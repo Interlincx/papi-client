@@ -1,0 +1,17 @@
+{
+  "name": "papi-client",
+  "version": "0.0.0",
+  "description": "papi-client interfaces with papi api to make life easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.lincx.me:modules/papi-client.git"
+  },
+  "author": "Tyler Bushnell",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "45e87b0c356a6ee9823b1a95debf1bc28c630d0a"
+}
