@@ -4,7 +4,7 @@
   "description": "papi-client interfaces with papi api to make life easier",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/coffee test/accounts.coffee"
   },
   "repository": {
     "type": "git",
@@ -13,5 +13,11 @@
   "author": "Tyler Bushnell",
   "license": "BSD",
   "readmeFilename": "README.md",
-  "gitHead": "45e87b0c356a6ee9823b1a95debf1bc28c630d0a"
+  "gitHead": "45e87b0c356a6ee9823b1a95debf1bc28c630d0a",
+  "devDependencies": {
+    "coffee-script": "~1.6.3"
+  },
+  "dependencies": {
+    "get-json-hq": "~0.1.5"
+  }
 }
