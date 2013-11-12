@@ -1,9 +1,9 @@
-assert = require 'assert'
+test = require 'tape'
 
 papiClient = require '..'
 
-assert.ok papiClient
 
-papiClient.getAccounts {}, (err, accounts) ->
-  assert.ok accounts[0]
-  console.log accounts[0]
+test "getAccounts", (t) ->
+  t.plan 1
+  papiClient.getAccounts {}, (err, accounts) ->
+    t.ok accounts[0]
