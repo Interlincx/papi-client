@@ -1,9 +1,9 @@
 test = require 'tape'
 
-papiClient = require '..'
-
+PapiClient = require '..'
+pc = new PapiClient
 
 test "getAccounts", (t) ->
   t.plan 1
-  papiClient.getAccounts {}, (err, accounts) ->
+  pc.getAccounts {}, (err, accounts) ->
     t.ok accounts[0]
