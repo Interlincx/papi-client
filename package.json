@@ -4,7 +4,8 @@
   "description": "papi-client interfaces with papi api to make life easier",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/coffee test/accounts.coffee"
+    "test": "node_modules/.bin/coffee test/accounts.coffee",
+    "example": "node_modules/.bin/beefy example/index.coffee"
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,16 @@
   "gitHead": "45e87b0c356a6ee9823b1a95debf1bc28c630d0a",
   "devDependencies": {
     "coffee-script": "~1.6.3",
-    "tape": "~2.1.0"
+    "tape": "~2.1.0",
+    "beefy": "~0.4.5",
+    "browserify": "~2.35.1",
+    "coffeeify": "~0.5.2"
   },
   "dependencies": {
     "get-json-hq": "~0.1.5"
+  },
+  "browser": "./index.coffee",
+  "browserify": {
+    "transform": "coffeeify"
   }
 }
