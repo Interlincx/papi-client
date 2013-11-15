@@ -1,0 +1,1118 @@
+{
+  "creative_templates": {
+    "classic_adpage": {
+      "title": "Basic AdPage",
+      "file_name": "index.html",
+      "sample_values": {
+        "background_fullpage__width": 1080,
+        "background_fullpage__height": 960,
+        "standard_adbox__top": 259,
+        "standard_adbox__left": 28
+      },
+      "settings": {
+        "main_feed": {
+          "global": false,
+          "count": 1,
+          "title": "Feed",
+          "setting_type": "feed",
+          "piece_category": "adpage_selection",
+          "default": ""
+        }
+      },
+      "pieces": {
+        "background_fullpage": {
+          "global": true,
+          "default": "",
+          "count": 1,
+          "resize_element": 0,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 50
+            },
+            "height": {
+              "type": "int",
+              "default": 50
+            }
+          },
+          "title": "Background",
+          "piece_category": "image_groups"
+        },
+        "buttons": {
+          "global": true,
+          "default": "",
+          "count": 10,
+          "resize_element": 1,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 50
+            },
+            "height": {
+              "type": "int",
+              "default": 50
+            }
+          },
+          "title": "Buttons",
+          "piece_category": "image_groups",
+          "thumb_size": 0.5
+        },
+        "standard_adbox": {
+          "global": false,
+          "sub_template": true,
+          "default": "classic_textad",
+          "count": 1,
+          "draggable": true,
+          "attributes": {
+            "top": {
+              "type": "int",
+              "default": 0
+            },
+            "left": {
+              "type": "int",
+              "default": 0
+            }
+          },
+          "title": "Feed",
+          "piece_category": "sub_template"
+        },
+        "ad_count": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Count",
+          "piece_category": "custom",
+          "input": {
+            "type": "text"
+          },
+          "target_piece": "standard_adbox",
+          "default": 5
+        },
+        "color_title": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Title",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#2A24E9"
+        },
+        "color_description": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Description",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#BBBBBB"
+        },
+        "color_domain": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Domain",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#09C509"
+        }
+      }
+    },
+    "twoclick": {
+      "title": "2 Click Page",
+      "file_name": "index.html",
+      "settings": {
+        "ad_link": {
+          "global": false,
+          "count": 1,
+          "title": "Ad",
+          "setting_type": "ad",
+          "piece_category": "adpage_selection",
+          "default": ""
+        },
+        "timed_redirect": {
+          "global": false,
+          "count": 1,
+          "input": {
+            "type": "text"
+          },
+          "title": "Timed Redirect",
+          "piece_category": "text",
+          "default": 0
+        }
+      },
+      "pieces": {
+        "twoclick": {
+          "global": true,
+          "default": "",
+          "count": 1,
+          "resize_element": 1,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 400
+            },
+            "height": {
+              "type": "int",
+              "default": 300
+            }
+          },
+          "title": "2Click Ad Image",
+          "piece_category": "image_groups"
+        },
+        "background_color": {
+          "global": false,
+          "count": 1,
+          "title": "Background Color",
+          "piece_category": "color_option",
+          "color_type": "background",
+          "default": "#FFFFFF"
+        },
+        "short_message": {
+          "global": false,
+          "count": 1,
+          "input": {
+            "type": "textarea",
+            "attributes": {
+              "rows": 10,
+              "cols": 30
+            }
+          },
+          "title": "Short Message",
+          "piece_category": "text",
+          "draggable": true,
+          "default": ""
+        }
+      }
+    },
+    "mobile_adpage": {
+      "title": "Mobile Adpage",
+      "file_name": "index.html",
+      "settings": {
+        "main_feed": {
+          "global": false,
+          "count": 1,
+          "title": "Feed",
+          "setting_type": "feed",
+          "piece_category": "adpage_selection",
+          "default": ""
+        }
+      },
+      "pieces": {
+        "background_mobile": {
+          "global": true,
+          "default": "",
+          "count": 1,
+          "resize_element": 0,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 50
+            },
+            "height": {
+              "type": "int",
+              "default": 50
+            }
+          },
+          "title": "Mobile Background",
+          "piece_category": "image_groups"
+        },
+        "standard_adbox": {
+          "global": false,
+          "sub_template": true,
+          "default": [
+            {
+              "value": "mobile_textad",
+              "top": 100,
+              "left": 20
+            }
+          ],
+          "count": 1,
+          "draggable": true,
+          "attributes": {
+            "top": {
+              "type": "int",
+              "default": 0
+            },
+            "left": {
+              "type": "int",
+              "default": 0
+            }
+          },
+          "title": "Feed",
+          "piece_category": "sub_template"
+        },
+        "ad_count": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Count",
+          "piece_category": "custom",
+          "target_piece": "standard_adbox",
+          "input": {
+            "type": "text"
+          },
+          "default": 5
+        },
+        "background_color": {
+          "global": false,
+          "count": 1,
+          "title": "Background Color",
+          "piece_category": "color_option",
+          "color_type": "background",
+          "default": [
+            {
+              "value": "#FFFFFF"
+            }
+          ]
+        },
+        "color_title": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Title",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#2A24E9"
+        },
+        "color_description": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Description",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#BBBBBB"
+        },
+        "color_domain": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Domain",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#09C509"
+        }
+      }
+    },
+    "test_page": {
+      "title": "Test Template",
+      "file_name": "index.html",
+      "sample_values": {
+        "background_fullpage__width": 1080,
+        "background_fullpage__height": 960,
+        "standard_adbox__top": 259,
+        "standard_adbox__left": 28
+      },
+      "settings": {
+        "main_feed": {
+          "global": false,
+          "count": 1,
+          "title": "Feed",
+          "setting_type": "feed",
+          "piece_category": "adpage_selection",
+          "default": ""
+        }
+      },
+      "pieces": {
+        "standard_adbox": {
+          "global": false,
+          "sub_template": true,
+          "default": [
+            {
+              "value": "classic_textad",
+              "top": 259,
+              "left": 28
+            }
+          ],
+          "count": 1,
+          "draggable": true,
+          "attributes": {
+            "top": {
+              "type": "int",
+              "default": 0
+            },
+            "left": {
+              "type": "int",
+              "default": 0
+            }
+          },
+          "title": "Feed",
+          "target_class": "cellSection",
+          "piece_category": "sub_template"
+        },
+        "ad_count": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Count",
+          "piece_category": "custom",
+          "input": {
+            "type": "text"
+          },
+          "target_piece": "standard_adbox",
+          "default": 5
+        },
+        "seal_location": {
+          "global": false,
+          "count": 1,
+          "title": "SEal LOC",
+          "target_class": "siteLoc",
+          "piece_category": "custom",
+          "default": "",
+          "draggable": true
+        },
+        "site_seal": {
+          "global": true,
+          "default": [
+            {
+              "value": "",
+              "width": 200,
+              "height": 200
+            }
+          ],
+          "count": 1,
+          "resize_element": 1,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 50
+            },
+            "height": {
+              "type": "int",
+              "default": 50
+            }
+          },
+          "title": "Site SEal",
+          "target_class": "siteSeal",
+          "piece_category": "image_groups"
+        },
+        "background_fullpage": {
+          "global": true,
+          "default": "",
+          "count": 1,
+          "resize_element": 0,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 50
+            },
+            "height": {
+              "type": "int",
+              "default": 50
+            }
+          },
+          "title": "Background",
+          "piece_category": "image_groups",
+          "target_class": "innerSection"
+        },
+        "buttons": {
+          "global": true,
+          "default": "",
+          "count": 10,
+          "resize_element": 1,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 50
+            },
+            "height": {
+              "type": "int",
+              "default": 50
+            }
+          },
+          "title": "Buttons",
+          "piece_category": "image_groups",
+          "thumb_size": 0.5,
+          "target_class": "adImage"
+        },
+        "color_title": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Title",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#2A24E9",
+          "target_class": "adTitle"
+        },
+        "color_description": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Description",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#BBBBBB",
+          "target_class": "adDescription"
+        },
+        "color_domain": {
+          "global": false,
+          "count": 1,
+          "title": "Ad Domain",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#09C509",
+          "target_class": "adDomain"
+        }
+      }
+    }
+  },
+  "script_info": {
+    "script_versions": {
+      "lincx1_30_0": {
+        "title": "v0.30.0"
+      },
+      "lincx1_30_0_1": {
+        "title": "v0.30.0.1 (eu)"
+      }
+    },
+    "var_groups": {
+      "index": [
+        "boolean_options__exit_off_for_mobile"
+      ],
+      "scripts": [
+        {
+          "versions": {
+            "lincx1_30_0": {
+              "title": "v0.30.0"
+            },
+            "lincx1_30_0_1": {
+              "title": "v0.30.0.1 (eu)"
+            }
+          },
+          "global": [
+            "switch_default",
+            "switch_state",
+            "browser_whitelist",
+            "iframe_turn_off_time",
+            "subid1",
+            "subid2",
+            "debug_status",
+            "debug_level"
+          ],
+          "background": [
+            "activate"
+          ],
+          "products": {
+            "click_popunder": [
+              "execution_frequency",
+              "wrap_links"
+            ],
+            "popunder": [
+              "execution_frequency",
+              "wrap_links"
+            ],
+            "wire": [
+              "execution_frequency",
+              "wrap_links",
+              "opacity",
+              "width2",
+              "height2",
+              "top1",
+              "left1",
+              "close_button_default",
+              "close_button_custom",
+              "allow_multiple_executions",
+              "wire_sensetivity",
+              "wire_time_to_show",
+              "use_json",
+              "custom_display"
+            ],
+            "exit": [
+              "execution_frequency",
+              "wrap_links",
+              "width1",
+              "height1",
+              "text1",
+              "text2",
+              "resize",
+              "text_safari1",
+              "text_safari2",
+              "text_chrome1",
+              "text_chrome2",
+              "text_firefox1",
+              "text_firefox2",
+              "text_ie1",
+              "text_ie2",
+              "alert_boxes",
+              "allow_client_url",
+              "alternate_url",
+              "dynamic_vars_pnames",
+              "dynamic_vars_pvals",
+              "allow_multiple_executions",
+              "exit_temp_off_time"
+            ]
+          }
+        }
+      ]
+    },
+    "product_info": {
+      "click_popunder": {
+        "title": "Click PopUnder"
+      },
+      "popunder": {
+        "title": "PopUnder"
+      },
+      "wire": {
+        "title": "Wire"
+      },
+      "exit": {
+        "title": "Exit"
+      }
+    },
+    "setting_info": {
+      "id": {
+        "type": "int",
+        "default": "auto_increment",
+        "title": "Table ID",
+        "key": "primary",
+        "client_editable": false
+      },
+      "uuid_line": {
+        "type": "char",
+        "length": 36,
+        "data_type": "uuid",
+        "title": "Pipeline Line ID",
+        "key": "unique",
+        "client_editable": false
+      },
+      "active": {
+        "type": "tinyint",
+        "title": "Active"
+      },
+      "altered": {
+        "type": "tinyint",
+        "title": "Active"
+      },
+      "user_id": {
+        "type": "int",
+        "title": "User ID",
+        "client_editable": false
+      },
+      "site_id": {
+        "type": "int",
+        "title": "Implementation ID",
+        "client_editable": false,
+        "bitflag": {
+          "wire": "###",
+          "exit": "###",
+          "click_popunder": "###",
+          "popunder": "###",
+          "none1": "###",
+          "none2": "###"
+        }
+      },
+      "implementation_id": {
+        "type": "varchar",
+        "length": 255,
+        "title": "Site ID"
+      },
+      "domain": {
+        "type": "varchar",
+        "length": 255,
+        "title": "Domain"
+      },
+      "selector_type": {
+        "type": "varchar",
+        "length": 16,
+        "title": "Selector Type",
+        "default": "base",
+        "options": {
+          "base": "Base",
+          "path": "Path",
+          "pattern": "Pattern",
+          "parameter": "Parameter"
+        }
+      },
+      "selector_value": {
+        "type": "text",
+        "title": "Selector Value"
+      },
+      "selector_subvalue": {
+        "type": "text",
+        "title": "Selector SubValue"
+      },
+      "script": {
+        "type": "varchar",
+        "length": 32,
+        "title": "Script Version",
+        "default": "lincx1_30_0"
+      },
+      "activate": {
+        "type": "char",
+        "length": 6,
+        "title": "Activate",
+        "bitflag": {
+          "wire": 0,
+          "exit": 1,
+          "click_popunder": 0,
+          "popunder": 0,
+          "none1": 0,
+          "none2": 0
+        }
+      },
+      "opacity": {
+        "type": "varchar",
+        "length": 5,
+        "title": "Opacity",
+        "default": 0.8
+      },
+      "width1": {
+        "type": "int",
+        "title": "Fixed Width (must also set height)",
+        "default": 1100
+      },
+      "height1": {
+        "type": "int",
+        "title": "Fixed Height (must also set width)",
+        "default": 1140
+      },
+      "width2": {
+        "type": "int",
+        "title": "",
+        "default": 858
+      },
+      "height2": {
+        "type": "int",
+        "title": "",
+        "default": 787
+      },
+      "top1": {
+        "type": "int",
+        "title": "Pixels From Top",
+        "default": 0
+      },
+      "left1": {
+        "type": "int",
+        "title": "Pixels From Left",
+        "default": 0
+      },
+      "top2": {
+        "type": "int",
+        "title": "",
+        "default": 0
+      },
+      "left2": {
+        "type": "int",
+        "title": "",
+        "default": 0
+      },
+      "switch_default": {
+        "type": "varchar",
+        "length": 3,
+        "default": "yes",
+        "title": "Script Default",
+        "options": {
+          "yes": "On",
+          "no": "Off"
+        }
+      },
+      "switch_state": {
+        "type": "varchar",
+        "length": 3,
+        "default": "on",
+        "title": "Script State",
+        "options": {
+          "on": "On",
+          "off": "Off"
+        }
+      },
+      "text1": {
+        "type": "text",
+        "title": "First Text",
+        "encoded": true
+      },
+      "text2": {
+        "type": "text",
+        "title": "Second Text",
+        "encoded": true
+      },
+      "text3": {
+        "type": "text",
+        "title": "",
+        "encoded": true
+      },
+      "resize": {
+        "type": "varchar",
+        "length": 3,
+        "title": "Resize",
+        "default": "off",
+        "options": {
+          "off": "Off",
+          "on": "On"
+        }
+      },
+      "frequency": {
+        "type": "varchar",
+        "length": 3,
+        "title": "Execute Script",
+        "default": "always",
+        "options": {
+          "always": "Always",
+          "session": "Once per Session",
+          "daily": "Once per Day"
+        }
+      },
+      "text_safari1": {
+        "type": "text",
+        "title": "Safari First Text",
+        "encoded": true
+      },
+      "text_safari2": {
+        "type": "text",
+        "title": "Safari Second Text",
+        "encoded": true
+      },
+      "text_chrome1": {
+        "type": "text",
+        "title": "Chrome First Text",
+        "encoded": true
+      },
+      "text_chrome2": {
+        "type": "text",
+        "title": "Chrome Second Text",
+        "encoded": true
+      },
+      "text_firefox1": {
+        "type": "text",
+        "title": "Firefox First Text",
+        "encoded": true
+      },
+      "text_firefox2": {
+        "type": "text",
+        "title": "Firefox Second Text",
+        "encoded": true
+      },
+      "text_ie1": {
+        "type": "text",
+        "title": "IE First Text",
+        "encoded": true
+      },
+      "text_ie2": {
+        "type": "text",
+        "title": "IE Second Text",
+        "encoded": true
+      },
+      "alert_boxes": {
+        "type": "varchar",
+        "length": 3,
+        "title": "Number Of Alerts",
+        "default": "two",
+        "options": {
+          "two": "Two",
+          "one": "One"
+        }
+      },
+      "fire_percent": {
+        "type": "smallint",
+        "title": "Fire (1-100)% of the time",
+        "default": 100
+      },
+      "keywords": {
+        "type": "text",
+        "title": "Keywords",
+        "encoded": true,
+        "conversion": {
+          "split": "\\n",
+          "serialize": ""
+        }
+      },
+      "allow_client_url": {
+        "type": "varchar",
+        "length": 3,
+        "title": "Allow Client to insert destination URL",
+        "default": "off",
+        "options": {
+          "off": "Off",
+          "on": "On"
+        }
+      },
+      "alternate_url": {
+        "type": "text",
+        "title": "Alternate Page URL",
+        "encoded": true
+      },
+      "subid1": {
+        "type": "varchar",
+        "length": 255,
+        "title": "SubID 1"
+      },
+      "subid2": {
+        "type": "varchar",
+        "length": 255,
+        "title": "SubID 2"
+      },
+      "dynamic_vars_pnames": {
+        "type": "text",
+        "title": "Dynamic Variables - Parameter Name",
+        "encoded": true,
+        "conversion": {
+          "split": "\\n",
+          "serialize": ""
+        }
+      },
+      "dynamic_vars_pvals": {
+        "type": "text",
+        "title": "Dynamic Variables - Parameter Value",
+        "encoded": true,
+        "conversion": {
+          "split": "\\n",
+          "serialize": ""
+        }
+      },
+      "dynamic_vars_kvals": {
+        "type": "text",
+        "title": "Dynamic Variables - Key Values",
+        "encoded": true,
+        "conversion": {
+          "split": "\\n",
+          "serialize": ""
+        }
+      },
+      "close_button_default": {
+        "type": "varchar",
+        "length": 3,
+        "title": "Tripwire Close Button",
+        "default": "off",
+        "options": {
+          "off": "Off",
+          "on": "On"
+        }
+      },
+      "close_button_custom": {
+        "type": "varchar",
+        "length": 255,
+        "title": "Custom Close Buttons"
+      },
+      "allow_multiple_executions": {
+        "type": "varchar",
+        "length": 3,
+        "default": "yes",
+        "title": "Multiple Fire",
+        "description": "Allow a single product to fire more than once in a single page load",
+        "options": {
+          "yes": "On",
+          "no": "Off"
+        }
+      },
+      "debug_status": {
+        "type": "varchar",
+        "length": 5,
+        "title": "Debug",
+        "default": "false",
+        "options": {
+          "true": "On",
+          "false": "Off"
+        }
+      },
+      "debug_level": {
+        "type": "tinyint",
+        "title": "Debug Level",
+        "default": 5
+      },
+      "debug_user_actions": {
+        "type": "varchar",
+        "length": 5,
+        "title": "Debug",
+        "default": "false",
+        "options": {
+          "true": "On",
+          "false": "Off"
+        }
+      },
+      "wire_sensetivity": {
+        "type": "int",
+        "title": "Wire Sensetivity",
+        "default": 10000
+      },
+      "wire_time_to_show": {
+        "type": "int",
+        "title": "Wire Time Between Trip And Show",
+        "default": 300
+      },
+      "exit_temp_off_time": {
+        "type": "smallint",
+        "title": "Turn off exit for (miliseconds) upon element click",
+        "default": 500
+      },
+      "use_json": {
+        "type": "varchar",
+        "length": 5,
+        "title": "Interpret Page as JSON",
+        "default": "false",
+        "options": {
+          "true": "On",
+          "false": "Off"
+        }
+      },
+      "custom_display": {
+        "type": "varchar",
+        "length": 5,
+        "title": "Custom Display",
+        "default": "false",
+        "options": {
+          "true": "On",
+          "false": "Off"
+        }
+      },
+      "execution_frequency": {
+        "type": "char",
+        "length": 6,
+        "title": "Execution Frequency",
+        "bitflag": {
+          "wire": 0,
+          "exit": 0,
+          "click_popunder": 0,
+          "popunder": 0,
+          "none1": 0,
+          "none2": 0
+        },
+        "options": [
+          "Always",
+          "Daily",
+          "Session"
+        ]
+      },
+      "boolean_options__activate_backbutton": {
+        "type": "boolean",
+        "title": "Activate Backbutton",
+        "default": 1
+      },
+      "boolean_options__exit_off_for_mobile": {
+        "type": "boolean",
+        "title": "Exit Off For Mobile",
+        "default": 0
+      },
+      "wrap_links": {
+        "type": "boolean",
+        "title": "Wrap Links",
+        "bitflag": {
+          "wire": 0,
+          "exit": 0,
+          "click_popunder": 0,
+          "popunder": 0,
+          "none1": 0,
+          "none2": 0
+        }
+      },
+      "browser_whitelist": {
+        "type": "varchar",
+        "length": 255,
+        "title": "Browser Whitelist",
+        "default": "ff~1+_ie~1+_sa~1+_ch~1+"
+      },
+      "un_returnval": {
+        "type": "char",
+        "length": 3,
+        "title": "",
+        "default": "1x1"
+      },
+      "un_gray": {
+        "type": "char",
+        "length": 1,
+        "title": "",
+        "default": "g"
+      },
+      "un_animsteps": {
+        "type": "smallint",
+        "title": "",
+        "default": 15
+      },
+      "wire_time_constraint_long": {
+        "type": "smallint",
+        "title": "Wire Time Constraint Long",
+        "default": 30000
+      },
+      "wire_time_constraint_short": {
+        "type": "smallint",
+        "title": "Wire Time Constraint Short",
+        "default": 1
+      },
+      "wire_end_y": {
+        "type": "smallint",
+        "title": "Wire End Y",
+        "default": 20
+      },
+      "wire_start_y": {
+        "type": "smallint",
+        "title": "Wire Start Y",
+        "default": 100
+      },
+      "wire_high_velocity": {
+        "type": "smallint",
+        "title": "Wire High Velocity",
+        "default": 6000
+      },
+      "wire_low_velocity": {
+        "type": "smallint",
+        "title": "Wire Low Velocity",
+        "default": 200
+      },
+      "wire_clear_track_points_time": {
+        "type": "smallint",
+        "title": "Milliseconds of non-motion before erasing user motion hiitory",
+        "default": 500
+      },
+      "wire_points_to_track": {
+        "type": "tinyint",
+        "title": "",
+        "default": 0
+      },
+      "wire_line_top": {
+        "type": "smallint",
+        "title": "Wire Line Bottom",
+        "default": 20
+      },
+      "wire_line_bottom": {
+        "type": "smallint",
+        "title": "Wire Line Bottom",
+        "default": 100
+      },
+      "mouse_movement_logging_length": {
+        "type": "smallint",
+        "title": "Max Mouse String Length",
+        "default": 1500
+      },
+      "log_user_mouse_movements": {
+        "type": "varchar",
+        "length": 5,
+        "title": "Log User Mouse Movements",
+        "default": "false",
+        "options": {
+          "true": "On",
+          "false": "Off"
+        }
+      },
+      "iframe_turn_off_time": {
+        "type": "smallint",
+        "title": "iFrame Turn Off Time (milliseconds)",
+        "default": 3000
+      },
+      "start_usage": {
+        "type": "datetime",
+        "title": "Start Usage"
+      },
+      "end_usage": {
+        "type": "datetime",
+        "title": "End Usage"
+      }
+    }
+  },
+  "swarm_settings": {
+    "openInNewWindow": {
+      "title": "Open links in a new window",
+      "type": "boolean",
+      "default": true
+    },
+    "clientPixelClick": {
+      "type": "text",
+      "title": "Client pixel URL (Click)",
+      "default": "",
+      "conversion": {
+        "base64": ""
+      }
+    },
+    "clientPixelImp": {
+      "type": "text",
+      "title": "Client pixel URL (Imp)",
+      "default": "",
+      "conversion": {
+        "base64": ""
+      }
+    },
+    "forwardsAsClicks": {
+      "title": "Count forwards as clicks",
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

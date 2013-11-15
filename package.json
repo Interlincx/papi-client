@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/coffee test/accounts.coffee",
-    "example": "node_modules/.bin/beefy example/index.coffee"
+    "example": "node_modules/.bin/beefy example/index.coffee",
+    "gs": "node_modules/.bin/coffee script/retrieve-schemas.coffee"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,8 @@
     "tape": "~2.1.0",
     "beefy": "~0.4.5",
     "browserify": "~2.35.1",
-    "coffeeify": "~0.5.2"
+    "coffeeify": "~0.5.2",
+    "async": "~0.2.9"
   },
   "dependencies": {
     "get-json-hq": "~0.1.5"
