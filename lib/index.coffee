@@ -21,17 +21,46 @@ PapiClient::semiStaticSchemas = {
       type: "swarm"
       module: "get_swarm_settings"
       }
+  tables: {
+      type: "utils"
+      module: "get_schemas"
+      }
   }
 
 PapiClient::endpoints = {
+  accounts: {
+      title: "Accounts"
+      type: "account"
+      get: "get_accounts"
+      }
+  account: {
+      title: "Account"
+      type: "account"
+      get: "get_account"
+      }
   gateways: {
+      title: "Gateways"
       type: "gateway"
       get: "get_gateways"
       }
   gateway: {
+      title: "Gateway"
       type: "gateway"
       get: "get_gateway"
       save: "save_gateway"
+      delete: "delete_gateway"
+      }
+  hive: {
+      title: "Hive"
+      type: "hive"
+      get: "get_hives"
+      save: "save_hive"
+      }
+  product: {
+      title: "Pipeline"
+      type: "pipeline"
+      save: "save_new_product"
+      delete: "delete_product"
       }
   }
 
@@ -53,12 +82,57 @@ PapiClient::getUrl = (endpoint, opts={}) ->
   return url
 
 
-PapiClient::get = (what, opts, cb) ->
+PapiClient::deleteProduct = (hive, product_id, cb) ->
+  i = 0
+  for product in hive.products
+    if product.hive_product_id == product_id
+      hive.products.splice( i, 1 )
+      hive_id = hive.hive_id
+      break
+    i++
+
+  @save( 'hive', hive, cb )
+
+PapiClient::delete = (what, opts, cb) ->
   endpoint = @endpoints[what]
-  pieces = {type:endpoint.type, module:endpoint.get}
+  pieces = {type:endpoint.type, module:endpoint.delete}
+
   url = @getUrl( pieces, opts )
   gj url, cb
 
+PapiClient::get = (what, opts, cb) ->
+  endpoint = @endpoints[what]
+  pieces = {type:endpoint.type, module:endpoint.get}
+
+  url = @getUrl( pieces, opts )
+  gj url, cb
+
+
+PapiClient::isSubTable = (table) ->
+  if typeof @schemas.tables[table] != 'undefined'
+    return true
+  return false
+
+PapiClient::schemify = (what, obj) ->
+  result = []
+  if typeof obj[0] != 'undefined'
+    for row in obj
+      result.push( @schemify(what, row) )
+  else
+    for handle, value of obj
+      type = typeof value
+      if type == 'string' or type == 'number' or type == 'boolean'
+        if typeof @schemas.tables[what].fields[handle] != 'undefined'
+          result[handle] = @schemas.tables[what].fields[handle]
+          result[handle].value = value
+        else
+          result[handle] =
+            value: value
+      else if @isSubTable handle
+        result[handle] = @schemify handle, value
+  return result
+
+#REMOVE THIS
 PapiClient::getAccounts = (opts, cb) ->
   url = @getUrl {type:'account', module:'get_accounts'}
   gj url, cb
@@ -117,16 +191,6 @@ PapiClient::populateScriptOptions = ->
 
   return script_options
 
-
-
-###
-PapiClient::writeFileNow = () ->
-  fs.writeFile "asdf", "Hey there!", (err) ->
-    if err
-      console.log err
-    else
-      console.log "The file was saved!"
-###
 
 PapiClient::formify = require './formify.coffee'
 
