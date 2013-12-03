@@ -4,14 +4,30 @@ schemas = require './schemas.json'
 
 module.exports = PapiClient = (opts={}) ->
   @baseUrl = opts.baseUrl or 'http://tyler.thankyoupath.com/papi/'
-  @script_options = @populateScriptOptions()
+  #@script_options = @populateScriptOptions()
   @schemas = schemas
   return this
 
 PapiClient::semiStaticSchemas = {
+  tags: {
+      type: "tag"
+      module: "get_tags"
+      }
+  creative_sub_templates: {
+      type: "creative"
+      module: "schema_sub_templates"
+      }
+  ad_templates: {
+      type: "ad"
+      module: "schema_templates"
+      }
   creative_templates: {
       type: "creative"
-      module: "get_templates"
+      module: "schema_templates"
+      }
+  creative_pieces: {
+      type: "creative"
+      module: "schema_pieces"
       }
   script_info: {
       type: "pipeline"
@@ -28,6 +44,17 @@ PapiClient::semiStaticSchemas = {
   }
 
 PapiClient::endpoints = {
+  ad: {
+      title: "Ad"
+      type: "ad"
+      get: "get_ad"
+      save: "save_ad"
+      }
+  ads: {
+      title: "Ads"
+      type: "ad"
+      get: "get_ads"
+      }
   accounts: {
       title: "Accounts"
       type: "account"
@@ -43,17 +70,40 @@ PapiClient::endpoints = {
       type: "gateway"
       get: "get_gateways"
       }
+  creative: {
+      title: "Creative"
+      type: "creative"
+      get: "get_creative"
+      save: "save_creative"
+      delete: "delete_creative"
+      }
+  creatives: {
+      title: "Creatives"
+      type: "creative"
+      get: "get_creatives_detail"
+      }
+  creative_instances: {
+      title: "Creative Instances"
+      type: "creative"
+      get: "get_instances"
+      }
+  creative_instance: {
+      title: "Creative Instance"
+      type: "creative"
+      get: "get_instance"
+      save: "save_instance"
+      }
   gateway: {
       title: "Gateway"
       type: "gateway"
-      get: "get_gateway"
+      #get: "get_gateway"
       save: "save_gateway"
       delete: "delete_gateway"
       }
   hive: {
       title: "Hive"
       type: "hive"
-      get: "get_hives"
+      #get: "get_hives"
       save: "save_hive"
       }
   product: {
@@ -107,6 +157,8 @@ PapiClient::get = (what, opts, cb) ->
   url = @getUrl( pieces, opts )
   gj url, cb
 
+  return url
+
 
 PapiClient::isSubTable = (table) ->
   if typeof @schemas.tables[table] != 'undefined'
@@ -121,7 +173,7 @@ PapiClient::schemify = (what, obj) ->
   else
     for handle, value of obj
       type = typeof value
-      if type == 'string' or type == 'number' or type == 'boolean'
+      if type == 'string' or type == 'number' or type == 'boolean' or value == null
         if typeof @schemas.tables[what].fields[handle] != 'undefined'
           result[handle] = @schemas.tables[what].fields[handle]
           result[handle].value = value
@@ -132,10 +184,6 @@ PapiClient::schemify = (what, obj) ->
         result[handle] = @schemify handle, value
   return result
 
-#REMOVE THIS
-PapiClient::getAccounts = (opts, cb) ->
-  url = @getUrl {type:'account', module:'get_accounts'}
-  gj url, cb
 
 
 PapiClient::save = (what, obj, cb) ->
@@ -157,6 +205,8 @@ PapiClient::save = (what, obj, cb) ->
       console.log "success data: ", data
       if data.success is false
         _this.saveError()
+      else if data.result is 'error'
+        _this.saveError()
       else
         $.gritter.add
           title: 'Notice'
@@ -175,7 +225,14 @@ PapiClient::saveError = ->
     text: 'Save Failed!!!!'
     time: 3000
 
+PapiClient::getCreativeTypes = (index, index_value) ->
+  result = []
+  for handle, item of @schemas.creative_pieces
+    if item[index] == index_value
+      result.push item
+  return result
 
+###
 PapiClient::populateScriptOptions = ->
   script_options = []
   pipeline_data =
@@ -190,7 +247,11 @@ PapiClient::populateScriptOptions = ->
   script_options.push pipeline_data
 
   return script_options
+###
 
 
-PapiClient::formify = require './formify.coffee'
+PapiClient::formification = require './formify.coffee'
+PapiClient::formify = (attrs, input) ->
+  return @formification.init(attrs, input)
 
+PapiClient::printForm = require './print_form.coffee'

@@ -1,4 +1,151 @@
 {
+  "tags": [
+    {
+      "tag_id": "1",
+      "category": "vertical",
+      "name": "payday loan"
+    },
+    {
+      "tag_id": "2",
+      "category": "vertical",
+      "name": "cash advance"
+    },
+    {
+      "tag_id": "3",
+      "category": "vertical",
+      "name": "credit card"
+    },
+    {
+      "tag_id": "4",
+      "category": "traffic type",
+      "name": "reject"
+    },
+    {
+      "tag_id": "5",
+      "category": "traffic type",
+      "name": "premium"
+    },
+    {
+      "tag_id": "6",
+      "category": "traffic type",
+      "name": "return user"
+    }
+  ],
+  "creative_sub_templates": {
+    "classic_textad": {
+      "title": "Classic Text Ads",
+      "file_name": "modules/creative/_sub_templates/classic_textad/index.html",
+      "file_css": "style.css",
+      "ad_data_type": "text_simple",
+      "sample_values": {
+        "title": "Example Headline",
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqum",
+        "display_url": "www.example.com",
+        "click_url": "#"
+      },
+      "pieces": {
+        "color_title": {
+          "shared": false,
+          "count": 1,
+          "title": "Ad Title",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#2A24E9",
+          "handle": "color_title"
+        },
+        "color_description": {
+          "shared": false,
+          "count": 1,
+          "title": "Ad Description",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#BBBBBB",
+          "handle": "color_description"
+        },
+        "color_domain": {
+          "shared": false,
+          "count": 1,
+          "title": "Ad Domain",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#09C509",
+          "handle": "color_domain"
+        }
+      },
+      "template": "<div class=\"ad_box\">\n  <div class=\"buttonswrapper\">\n    <div class=\"buttons buttons|counter|\"></div>\n  </div>\n  <div class=\"right_side\">\n    <div><a href=\"#\" class=\"color_title\" >Example Headline</a></div>\n    <div><a href=\"#\" class=\"color_description\" >Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqum</a></div>\n    <div><a href=\"#\" class=\"color_domain\" >www.example.com</a></div>\n  </div>\n</div>  \n"
+    },
+    "mobile_textad": {
+      "title": "Mobile Text Ads",
+      "file_name": "modules/creative/_sub_templates/mobile_textad/index.html",
+      "file_css": "style.css",
+      "ad_data_type": "text_simple",
+      "sample_values": {
+        "title": "Example Headline",
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqum",
+        "display_url": "www.example.com",
+        "click_url": "#"
+      },
+      "pieces": {
+        "color_title": {
+          "shared": false,
+          "count": 1,
+          "title": "Ad Title",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#2A24E9",
+          "handle": "color_title"
+        },
+        "color_description": {
+          "shared": false,
+          "count": 1,
+          "title": "Ad Description",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#BBBBBB",
+          "handle": "color_description"
+        },
+        "color_domain": {
+          "shared": false,
+          "count": 1,
+          "title": "Ad Domain",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#09C509",
+          "handle": "color_domain"
+        }
+      },
+      "template": "<div class=\"ad_box\">\n  <div class=\"right_side\">\n    <div><a href=\"#\" class=\"color_title\" >Example Headline</a></div>\n    <div><a href=\"#\" class=\"color_description\" >Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqum</a></div>\n    <div><a href=\"#\" class=\"color_domain\" >www.example.com</a></div>\n  </div>\n</div>  \n"
+    }
+  },
+  "ad_templates": {
+    "text_simple": {
+      "template_id": 1,
+      "title": "Text Ad",
+      "pieces": {
+        "title": {
+          "type": "text",
+          "length": 64
+        },
+        "description": {
+          "type": "text",
+          "length": 128
+        },
+        "display_url": {
+          "type": "text",
+          "length": 64
+        }
+      }
+    },
+    "banner_horizontal": {
+      "template_id": 2,
+      "title": "Banner Ad",
+      "pieces": {
+        "banner": {
+          "type": "image"
+        }
+      }
+    }
+  },
   "creative_templates": {
     "classic_adpage": {
       "title": "Basic AdPage",
@@ -11,17 +158,18 @@
       },
       "settings": {
         "main_feed": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Feed",
           "setting_type": "ad_feed",
           "piece_category": "adpage_selection",
-          "default": ""
+          "default": "",
+          "handle": "main_feed"
         }
       },
       "pieces": {
         "background_fullpage": {
-          "global": true,
+          "shared": true,
           "default": "",
           "count": 1,
           "resize_element": 0,
@@ -36,10 +184,11 @@
             }
           },
           "title": "Background",
-          "piece_category": "image_groups"
+          "piece_category": "image_groups",
+          "handle": "background_fullpage"
         },
         "buttons": {
-          "global": true,
+          "shared": true,
           "default": "",
           "count": 10,
           "resize_element": 1,
@@ -55,10 +204,11 @@
           },
           "title": "Buttons",
           "piece_category": "image_groups",
-          "thumb_size": 0.5
+          "thumb_size": 0.5,
+          "handle": "buttons"
         },
         "standard_adbox": {
-          "global": false,
+          "shared": false,
           "sub_template": true,
           "default": "classic_textad",
           "count": 1,
@@ -74,42 +224,45 @@
             }
           },
           "title": "Feed",
-          "piece_category": "sub_template"
+          "piece_category": "sub_template",
+          "handle": "standard_adbox"
         },
         "ad_count": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad Count",
+          "type": "tinyint",
           "piece_category": "custom",
-          "input": {
-            "type": "text"
-          },
           "target_piece": "standard_adbox",
-          "default": 5
+          "default": 5,
+          "handle": "ad_count"
         },
         "color_title": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad Title",
           "piece_category": "color_option",
           "color_type": "text",
-          "default": "#2A24E9"
+          "default": "#2A24E9",
+          "handle": "color_title"
         },
         "color_description": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad Description",
           "piece_category": "color_option",
           "color_type": "text",
-          "default": "#BBBBBB"
+          "default": "#BBBBBB",
+          "handle": "color_description"
         },
         "color_domain": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad Domain",
           "piece_category": "color_option",
           "color_type": "text",
-          "default": "#09C509"
+          "default": "#09C509",
+          "handle": "color_domain"
         }
       }
     },
@@ -118,27 +271,30 @@
       "file_name": "index.html",
       "settings": {
         "ad_link": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad",
           "setting_type": "ad",
           "piece_category": "adpage_selection",
-          "default": ""
+          "default": "",
+          "handle": "ad_link"
         },
         "timed_redirect": {
-          "global": false,
+          "shared": false,
           "count": 1,
+          "type": "text",
           "input": {
             "type": "text"
           },
           "title": "Timed Redirect",
           "piece_category": "text",
-          "default": 0
+          "default": 0,
+          "handle": "timed_redirect"
         }
       },
       "pieces": {
         "twoclick": {
-          "global": true,
+          "shared": true,
           "default": "",
           "count": 1,
           "resize_element": 1,
@@ -153,19 +309,22 @@
             }
           },
           "title": "2Click Ad Image",
-          "piece_category": "image_groups"
+          "piece_category": "image_groups",
+          "handle": "twoclick"
         },
         "background_color": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Background Color",
           "piece_category": "color_option",
           "color_type": "background",
-          "default": "#FFFFFF"
+          "default": "#FFFFFF",
+          "handle": "background_color"
         },
         "short_message": {
-          "global": false,
+          "shared": false,
           "count": 1,
+          "type": "text",
           "input": {
             "type": "textarea",
             "attributes": {
@@ -176,7 +335,8 @@
           "title": "Short Message",
           "piece_category": "text",
           "draggable": true,
-          "default": ""
+          "default": "",
+          "handle": "short_message"
         }
       }
     },
@@ -185,17 +345,18 @@
       "file_name": "index.html",
       "settings": {
         "main_feed": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Feed",
           "setting_type": "ad_feed",
           "piece_category": "adpage_selection",
-          "default": ""
+          "default": "",
+          "handle": "main_feed"
         }
       },
       "pieces": {
         "background_mobile": {
-          "global": true,
+          "shared": true,
           "default": "",
           "count": 1,
           "resize_element": 0,
@@ -210,10 +371,11 @@
             }
           },
           "title": "Mobile Background",
-          "piece_category": "image_groups"
+          "piece_category": "image_groups",
+          "handle": "background_mobile"
         },
         "standard_adbox": {
-          "global": false,
+          "shared": false,
           "sub_template": true,
           "default": [
             {
@@ -235,21 +397,24 @@
             }
           },
           "title": "Feed",
-          "piece_category": "sub_template"
+          "piece_category": "sub_template",
+          "handle": "standard_adbox"
         },
         "ad_count": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad Count",
+          "type": "tinyint",
           "piece_category": "custom",
           "target_piece": "standard_adbox",
+          "default": 5,
+          "handle": "ad_count",
           "input": {
             "type": "text"
-          },
-          "default": 5
+          }
         },
         "background_color": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Background Color",
           "piece_category": "color_option",
@@ -258,31 +423,35 @@
             {
               "value": "#FFFFFF"
             }
-          ]
+          ],
+          "handle": "background_color"
         },
         "color_title": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad Title",
           "piece_category": "color_option",
           "color_type": "text",
-          "default": "#2A24E9"
+          "default": "#2A24E9",
+          "handle": "color_title"
         },
         "color_description": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad Description",
           "piece_category": "color_option",
           "color_type": "text",
-          "default": "#BBBBBB"
+          "default": "#BBBBBB",
+          "handle": "color_description"
         },
         "color_domain": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad Domain",
           "piece_category": "color_option",
           "color_type": "text",
-          "default": "#09C509"
+          "default": "#09C509",
+          "handle": "color_domain"
         }
       }
     },
@@ -297,23 +466,24 @@
       },
       "settings": {
         "main_feed": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Feed",
           "setting_type": "ad_feed",
           "piece_category": "adpage_selection",
-          "default": ""
+          "default": "",
+          "handle": "main_feed"
         }
       },
       "pieces": {
         "standard_adbox": {
-          "global": false,
+          "shared": false,
           "sub_template": true,
           "default": [
             {
-              "value": "classic_textad",
-              "top": 259,
-              "left": 28
+              "value": "mobile_textad",
+              "top": 100,
+              "left": 20
             }
           ],
           "count": 1,
@@ -329,31 +499,100 @@
             }
           },
           "title": "Feed",
-          "target_class": "cellSection",
-          "piece_category": "sub_template"
+          "piece_category": "sub_template",
+          "handle": "standard_adbox"
         },
         "ad_count": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "Ad Count",
+          "type": "tinyint",
           "piece_category": "custom",
+          "target_piece": "standard_adbox",
+          "default": 5,
+          "handle": "ad_count",
           "input": {
             "type": "text"
+          }
+        },
+        "background_fullpage": {
+          "shared": true,
+          "default": "",
+          "count": 1,
+          "resize_element": 0,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 50
+            },
+            "height": {
+              "type": "int",
+              "default": 50
+            }
           },
-          "target_piece": "standard_adbox",
-          "default": 5
+          "title": "Background",
+          "piece_category": "image_groups",
+          "handle": "background_fullpage"
+        },
+        "buttons": {
+          "shared": true,
+          "default": "",
+          "count": 10,
+          "resize_element": 1,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 50
+            },
+            "height": {
+              "type": "int",
+              "default": 50
+            }
+          },
+          "title": "Buttons",
+          "piece_category": "image_groups",
+          "thumb_size": 0.5,
+          "handle": "buttons"
+        },
+        "color_title": {
+          "shared": false,
+          "count": 1,
+          "title": "Ad Title",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#2A24E9",
+          "handle": "color_title"
+        },
+        "color_description": {
+          "shared": false,
+          "count": 1,
+          "title": "Ad Description",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#BBBBBB",
+          "handle": "color_description"
+        },
+        "color_domain": {
+          "shared": false,
+          "count": 1,
+          "title": "Ad Domain",
+          "piece_category": "color_option",
+          "color_type": "text",
+          "default": "#09C509",
+          "handle": "color_domain"
         },
         "seal_location": {
-          "global": false,
+          "shared": false,
           "count": 1,
           "title": "SEal LOC",
           "target_class": "siteLoc",
           "piece_category": "custom",
           "default": "",
-          "draggable": true
+          "draggable": true,
+          "handle": "seal_location"
         },
         "site_seal": {
-          "global": true,
+          "shared": true,
           "default": [
             {
               "value": "",
@@ -375,75 +614,251 @@
           },
           "title": "Site SEal",
           "target_class": "siteSeal",
-          "piece_category": "image_groups"
-        },
-        "background_fullpage": {
-          "global": true,
-          "default": "",
-          "count": 1,
-          "resize_element": 0,
-          "attributes": {
-            "width": {
-              "type": "int",
-              "default": 50
-            },
-            "height": {
-              "type": "int",
-              "default": 50
-            }
-          },
-          "title": "Background",
           "piece_category": "image_groups",
-          "target_class": "innerSection"
-        },
-        "buttons": {
-          "global": true,
-          "default": "",
-          "count": 10,
-          "resize_element": 1,
-          "attributes": {
-            "width": {
-              "type": "int",
-              "default": 50
-            },
-            "height": {
-              "type": "int",
-              "default": 50
-            }
-          },
-          "title": "Buttons",
-          "piece_category": "image_groups",
-          "thumb_size": 0.5,
-          "target_class": "adImage"
-        },
-        "color_title": {
-          "global": false,
-          "count": 1,
-          "title": "Ad Title",
-          "piece_category": "color_option",
-          "color_type": "text",
-          "default": "#2A24E9",
-          "target_class": "adTitle"
-        },
-        "color_description": {
-          "global": false,
-          "count": 1,
-          "title": "Ad Description",
-          "piece_category": "color_option",
-          "color_type": "text",
-          "default": "#BBBBBB",
-          "target_class": "adDescription"
-        },
-        "color_domain": {
-          "global": false,
-          "count": 1,
-          "title": "Ad Domain",
-          "piece_category": "color_option",
-          "color_type": "text",
-          "default": "#09C509",
-          "target_class": "adDomain"
+          "handle": "site_seal"
         }
       }
+    }
+  },
+  "creative_pieces": {
+    "main_feed": {
+      "shared": false,
+      "count": 1,
+      "title": "Feed",
+      "setting_type": "ad_feed",
+      "piece_category": "adpage_selection",
+      "default": "",
+      "handle": "main_feed"
+    },
+    "twoclick": {
+      "shared": true,
+      "default": "",
+      "count": 1,
+      "resize_element": 1,
+      "attributes": {
+        "width": {
+          "type": "int",
+          "default": 400
+        },
+        "height": {
+          "type": "int",
+          "default": 300
+        }
+      },
+      "title": "2Click Ad Image",
+      "piece_category": "image_groups",
+      "handle": "twoclick"
+    },
+    "background_mobile": {
+      "shared": true,
+      "default": "",
+      "count": 1,
+      "resize_element": 0,
+      "attributes": {
+        "width": {
+          "type": "int",
+          "default": 50
+        },
+        "height": {
+          "type": "int",
+          "default": 50
+        }
+      },
+      "title": "Mobile Background",
+      "piece_category": "image_groups",
+      "handle": "background_mobile"
+    },
+    "background_fullpage": {
+      "shared": true,
+      "default": "",
+      "count": 1,
+      "resize_element": 0,
+      "attributes": {
+        "width": {
+          "type": "int",
+          "default": 50
+        },
+        "height": {
+          "type": "int",
+          "default": 50
+        }
+      },
+      "title": "Background",
+      "piece_category": "image_groups",
+      "handle": "background_fullpage"
+    },
+    "buttons": {
+      "shared": true,
+      "default": "",
+      "count": 10,
+      "resize_element": 1,
+      "attributes": {
+        "width": {
+          "type": "int",
+          "default": 50
+        },
+        "height": {
+          "type": "int",
+          "default": 50
+        }
+      },
+      "title": "Buttons",
+      "piece_category": "image_groups",
+      "thumb_size": 0.5,
+      "handle": "buttons"
+    },
+    "standard_adbox": {
+      "shared": false,
+      "sub_template": true,
+      "default": [
+        {
+          "value": "mobile_textad",
+          "top": 100,
+          "left": 20
+        }
+      ],
+      "count": 1,
+      "draggable": true,
+      "attributes": {
+        "top": {
+          "type": "int",
+          "default": 0
+        },
+        "left": {
+          "type": "int",
+          "default": 0
+        }
+      },
+      "title": "Feed",
+      "piece_category": "sub_template",
+      "handle": "standard_adbox"
+    },
+    "ad_count": {
+      "shared": false,
+      "count": 1,
+      "title": "Ad Count",
+      "type": "tinyint",
+      "piece_category": "custom",
+      "target_piece": "standard_adbox",
+      "default": 5,
+      "handle": "ad_count",
+      "input": {
+        "type": "text"
+      }
+    },
+    "color_title": {
+      "shared": false,
+      "count": 1,
+      "title": "Ad Title",
+      "piece_category": "color_option",
+      "color_type": "text",
+      "default": "#2A24E9",
+      "handle": "color_title"
+    },
+    "color_description": {
+      "shared": false,
+      "count": 1,
+      "title": "Ad Description",
+      "piece_category": "color_option",
+      "color_type": "text",
+      "default": "#BBBBBB",
+      "handle": "color_description"
+    },
+    "color_domain": {
+      "shared": false,
+      "count": 1,
+      "title": "Ad Domain",
+      "piece_category": "color_option",
+      "color_type": "text",
+      "default": "#09C509",
+      "handle": "color_domain"
+    },
+    "ad_link": {
+      "shared": false,
+      "count": 1,
+      "title": "Ad",
+      "setting_type": "ad",
+      "piece_category": "adpage_selection",
+      "default": "",
+      "handle": "ad_link"
+    },
+    "timed_redirect": {
+      "shared": false,
+      "count": 1,
+      "type": "text",
+      "input": {
+        "type": "text"
+      },
+      "title": "Timed Redirect",
+      "piece_category": "text",
+      "default": 0,
+      "handle": "timed_redirect"
+    },
+    "background_color": {
+      "shared": false,
+      "count": 1,
+      "title": "Background Color",
+      "piece_category": "color_option",
+      "color_type": "background",
+      "default": [
+        {
+          "value": "#FFFFFF"
+        }
+      ],
+      "handle": "background_color"
+    },
+    "short_message": {
+      "shared": false,
+      "count": 1,
+      "type": "text",
+      "input": {
+        "type": "textarea",
+        "attributes": {
+          "rows": 10,
+          "cols": 30
+        }
+      },
+      "title": "Short Message",
+      "piece_category": "text",
+      "draggable": true,
+      "default": "",
+      "handle": "short_message"
+    },
+    "seal_location": {
+      "shared": false,
+      "count": 1,
+      "title": "SEal LOC",
+      "target_class": "siteLoc",
+      "piece_category": "custom",
+      "default": "",
+      "draggable": true,
+      "handle": "seal_location"
+    },
+    "site_seal": {
+      "shared": true,
+      "default": [
+        {
+          "value": "",
+          "width": 200,
+          "height": 200
+        }
+      ],
+      "count": 1,
+      "resize_element": 1,
+      "attributes": {
+        "width": {
+          "type": "int",
+          "default": 50
+        },
+        "height": {
+          "type": "int",
+          "default": 50
+        }
+      },
+      "title": "Site SEal",
+      "target_class": "siteSeal",
+      "piece_category": "image_groups",
+      "handle": "site_seal"
     }
   },
   "script_info": {
@@ -1111,6 +1526,21 @@
       }
     }
   },
+  "script_options": [
+    {
+      "title": "Pipeline",
+      "options": [
+        {
+          "title": "v0.30.0",
+          "handle": "lincx1_30_0"
+        },
+        {
+          "title": "v0.30.0.1 (eu)",
+          "handle": "lincx1_30_0_1"
+        }
+      ]
+    }
+  ],
   "swarm_settings": {
     "openInNewWindow": {
       "title": "Open links in a new window",
@@ -2018,6 +2448,11 @@
           "title": "Creative ID",
           "key": "column"
         },
+        "account_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Account ID"
+        },
         "type": {
           "type": "varchar",
           "length": 36,
@@ -2040,11 +2475,6 @@
           "type": "datetime",
           "default": "_NOW_",
           "title": "Created Date"
-        },
-        "account_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Account ID"
         },
         "value": {
           "type": "text",
@@ -2794,6 +3224,7 @@
           "type": "int",
           "default": "auto_increment",
           "title": "Table ID",
+          "client_editable": false,
           "key": "primary"
         },
         "ad_version_id": {
@@ -2801,12 +3232,14 @@
           "length": "36",
           "data_type": "uuid",
           "title": "Ad ID",
+          "client_editable": false,
           "key": "unique"
         },
         "ad_id": {
           "type": "char",
           "length": 36,
           "data_type": "uuid",
+          "client_editable": false,
           "key": "column"
         },
         "account_id": {
@@ -2815,13 +3248,14 @@
           "title": "Advertiser Account ID"
         },
         "active": {
-          "type": "tinyint",
+          "type": "boolean",
           "default": 1,
           "title": "Active"
         },
         "archive": {
           "type": "tinyint",
           "default": 0,
+          "client_editable": false,
           "title": "Archived"
         },
         "cpc": {
@@ -2890,6 +3324,7 @@
           "type": "char",
           "length": 7,
           "title": "Days Allowed",
+          "data_type": "bitflag",
           "options": [
             "Sunday",
             "Monday",
@@ -2908,15 +3343,18 @@
         "create_date": {
           "type": "datetime",
           "default": "_NOW_",
+          "client_editable": false,
           "title": "Created Date"
         },
         "archive_date": {
           "type": "datetime",
-          "title": "Archived Date"
+          "title": "Archived Date",
+          "client_editable": false
         },
         "access_date": {
           "type": "timestamp",
-          "title": "Access Date"
+          "title": "Access Date",
+          "client_editable": false
         },
         "tracker_url": {
           "type": "text",
@@ -2941,6 +3379,7 @@
         "ad_creative_id": {
           "type": "int",
           "default": "auto_increment",
+          "client_editable": false,
           "key": "primary"
         },
         "ad_version_id": {
@@ -2948,6 +3387,7 @@
           "length": "36",
           "data_type": "uuid",
           "title": "Ad Version ID",
+          "client_editable": false,
           "key": {
             "table": "ad"
           }
@@ -2973,6 +3413,7 @@
         "ad_tag_id": {
           "type": "int",
           "default": "auto_increment",
+          "client_editable": false,
           "key": "primary"
         },
         "ad_version_id": {
@@ -3008,6 +3449,7 @@
           "type": "int",
           "default": "auto_increment",
           "title": "Table ID",
+          "client_editable": false,
           "key": "primary"
         },
         "ad_feed_version_id": {
@@ -3015,12 +3457,14 @@
           "length": "36",
           "data_type": "uuid",
           "title": "Ad Feed Version ID",
+          "client_editable": false,
           "key": "unique"
         },
         "ad_feed_id": {
           "type": "char",
           "length": 36,
           "data_type": "uuid",
+          "client_editable": false,
           "key": "column"
         },
         "feed_title": {
@@ -3090,6 +3534,7 @@
         "ad_feed_tag_id": {
           "type": "int",
           "default": "auto_increment",
+          "client_editable": false,
           "key": "primary"
         },
         "ad_feed_version_id": {

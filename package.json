@@ -4,7 +4,7 @@
   "description": "papi-client interfaces with papi api to make life easier",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/coffee test/accounts.coffee",
+    "test": "node_modules/.bin/coffee test/endpoints.coffee",
     "example": "node_modules/.bin/beefy example/index.coffee",
     "gs": "node_modules/.bin/coffee script/retrieve-schemas.coffee"
   },

@@ -20,5 +20,20 @@ async.mapSeries urls, gj, (err, result) ->
   i = 0
   for handle, url of schemas
     final[handle] = result[i]
+
+    switch handle
+      when 'script_info'
+        pipeline_data =
+          title: "Pipeline"
+          options: []
+      
+        for version, data of result[i].script_versions
+          tmp =
+            title: data['title']
+            handle: version
+          pipeline_data.options.push tmp
+        final['script_options'] = []
+        final['script_options'].push pipeline_data
+ 
     i++
   fs.writeFileSync targetFile, (JSON.stringify final, null, 2)
