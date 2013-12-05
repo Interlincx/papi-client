@@ -5,17 +5,27 @@ module.exports =
     if typeof input_settings == 'undefined' || typeof input_settings.type == 'undefined'
       return false
 
+    ###
     if input_settings.data_type is 'bitflag'
       i = 0
-      values = input_settings.value.split("")
+      if input_settings.value != '' && input_settings.value != null
+        values = input_settings.value.split("")
       $input = $("<div/>")
+      tmp = {}
+      if input_settings.class_name
+        tmp.class_name = input_settings.class_name
+      tmp.type = 'boolean'
       for option, title of input_settings.options
-        input_settings.value = values[i]
-        input_settings.title = title
-        $input.append @convertField(attr_settings, input_settings)
+        tmp.value = 0
+        if typeof values != 'undefined'
+          tmp.value = values[i]
+        tmp.title = title
+        attr_settings.data_position = i
+        $input.append @convertField(attr_settings, tmp)
         i++
     else
-      $input = @convertField(attr_settings, input_settings)
+    ###
+    $input = @convertField(attr_settings, input_settings)
     return $input
 
   convertField: (attr_settings, input_settings) ->
@@ -26,6 +36,8 @@ module.exports =
     if input_settings.client_editable == false
       $input = @buildHidden(input_settings)
       return $input
+    else if input_settings.type == 'time' or input_settings.type == 'date' or input_settings.type == 'datetime'
+      $input = @buildPicker(input_settings)
     else if input_settings.type == 'text'
       $input = @buildTextarea(input_settings)
     else if input_settings.data_type is 'bitflag' || input_settings.type is 'boolean'
@@ -60,6 +72,16 @@ module.exports =
   
     return $final_input[0]
 
+  buildPicker: (input_settings) ->
+    $input = @buildText( input_settings )
+    picker_format = 
+      dateFormat: 'yy-mm-dd' 
+      timeFormat: 'hh:mm:ss'
+      ampm: false
+
+    #$input[input_settings.type+'picker'](picker_format)
+    return $input
+
   buildHidden: (input_settings) ->
     $input = $('<input/>')
     $input.attr('type', 'hidden')
@@ -71,7 +93,7 @@ module.exports =
     $input.attr('type', 'checkbox')
     $input.attr('data-input-type', 'checkbox')
  
-    if input_settings.value is '1'
+    if input_settings.value is '1' or input_settings.value is 1
       value = 'checked'
       $input.attr('checked', value)
     return $input

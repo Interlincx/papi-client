@@ -165,36 +165,76 @@ PapiClient::isSubTable = (table) ->
     return true
   return false
 
+PapiClient::copyObj = (obj) ->
+  return JSON.parse(JSON.stringify(obj));
+
 PapiClient::schemify = (what, obj) ->
+  if typeof obj[0] != 'undefined'
+    result = []
+    switch what
+      for row in obj
+        result.push( @schemify(what, row) )
+  else
+    result = {}
+    switch what
+      when 'ad_creative'
+        result = @schemifyAdCreative( obj )
+      when 'ad_tag'
+        result = @schemifyAdTags( obj )
+      else
+        for handle, value of obj
+          type = typeof value
+          if type == 'string' or type == 'number' or type == 'boolean' or value == null
+            if typeof @schemas.tables[what].fields[handle] != 'undefined'
+              result[handle] = @copyObj(@schemas.tables[what].fields[handle])
+              result[handle].value = value
+            else
+              result[handle] =
+                value: value
+          else if @isSubTable handle
+            result[handle] = @schemify handle, value
+  return result
+  
+PapiClient::unschemify = (what, obj) ->
   result = []
   if typeof obj[0] != 'undefined'
     for row in obj
-      result.push( @schemify(what, row) )
+      result.push( @unschemify(what, row) )
   else
-    for handle, value of obj
-      type = typeof value
-      if type == 'string' or type == 'number' or type == 'boolean' or value == null
-        if typeof @schemas.tables[what].fields[handle] != 'undefined'
-          result[handle] = @schemas.tables[what].fields[handle]
-          result[handle].value = value
-        else
-          result[handle] =
-            value: value
+    for handle, data of obj
+      if typeof data.value != 'undefined'
+        result[handle] = data.value
       else if @isSubTable handle
-        result[handle] = @schemify handle, value
+        result[handle] = @unschemify handle, data
+  return result
+
+PapiClient::schemifyAdTags = (obj) ->
+  result = @copyObj( @schemas.tags )
+  for data in obj
+    for item in result
+      if data.tag_id == item.tag_id
+        item.selected = true
+  console.log 'TAGS', result
+  return result
+
+PapiClient::schemifyAdCreative = (obj) ->
+  result = @copyObj( @schemas.ad_templates )
+  for handle, data of result
+    for name, schema of data.pieces
+      if typeof obj[handle][name] != 'undefined'
+        schema.value = obj[handle][name]
   return result
 
 
-
 PapiClient::save = (what, obj, cb) ->
-  console.log "@toJSON(): ", obj
+  console.log "json stringify: ", obj
   post_data = JSON.stringify obj
+  console.log 'POST', post_data
   _this = this
 
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.save}
   url = @getUrl( pieces )
-
   options =
     type: 'POST'
     contentType: 'application/json'
@@ -232,6 +272,32 @@ PapiClient::getCreativeTypes = (index, index_value) ->
       result.push item
   return result
 
+
+PapiClient::adpagePieceSelect = (callback, params, e) ->
+  if typeof params.selected_id == 'undefined'
+    params.selected_id = ''
+  pass = {}
+
+  if params.type is 'account'
+    what = 'accounts'
+    item_label = 'company_name'
+    item_id_handle = 'account_id'
+    title = 'Pick an Account'
+
+
+  options =
+    item_label: item_label
+    item_id_handle: item_id_handle
+    selected_id: params.selected_id
+    title: title
+
+  _this = @
+  @listModal.createModal options, (err) ->
+    _this.get what, pass, (err, results) ->
+      _this.listModal.populateModal(results, callback, params, e)
+
+
+
 ###
 PapiClient::populateScriptOptions = ->
   script_options = []
@@ -255,3 +321,5 @@ PapiClient::formify = (attrs, input) ->
   return @formification.init(attrs, input)
 
 PapiClient::printForm = require './print_form.coffee'
+
+PapiClient::listModal = require './modal.coffee'

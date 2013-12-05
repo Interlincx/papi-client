@@ -123,15 +123,18 @@
       "title": "Text Ad",
       "pieces": {
         "title": {
-          "type": "text",
+          "title": "Title",
+          "type": "varchar",
           "length": 64
         },
         "description": {
-          "type": "text",
+          "title": "Description",
+          "type": "varchar",
           "length": 128
         },
         "display_url": {
-          "type": "text",
+          "title": "Display URL",
+          "type": "varchar",
           "length": 64
         }
       }
@@ -141,6 +144,7 @@
       "title": "Banner Ad",
       "pieces": {
         "banner": {
+          "title": "Horizontal Banner",
           "type": "image"
         }
       }
@@ -3320,20 +3324,40 @@
           "type": "mediumint",
           "title": "Max Click Count"
         },
-        "days_allowed": {
-          "type": "char",
-          "length": 7,
-          "title": "Days Allowed",
-          "data_type": "bitflag",
-          "options": [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ]
+        "allow_sunday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Sunday"
+        },
+        "allow_monday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Monday"
+        },
+        "allow_tuesday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Tuesday"
+        },
+        "allow_wednesday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Wednesday"
+        },
+        "allow_thursday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Thursday"
+        },
+        "allow_friday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Friday"
+        },
+        "allow_saturday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Saturday"
         },
         "ad_name": {
           "type": "varchar",
@@ -3399,12 +3423,20 @@
         "content": {
           "type": "text",
           "data_type": "json",
-          "title": "Content"
+          "title": "Content",
+          "conversion": [
+            "json",
+            "base64"
+          ]
         },
         "content_merged": {
           "type": "text",
           "data_type": "json",
-          "title": "Merged Content"
+          "title": "Merged Content",
+          "conversion": [
+            "json",
+            "base64"
+          ]
         }
       }
     },
