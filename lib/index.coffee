@@ -166,14 +166,13 @@ PapiClient::isSubTable = (table) ->
   return false
 
 PapiClient::copyObj = (obj) ->
-  return JSON.parse(JSON.stringify(obj));
+  return JSON.parse(JSON.stringify(obj))
 
 PapiClient::schemify = (what, obj) ->
   if typeof obj[0] != 'undefined'
     result = []
-    switch what
-      for row in obj
-        result.push( @schemify(what, row) )
+    for row in obj
+      result.push( @schemify(what, row) )
   else
     result = {}
     switch what
