@@ -1,15 +1,17 @@
 
 module.exports =
   #console.log 'render form starts', input_settings
-  init: (attr_settings, input_settings) ->
+  init: (attr_settings, input_settings, value, class_name='') ->
     if typeof input_settings == 'undefined' || typeof input_settings.type == 'undefined'
       return false
 
+    @value = value
+    @class_name = class_name
     ###
     if input_settings.data_type is 'bitflag'
       i = 0
-      if input_settings.value != '' && input_settings.value != null
-        values = input_settings.value.split("")
+      if @value != '' && @value != null
+        values = @value.split("")
       $input = $("<div/>")
       tmp = {}
       if input_settings.class_name
@@ -57,12 +59,12 @@ module.exports =
         content: ->
           input_settings.tooltip
   
-    $input.addClass input_settings.class_name
+    $input.addClass @class_name
   
     for handle, value of attr_settings
       $input.attr(handle.replace(/_/g, '-'), value)
 
-    $input.attr('value', input_settings.value)
+    $input.attr('value', @value)
     $final_input = $("<div/>")
     if next_to
       $label.append $input
@@ -93,7 +95,7 @@ module.exports =
     $input.attr('type', 'checkbox')
     $input.attr('data-input-type', 'checkbox')
  
-    if input_settings.value is '1' or input_settings.value is 1
+    if @value is '1' or @value is 1
       value = 'checked'
       $input.attr('checked', value)
     return $input
@@ -121,14 +123,14 @@ module.exports =
     $input = $('<select/>')
     $input.attr('type', 'text')
     $input.attr('data-input-type', 'select')
-    $input.attr('value', input_settings.value)
+    $input.attr('value', @value)
     for option, values of input_settings.options
       $option = $('<option/>')
       $option.append values
       $option.attr('value', option)
       $input.append $option
 
-    $input.val(input_settings.value)
+    $input.val(@value)
     return $input
 
 

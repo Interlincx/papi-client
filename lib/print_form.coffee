@@ -1,6 +1,8 @@
 
-module.exports = (list, class_name, number_of_items=10, order=[], exclude=[]) ->
+module.exports = (list, values, class_name, number_of_items=10, order=[], exclude=[]) ->
   $main = $('<div/>').addClass class_name+'_form'
+  if typeof list is 'string'
+    list = this.schemas.tables[list].fields
 
   tmp = []
   if order.length > 0
@@ -32,11 +34,10 @@ module.exports = (list, class_name, number_of_items=10, order=[], exclude=[]) ->
     attr_settings =
       data_id: item.id_find
       data_handle: name
-      input_type: item.type
 
-    item.class_name = class_name+' '+name
+    current_class = class_name+' '+name
 
-    rendered_setting = this.formify(attr_settings, item)
+    rendered_setting = this.formify(attr_settings, item, values[name], current_class)
     $current.append rendered_setting
 
   $main.append $current

@@ -64,6 +64,13 @@ PapiClient::endpoints = {
       title: "Account"
       type: "account"
       get: "get_account"
+      save: "save_account"
+      }
+  address: {
+      title: "Address"
+      type: "account"
+      get: "get_address"
+      save: "save_address"
       }
   gateways: {
       title: "Gateways"
@@ -165,6 +172,7 @@ PapiClient::isSubTable = (table) ->
     return true
   return false
 
+###
 PapiClient::copyObj = (obj) ->
   return JSON.parse(JSON.stringify(obj))
 
@@ -175,23 +183,17 @@ PapiClient::schemify = (what, obj) ->
       result.push( @schemify(what, row) )
   else
     result = {}
-    switch what
-      when 'ad_creative'
-        result = @schemifyAdCreative( obj )
-      when 'ad_tag'
-        result = @schemifyAdTags( obj )
-      else
-        for handle, value of obj
-          type = typeof value
-          if type == 'string' or type == 'number' or type == 'boolean' or value == null
-            if typeof @schemas.tables[what].fields[handle] != 'undefined'
-              result[handle] = @copyObj(@schemas.tables[what].fields[handle])
-              result[handle].value = value
-            else
-              result[handle] =
-                value: value
-          else if @isSubTable handle
-            result[handle] = @schemify handle, value
+    for handle, value of obj
+      type = typeof value
+      if type == 'string' or type == 'number' or type == 'boolean' or value == null
+        if typeof @schemas.tables[what].fields[handle] != 'undefined'
+          result[handle] = @copyObj(@schemas.tables[what].fields[handle])
+          result[handle].value = value
+        else
+          result[handle] =
+            value: value
+      else if @isSubTable handle
+        result[handle] = @schemify handle, value
   return result
   
 PapiClient::unschemify = (what, obj) ->
@@ -206,23 +208,7 @@ PapiClient::unschemify = (what, obj) ->
       else if @isSubTable handle
         result[handle] = @unschemify handle, data
   return result
-
-PapiClient::schemifyAdTags = (obj) ->
-  result = @copyObj( @schemas.tags )
-  for data in obj
-    for item in result
-      if data.tag_id == item.tag_id
-        item.selected = true
-  console.log 'TAGS', result
-  return result
-
-PapiClient::schemifyAdCreative = (obj) ->
-  result = @copyObj( @schemas.ad_templates )
-  for handle, data of result
-    for name, schema of data.pieces
-      if typeof obj[handle][name] != 'undefined'
-        schema.value = obj[handle][name]
-  return result
+###
 
 
 PapiClient::save = (what, obj, cb) ->
@@ -316,8 +302,8 @@ PapiClient::populateScriptOptions = ->
 
 
 PapiClient::formification = require './formify.coffee'
-PapiClient::formify = (attrs, input) ->
-  return @formification.init(attrs, input)
+PapiClient::formify = (attrs, input, value, class_name) ->
+  return @formification.init(attrs, input, value, class_name)
 
 PapiClient::printForm = require './print_form.coffee'
 
