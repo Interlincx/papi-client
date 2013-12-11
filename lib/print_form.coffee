@@ -35,9 +35,11 @@ module.exports = (list, values, class_name, number_of_items=10, order=[], exclud
       data_id: item.id_find
       data_handle: name
 
-    current_class = class_name+' '+name
+    current_val = ''
+    if typeof values[name] != 'undefined'
+      current_val = values[name]
 
-    rendered_setting = this.formify(attr_settings, item, values[name], current_class)
+    rendered_setting = this.formify(attr_settings, item, current_val, class_name)
     $current.append rendered_setting
 
   $main.append $current

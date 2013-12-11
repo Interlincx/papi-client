@@ -22,7 +22,7 @@ module.exports =
     @cb = callback
     @params = params
 
-    {item_label,item_id_handle,selected_id,title} = @options
+    {item_label,item_id_handle,selected_id,title, original_event} = @options
   
     $('.modal-body').empty()
   

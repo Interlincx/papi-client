@@ -189,6 +189,7 @@
           },
           "title": "Background",
           "piece_category": "image_groups",
+          "thumb_size": 0.2,
           "handle": "background_fullpage"
         },
         "buttons": {
@@ -234,9 +235,9 @@
         "ad_count": {
           "shared": false,
           "count": 1,
-          "title": "Ad Count",
           "type": "tinyint",
-          "piece_category": "custom",
+          "title": "Ad Count",
+          "piece_category": "text",
           "target_piece": "standard_adbox",
           "default": 5,
           "handle": "ad_count"
@@ -286,7 +287,7 @@
         "timed_redirect": {
           "shared": false,
           "count": 1,
-          "type": "text",
+          "type": "int",
           "input": {
             "type": "text"
           },
@@ -407,8 +408,8 @@
         "ad_count": {
           "shared": false,
           "count": 1,
-          "title": "Ad Count",
           "type": "tinyint",
+          "title": "Ad Count",
           "piece_category": "custom",
           "target_piece": "standard_adbox",
           "default": 5,
@@ -509,8 +510,8 @@
         "ad_count": {
           "shared": false,
           "count": 1,
-          "title": "Ad Count",
           "type": "tinyint",
+          "title": "Ad Count",
           "piece_category": "custom",
           "target_piece": "standard_adbox",
           "default": 5,
@@ -536,6 +537,7 @@
           },
           "title": "Background",
           "piece_category": "image_groups",
+          "thumb_size": 0.2,
           "handle": "background_fullpage"
         },
         "buttons": {
@@ -689,6 +691,7 @@
       },
       "title": "Background",
       "piece_category": "image_groups",
+      "thumb_size": 0.2,
       "handle": "background_fullpage"
     },
     "buttons": {
@@ -740,8 +743,8 @@
     "ad_count": {
       "shared": false,
       "count": 1,
-      "title": "Ad Count",
       "type": "tinyint",
+      "title": "Ad Count",
       "piece_category": "custom",
       "target_piece": "standard_adbox",
       "default": 5,
@@ -789,7 +792,7 @@
     "timed_redirect": {
       "shared": false,
       "count": 1,
-      "type": "text",
+      "type": "int",
       "input": {
         "type": "text"
       },
@@ -3155,7 +3158,7 @@
         },
         "account_id": {
           "type": "char",
-          "length": "36",
+          "length": "8",
           "data_type": "uuid",
           "client_editable": false
         },
@@ -3581,6 +3584,1021 @@
         "tag_id": {
           "type": "int",
           "title": "Tag ID"
+        }
+      }
+    }
+  },
+  "path_options": {
+    "endpoint": {
+      "forward_url": {
+        "title": "Forward URL",
+        "options": {
+          "ad_id": {
+            "type": "string"
+          }
+        }
+      },
+      "next_tree": {
+        "title": "Next Tree",
+        "options": {
+          "tree_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "transform": {
+      "image_groups": {
+        "title": "Img",
+        "options": {
+          "twoclick": [],
+          "background_mobile": [],
+          "background_fullpage": [],
+          "buttons": [],
+          "site_seal": []
+        }
+      },
+      "creative_instance": {
+        "options": {
+          "creative_instance_id": {
+            "type": "string"
+          }
+        }
+      },
+      "ad_feed": {
+        "title": "Feed",
+        "options": {
+          "ad_feed_id": {
+            "type": "string"
+          }
+        }
+      },
+      "ad": {
+        "title": "Ad",
+        "options": {
+          "ad_id": {
+            "type": "string"
+          },
+          "ad_position": {
+            "type": "int",
+            "input": {
+              "type": "text",
+              "title": "",
+              "attributes": {
+                "size": 2
+              }
+            }
+          }
+        }
+      }
+    },
+    "decision": {
+      "persistent_percentage": {
+        "title": "Persistent Percentage",
+        "handle": "persistent_percentage",
+        "options": {
+          "percentage": {
+            "allow_quantity": 1,
+            "type": "int",
+            "value": 0,
+            "allow_range": {
+              "min": 1,
+              "max": 100
+            },
+            "input": {
+              "type": "text",
+              "title": "P%",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
+      "uk_provinces_fips": {
+        "title": "UK Provinces",
+        "handle": "uk_provinces_fips",
+        "options": {
+          "uk_fips": {
+            "type": "csv",
+            "input": {
+              "title": "UK Provinces",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 10
+              },
+              "options": {
+                "0": "Greater London",
+                "T5": "Aberdeen",
+                "T6": "Aberdeenshire",
+                "X1": "Anglesey",
+                "T7": "Angus",
+                "Q6": "Antrim",
+                "Q7": "Ards",
+                "T8": "Argyll and Bute",
+                "Q8": "Armagh",
+                "Q9": "Ballymena",
+                "R1": "Ballymoney",
+                "R2": "Banbridge",
+                "A3": "Barnsley",
+                "A4": "Bath and North East Somerset",
+                "Z5": "Bedford",
+                "R3": "Belfast",
+                "A7": "Birmingham",
+                "A8": "Blackburn with Darwen",
+                "A9": "Blackpool",
+                "X2": "Blaenau Gwent",
+                "B1": "Bolton",
+                "B2": "Bournemouth",
+                "B3": "Bracknell Forest",
+                "B4": "Bradford",
+                "X3": "Bridgend",
+                "B6": "Brighton and Hove",
+                "B7": "Bristol",
+                "B9": "Buckinghamshire",
+                "C1": "Bury",
+                "X4": "Caerphilly",
+                "C2": "Calderdale",
+                "C3": "Cambridgeshire",
+                "X5": "Cardiff",
+                "X7": "Carmarthenshire",
+                "R4": "Carrickfergus",
+                "R5": "Castlereagh",
+                "Z6": "Central Bedfordshire",
+                "X6": "Ceredigion",
+                "Z7": "Cheshire East",
+                "Z8": "Cheshire West and Chester",
+                "U1": "Clackmannanshire",
+                "R6": "Coleraine",
+                "X8": "Conwy",
+                "R7": "Cookstown",
+                "C6": "Cornwall",
+                "C7": "Coventry",
+                "R8": "Craigavon",
+                "C9": "Cumbria",
+                "D1": "Darlington",
+                "X9": "Denbighshire",
+                "D2": "Derby",
+                "D3": "Derbyshire",
+                "S6": "Derry",
+                "D4": "Devon",
+                "D5": "Doncaster",
+                "D6": "Dorset",
+                "R9": "Down",
+                "D7": "Dudley",
+                "U2": "Dumfries and Galloway",
+                "U3": "Dundee",
+                "S1": "Dungannon",
+                "D8": "Durham",
+                "U4": "East Ayrshire",
+                "U5": "East Dunbartonshire",
+                "U6": "East Lothian",
+                "U7": "East Renfrewshire",
+                "E1": "East Riding of Yorkshire",
+                "E2": "East Sussex",
+                "U8": "Edinburgh",
+                "W8": "Eilean Siar",
+                "E4": "Essex",
+                "U9": "Falkirk",
+                "S2": "Fermanagh",
+                "V1": "Fife",
+                "Y1": "Flintshire",
+                "E5": "Gateshead",
+                "V2": "Glasgow",
+                "E6": "Gloucestershire",
+                "Y2": "Gwynedd",
+                "E9": "Halton",
+                "F2": "Hampshire",
+                "F5": "Hartlepool",
+                "F7": "Herefordshire",
+                "F8": "Hertfordshire",
+                "V3": "Highland",
+                "V4": "Inverclyde",
+                "G2": "Isle of Wight",
+                "Z9": "Isles of Scilly",
+                "G5": "Kent",
+                "G6": "Kingston upon Hull",
+                "G8": "Kirklees",
+                "G9": "Knowsley",
+                "H2": "Lancashire",
+                "S3": "Larne",
+                "H3": "Leeds",
+                "H4": "Leicester",
+                "H5": "Leicestershire",
+                "S4": "Limavady",
+                "H7": "Lincolnshire",
+                "S5": "Lisburn",
+                "H8": "Liverpool",
+                "I1": "Luton",
+                "S7": "Magherafelt",
+                "I2": "Manchester",
+                "I3": "Medway",
+                "Y3": "Merthyr Tydfil",
+                "I5": "Middlesbrough",
+                "V5": "Midlothian",
+                "I6": "Milton Keynes",
+                "Y4": "Monmouthshire",
+                "V6": "Moray",
+                "S8": "Moyle",
+                "Y5": "Neath Port Talbot",
+                "I7": "Newcastle upon Tyne",
+                "Y6": "Newport",
+                "S9": "Newry and Mourne",
+                "T1": "Newtownabbey",
+                "I9": "Norfolk",
+                "J1": "Northamptonshire",
+                "V7": "North Ayrshire",
+                "T2": "North Down",
+                "J2": "North East Lincolnshire",
+                "V8": "North Lanarkshire",
+                "J3": "North Lincolnshire",
+                "J4": "North Somerset",
+                "J5": "North Tyneside",
+                "J6": "Northumberland",
+                "J7": "North Yorkshire",
+                "J8": "Nottingham",
+                "J9": "Nottinghamshire",
+                "K1": "Oldham",
+                "T3": "Omagh",
+                "V9": "Orkney Islands",
+                "K2": "Oxfordshire",
+                "Y7": "Pembrokeshire",
+                "W1": "Perthshire and Kinross",
+                "K3": "Peterborough",
+                "K4": "Plymouth",
+                "K5": "Poole",
+                "K6": "Portsmouth",
+                "Y8": "Powys",
+                "K7": "Reading",
+                "K9": "Redcar and Cleveland",
+                "W2": "Renfrewshire",
+                "Y9": "Rhondda, Cynon, Taff",
+                "L2": "Rochdale",
+                "L3": "Rotherham",
+                "L4": "Rutland",
+                "N1": "Saint Helens",
+                "L5": "Salford",
+                "L7": "Sandwell",
+                "T9": "Scottish Borders",
+                "L8": "Sefton",
+                "L9": "Sheffield",
+                "W3": "Shetland Islands",
+                "L6": "Shropshire",
+                "M1": "Slough",
+                "M2": "Solihull",
+                "M3": "Somerset",
+                "M4": "Southampton",
+                "W4": "South Ayrshire",
+                "M5": "Southend-on-Sea",
+                "M6": "South Gloucestershire",
+                "W5": "South Lanarkshire",
+                "M7": "South Tyneside",
+                "M9": "Staffordshire",
+                "W6": "Stirling",
+                "N2": "Stockport",
+                "N3": "Stockton-on-Tees",
+                "N4": "Stoke-on-Trent",
+                "T4": "Strabane",
+                "N5": "Suffolk",
+                "N6": "Sunderland",
+                "N7": "Surrey",
+                "Z1": "Swansea",
+                "N9": "Swindon",
+                "O1": "Tameside",
+                "O2": "Telford and Wrekin",
+                "O3": "Thurrock",
+                "O4": "Torbay",
+                "Z2": "Torfaen",
+                "O6": "Trafford",
+                "Z3": "Vale of Glamorgan",
+                "O7": "Wakefield",
+                "O8": "Walsall",
+                "P2": "Warrington",
+                "P3": "Warwickshire",
+                "P4": "West Berkshire",
+                "W7": "West Dunbartonshire",
+                "W9": "West Lothian",
+                "P6": "West Sussex",
+                "P7": "Wigan",
+                "P8": "Wiltshire",
+                "P9": "Windsor and Maidenhead",
+                "Q1": "Wirral",
+                "Q2": "Wokingham",
+                "Q3": "Wolverhampton",
+                "Q4": "Worcestershire",
+                "Z4": "Wrexham",
+                "Q5": "York",
+                "A1": "Barking and Dagenham",
+                "A2": "Barnet",
+                "A6": "Bexley",
+                "B5": "Brent",
+                "B8": "Bromley",
+                "C4": "Camden",
+                "C8": "Croydon",
+                "D9": "Ealing",
+                "E3": "Enfield",
+                "E7": "Greenwich",
+                "E8": "Hackney",
+                "F1": "Hammersmith and Fulham",
+                "F3": "Haringey",
+                "F4": "Harrow",
+                "F6": "Havering",
+                "F9": "Hillingdon",
+                "G1": "Hounslow",
+                "G3": "Islington",
+                "G4": "Kensington and Chelsea",
+                "G7": "Kingston upon Thames",
+                "H1": "Lambeth",
+                "H6": "Lewisham",
+                "H9": "London",
+                "I4": "Merton",
+                "I8": "Newham",
+                "K8": "Redbridge",
+                "L1": "Richmond upon Thames",
+                "M8": "Southwark",
+                "N8": "Sutton",
+                "O5": "Tower Hamlets",
+                "O9": "Waltham Forest",
+                "P1": "Wandsworth",
+                "P5": "Westminster"
+              }
+            }
+          }
+        }
+      },
+      "mobile": {
+        "title": "Mobile",
+        "handle": "mobile",
+        "options": {
+          "mobile_on": {
+            "type": "int",
+            "input": {
+              "type": "select",
+              "title": "Mobile",
+              "options": {
+                "0": "No",
+                "1": "Yes"
+              }
+            }
+          }
+        }
+      },
+      "click_cap": {
+        "title": "Click Cap",
+        "handle": "click_cap",
+        "options": {
+          "clicks": {
+            "type": "int",
+            "input": {
+              "type": "text",
+              "title": "Click Cap",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
+      "us_states": {
+        "title": "US States",
+        "handle": "us_states",
+        "options": {
+          "us_states": {
+            "type": "csv",
+            "input": {
+              "title": "US States",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 10
+              },
+              "options": {
+                "": "None Selected",
+                "ZZ": "Not Applicable",
+                "AL": "Alabama",
+                "AK": "Alaska",
+                "AZ": "Arizona",
+                "AR": "Arkansas",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "IA": "Iowa",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "ME": "Maine",
+                "MD": "Maryland",
+                "MA": "Massachusetts",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MS": "Mississippi",
+                "MO": "Missouri",
+                "MT": "Montana",
+                "NE": "Nebraska",
+                "NV": "Nevada",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NY": "New York",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VT": "Vermont",
+                "VA": "Virginia",
+                "WA": "Washington",
+                "DC": "Washington, DC",
+                "WV": "West Virginia",
+                "WI": "Wisconsin",
+                "WY": "Wyoming",
+                "PR": "Puerto Rico",
+                "BC": "British Columbia",
+                "NF": "Newfoundland",
+                "NS": "Nova Scotia",
+                "ON": "Ontario",
+                "PE": "Prince Edward",
+                "PQ": "Quebec",
+                "SK": "Saskatchewan",
+                "NT": "Northwest Territories",
+                "YT": "Yukon Terrirory"
+              }
+            }
+          }
+        }
+      },
+      "daytime": {
+        "title": "Day+Time",
+        "handle": "daytime",
+        "options": {
+          "start_day": {
+            "type": "int",
+            "input": {
+              "title": "Start",
+              "type": "select",
+              "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "start_time_hour": {
+            "type": "int",
+            "input": {
+              "title": "",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "start_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_day": {
+            "type": "int",
+            "input": {
+              "title": "<br/>End",
+              "type": "select",
+              "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "end_time_hour": {
+            "type": "int",
+            "input": {
+              "title": "",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
+      "uk_provinces_nuts": {
+        "title": "UK Greater Regions",
+        "handle": "uk_provinces_nuts",
+        "options": {
+          "uk_nuts": {
+            "type": "csv",
+            "input": {
+              "title": "UK Greater Regions",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 10
+              },
+              "options": {
+                "UKC": "North East, England",
+                "UKC1": " - Tees Valley and Durham",
+                "UKC2": " - Northumberland and Tyne and Wear",
+                "UKD": "North West, England",
+                "UKD1": " - Cumbria",
+                "UKD6": " - Cheshire",
+                "UKD3": " - Greater Manchester",
+                "UKD4": " - Lancashire",
+                "UKD7": " - Merseyside",
+                "UKE": "Yorkshire and the Humber, England",
+                "UKE1": " - East Riding and North Lincolnshire",
+                "UKE2": " - North Yorkshire",
+                "UKE3": " - South Yorkshire",
+                "UKE4": " - West Yorkshire",
+                "UKF": "East Midlands, England",
+                "UKF1": " - Derbyshire and Nottinghamshire",
+                "UKF2": " - Leicestershire, Rutland and Northamptonshire",
+                "UKF3": " - Lincolnshire",
+                "UKG": "West Midlands, England",
+                "UKG1": " - Herefordshire, Worcestershire and Warwickshire",
+                "UKG2": " - Shropshire and Staffordshire",
+                "UKG3": " - West Midlands",
+                "UKH": "East of England",
+                "UKH1": " - East Anglia",
+                "UKH2": " - Bedfordshire and Hertfordshire",
+                "UKH3": " - Essex",
+                "UKI": "London, England",
+                "UKI1": " - Inner London",
+                "UKI2": " - Outer London",
+                "UKJ": "South East, England",
+                "UKJ1": " - Berkshire, Buckinghamshire, and Oxfordshire",
+                "UKJ2": " - Surrey, East and West Sussex",
+                "UKJ3": " - Hampshire and Isle of Wight",
+                "UKJ4": " - Kent",
+                "UKK": "South West, England",
+                "UKK1": " - Gloucestershire, Wiltshire and Bristol/Bath area",
+                "UKK2": " - Dorset and Somerset",
+                "UKK3": " - Cornwall and Isles of Scilly",
+                "UKK4": " - Devon",
+                "UKL": "Wales",
+                "UKL1": " - West Wales and The Valleys",
+                "UKL2": " - East Wales",
+                "UKM": "Scotland",
+                "UKM2": " - Eastern Scotland",
+                "UKM3": " - South Western Scotland",
+                "UKM5": " - North Eastern Scotland",
+                "UKM6": " - Highlands and Islands",
+                "UKN": "Northern Ireland",
+                "UKN0": " - Northern Ireland"
+              }
+            }
+          }
+        }
+      },
+      "get_var": {
+        "title": "Param",
+        "handle": "get_var",
+        "options": {
+          "param_name": {
+            "type": "alnum",
+            "input": {
+              "title": "Param",
+              "type": "text",
+              "attributes": {
+                "size": 2
+              }
+            }
+          },
+          "value": {
+            "type": "alnum",
+            "input": {
+              "title": "&nbsp;&nbsp;=",
+              "type": "text",
+              "attributes": {
+                "size": 4
+              }
+            }
+          },
+          "value_exact": {
+            "type": "alnum",
+            "value": "exact",
+            "input": {
+              "title": "",
+              "type": "select",
+              "options": {
+                "exact": "Exact",
+                "contains": "Contains"
+              }
+            }
+          }
+        }
+      },
+      "user_history": {
+        "title": "User History",
+        "handle": "user_history",
+        "options": {
+          "trailing_days": {
+            "type": "int",
+            "input": {
+              "title": "Trailing Days",
+              "type": "text",
+              "attributes": {
+                "size": 2
+              }
+            }
+          },
+          "network": {
+            "type": "alnum",
+            "input": {
+              "title": "Network",
+              "type": "select",
+              "options": {
+                "Affmin": "Revnet",
+                "OB Media 6": "OB Media"
+              }
+            }
+          },
+          "operator": {
+            "type": "string",
+            "input": {
+              "title": "Amount",
+              "type": "select",
+              "options": {
+                "gt": ">",
+                "et": "=",
+                "lt": "<"
+              }
+            }
+          },
+          "amount": {
+            "type": "int",
+            "input": {
+              "title": "",
+              "type": "text",
+              "attributes": {
+                "size": 2
+              }
+            }
+          }
+        }
+      },
+      "random_percentage": {
+        "title": "Random Percentage",
+        "handle": "random_percentage",
+        "options": {
+          "percentage": {
+            "allow_quantity": "many",
+            "type": "int",
+            "value": 0,
+            "allow_range": {
+              "min": 1,
+              "max": 100
+            },
+            "input": {
+              "type": "text",
+              "title": "%",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
+      "visits": {
+        "title": "Visits",
+        "handle": "visits",
+        "options": {
+          "visits": {
+            "type": "int",
+            "input": {
+              "title": "Visits",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "visit_type": {
+            "type": "alnum",
+            "input": {
+              "title": "",
+              "type": "select",
+              "options": {
+                "page": "Page",
+                "global": "Global"
+              }
+            }
+          }
+        }
+      },
+      "dailytime": {
+        "title": "Daily Time",
+        "handle": "dailytime",
+        "options": {
+          "days": {
+            "type": "csv",
+            "input": {
+              "title": "Days",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 7
+              },
+              "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "start_time_hour": {
+            "type": "int",
+            "input": {
+              "title": "<br/>Start",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "start_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_time_hour": {
+            "type": "int",
+            "input": {
+              "title": "<br/>End",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
+      "countries": {
+        "title": "Countries",
+        "handle": "countries",
+        "options": {
+          "countries": {
+            "type": "csv",
+            "input": {
+              "title": "Countries",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 10
+              },
+              "options": {
+                "us": "United States",
+                "gb": "United Kingdom",
+                "au": "Australia",
+                "ca": "Canada",
+                "fr": "France",
+                "ch": "Switzerland",
+                "mx": "Mexico",
+                "es": "Spain",
+                "it": "Italy",
+                "no": "Norway",
+                "nl": "Netherlands",
+                "se": "Sweden",
+                "fi": "Finland",
+                "de": "Germany",
+                "at": "Austria",
+                "dk": "Denmark",
+                "sa": "Saudi Arabia",
+                "cn": "China",
+                "za": "South Africa",
+                "id": "Indonesia",
+                "eg": "Egypt",
+                "pt": "Portugal",
+                "ae": "United Arab Emirates",
+                "br": "Brazil",
+                "af": "Afganistan",
+                "ad": "Andorra",
+                "qa": "Qatar",
+                "co": "Colombia",
+                "ar": "Argentina",
+                "tr": "Turkey",
+                "iq": "Iraq",
+                "ie": "Ireland",
+                "hn": "Honduras",
+                "in": "India",
+                "ye": "Yemen",
+                "sv": "El Salvador",
+                "kw": "Kuwait",
+                "pr": "Puerto Rico",
+                "pe": "Peru",
+                "be": "Belgium",
+                "ph": "Philippines",
+                "gt": "Guatemala",
+                "ru": "Russia",
+                "tt": "Trinidad and Tobago",
+                "sy": "Syria",
+                "jo": "Jordan",
+                "gr": "Greece",
+                "ve": "Venezuela",
+                "cz": "Czech Republic",
+                "cl": "Chile",
+                "jp": "Japan",
+                "jm": "Jamaica",
+                "vn": "Viet Nam",
+                "cr": "Costa Rica",
+                "vi": "Virgin Islands (U.S.)",
+                "ro": "Romania",
+                "lb": "Lebanon",
+                "pa": "Panama",
+                "ir": "Iran",
+                "my": "Malaysia",
+                "ma": "Morocco",
+                "tw": "Taiwan",
+                "th": "Thailand",
+                "ba": "Bosnia and Herzegovina",
+                "bb": "Barbados",
+                "do": "Dominican Republic",
+                "bd": "Bangladesh",
+                "dz": "Algeria",
+                "cs": "Czechoslovakia (former)",
+                "kr": "South Korea",
+                "gh": "Ghana",
+                "sk": "Slovak Republic",
+                "mn": "Mongolia",
+                "ua": "Ukraine",
+                "ni": "Nicaragua",
+                "sg": "Singapore",
+                "py": "Paraguay",
+                "uy": "Uruguay",
+                "om": "Oman",
+                "ng": "Nigeria",
+                "pk": "Pakistan",
+                "ly": "Libya",
+                "bs": "Bahamas",
+                "ht": "Haiti",
+                "la": "Laos",
+                "kz": "Kazakhstan",
+                "il": "Israel",
+                "hk": "Hong Kong",
+                "ec": "Ecuador",
+                "ag": "Antigua and Barbuda",
+                "ai": "Anguilla",
+                "al": "Albania",
+                "am": "Armenia",
+                "an": "Netherlands Antilles",
+                "ao": "Angola",
+                "aq": "Antarctica",
+                "as": "American Samoa",
+                "aw": "Aruba",
+                "az": "Azerbaijan",
+                "bf": "Burkina Faso",
+                "bg": "Bulgaria",
+                "bh": "Bahrain",
+                "bi": "Burundi",
+                "bj": "Benin",
+                "bm": "Bermuda",
+                "bn": "Brunei Darussalam",
+                "bo": "Bolivia",
+                "bt": "Bhutan",
+                "bv": "Bouvet Island",
+                "bw": "Botswana",
+                "by": "Belarus",
+                "bz": "Belize",
+                "cc": "Cocos (Keeling) Islands",
+                "cf": "Central African Republic",
+                "cg": "Congo",
+                "ci": "Cote D'Ivoire (Ivory Coast)",
+                "ck": "Cook Islands",
+                "cm": "Cameroon",
+                "cu": "Cuba",
+                "cv": "Cape Verde",
+                "cx": "Christmas Island",
+                "cy": "Cyprus",
+                "dj": "Djibouti",
+                "dm": "Dominica",
+                "ee": "Estonia",
+                "eh": "Western Sahara",
+                "er": "Eritrea",
+                "et": "Ethiopia",
+                "fj": "Fiji",
+                "fk": "Falkland Islands (Malvinas)",
+                "fm": "Micronesia",
+                "fo": "Faroe Islands",
+                "fx": "France, Metropolitan",
+                "ga": "Gabon",
+                "gd": "Grenada",
+                "ge": "Georgia",
+                "gf": "French Guiana",
+                "gi": "Gibraltar",
+                "gl": "Greenland",
+                "gm": "Gambia",
+                "gn": "Guinea",
+                "gp": "Guadeloupe",
+                "gq": "Equatorial Guinea",
+                "gs": "S. Georgia and S. Sandwich Isls.",
+                "gu": "Guam",
+                "gw": "Guinea-Bissau",
+                "gy": "Guyana",
+                "hm": "Heard and McDonald Islands",
+                "hr": "Croatia (Hrvatska)",
+                "hu": "Hungary",
+                "io": "British Indian Ocean Territory",
+                "is": "Iceland",
+                "ke": "Kenya",
+                "kg": "Kyrgyzstan",
+                "kh": "Cambodia",
+                "ki": "Kiribati",
+                "km": "Comoros",
+                "kn": "Saint Kitts and Nevis",
+                "kp": "Korea (North)",
+                "ky": "Cayman Islands",
+                "lc": "Saint Lucia",
+                "li": "Liechtenstein",
+                "lk": "Sri Lanka",
+                "lr": "Liberia",
+                "ls": "Lesotho",
+                "lt": "Lithuania",
+                "lu": "Luxembourg",
+                "lv": "Latvia",
+                "mc": "Monaco",
+                "mt": "Malta",
+                "np": "Nepal",
+                "nz": "New Zealand (Aotearoa)",
+                "pl": "Poland",
+                "si": "Slovenia",
+                "zm": "Zambia",
+                "zw": "Zimbabwe"
+              }
+            }
+          }
+        }
+      },
+      "imp_cap": {
+        "title": "Imp Cap",
+        "handle": "imp_cap",
+        "options": {
+          "imps": {
+            "type": "int",
+            "input": {
+              "type": "text",
+              "title": "Imp Cap",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
         }
       }
     }

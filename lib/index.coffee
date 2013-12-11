@@ -41,14 +41,55 @@ PapiClient::semiStaticSchemas = {
       type: "utils"
       module: "get_schemas"
       }
+  path_options: {
+      type: "decision_tree"
+      module: "schema_path_options"
+      }
   }
 
 PapiClient::endpoints = {
+  adpage_pieces: {
+      type: "decision_tree"
+      get: "get_adpage_pieces"
+      }
+  users: {
+      title: "Users"
+      type: "user"
+      get: "get_users"
+      }
+  user: {
+      title: "User"
+      type: "user"
+      get: "get_user"
+      save: "save_user"
+      }
   ad: {
       title: "Ad"
       type: "ad"
       get: "get_ad"
       save: "save_ad"
+      }
+  decision_tree: {
+      title: "Decision Tree"
+      type: "decision_tree"
+      get: "get_decision_tree"
+      save: "save_decision_tree"
+      }
+  decision_trees: {
+      title: "Decision Trees"
+      type: "decision_tree"
+      get: "get_decision_trees"
+      }
+  feed: {
+      title: "Feed"
+      type: "ad"
+      get: "get_feed"
+      save: "save_feed"
+      }
+  feeds: {
+      title: "Feeds"
+      type: "ad"
+      get: "get_feeds"
       }
   ads: {
       title: "Ads"
@@ -172,44 +213,6 @@ PapiClient::isSubTable = (table) ->
     return true
   return false
 
-###
-PapiClient::copyObj = (obj) ->
-  return JSON.parse(JSON.stringify(obj))
-
-PapiClient::schemify = (what, obj) ->
-  if typeof obj[0] != 'undefined'
-    result = []
-    for row in obj
-      result.push( @schemify(what, row) )
-  else
-    result = {}
-    for handle, value of obj
-      type = typeof value
-      if type == 'string' or type == 'number' or type == 'boolean' or value == null
-        if typeof @schemas.tables[what].fields[handle] != 'undefined'
-          result[handle] = @copyObj(@schemas.tables[what].fields[handle])
-          result[handle].value = value
-        else
-          result[handle] =
-            value: value
-      else if @isSubTable handle
-        result[handle] = @schemify handle, value
-  return result
-  
-PapiClient::unschemify = (what, obj) ->
-  result = []
-  if typeof obj[0] != 'undefined'
-    for row in obj
-      result.push( @unschemify(what, row) )
-  else
-    for handle, data of obj
-      if typeof data.value != 'undefined'
-        result[handle] = data.value
-      else if @isSubTable handle
-        result[handle] = @unschemify handle, data
-  return result
-###
-
 
 PapiClient::save = (what, obj, cb) ->
   console.log "json stringify: ", obj
@@ -268,13 +271,33 @@ PapiClient::adpagePieceSelect = (callback, params, e) ->
     item_label = 'company_name'
     item_id_handle = 'account_id'
     title = 'Pick an Account'
-
+  if params.type is 'creative_instance'
+    what = 'creative_instances'
+    item_label = 'creative_instance_name'
+    item_id_handle = 'creative_instance_id'
+    title = 'Pick a Creative Instance'
+  if params.type is 'decision_tree'
+    what = 'decision_trees'
+    item_label = 'decision_tree_name'
+    item_id_handle = 'decision_tree_id'
+    title = 'Pick a Decision Tree'
+  if params.type is 'ad_feed'
+    what = 'feeds'
+    item_label = 'feed_title'
+    item_id_handle = 'ad_feed_id'
+    title = 'Pick a Feed'
+  if params.type is 'ad'
+    what = 'ads'
+    item_label = 'ad_name'
+    item_id_handle = 'ad_id'
+    title = 'Pick an Ad'
 
   options =
     item_label: item_label
     item_id_handle: item_id_handle
     selected_id: params.selected_id
     title: title
+    original_event: e
 
   _this = @
   @listModal.createModal options, (err) ->
