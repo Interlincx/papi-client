@@ -1,0 +1,39 @@
+{
+  "tags": {
+      "type": "tag",
+      "module": "get_tags"
+      },
+  "creative_sub_templates": {
+      "type": "creative",
+      "module": "schema_sub_templates"
+      },
+  "ad_templates": {
+      "type": "ad",
+      "module": "schema_templates"
+      },
+  "creative_templates": {
+      "type": "creative",
+      "module": "schema_templates"
+      },
+  "creative_pieces": {
+      "type": "creative",
+      "module": "schema_pieces"
+      },
+  "script_info": {
+      "type": "pipeline",
+      "module": "get_script_info"
+      },
+  "swarm_settings": {
+      "type": "swarm",
+      "module": "get_swarm_settings"
+      },
+  "tables": {
+      "type": "utils",
+      "module": "get_schemas"
+      },
+  "path_options": {
+      "type": "decision_tree",
+      "module": "schema_path_options"
+      }
+}
+

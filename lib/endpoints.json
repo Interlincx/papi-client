@@ -1,0 +1,119 @@
+{
+"adpage_pieces": { 
+    "type": "decision_tree",
+    "get": "get_adpage_pieces"
+    },
+"users": {
+    "title": "Users",
+    "type": "user",
+    "get": "get_users"
+    },
+"user": {
+    "title": "User",
+    "type": "user",
+    "get": "get_user",
+    "save": "save_user"
+    },
+"ad": {
+    "title": "Ad",
+    "type": "ad",
+    "get": "get_ad",
+    "save": "save_ad"
+    },
+"decision_tree": {
+    "title": "Decision Tree",
+    "type": "decision_tree",
+    "get": "get_decision_tree",
+    "save": "save_decision_tree"
+    },
+"decision_trees": {
+    "title": "Decision Trees",
+    "type": "decision_tree",
+    "get": "get_decision_trees"
+    },
+"feed": {
+    "title": "Feed",
+    "type": "ad",
+    "get": "get_feed",
+    "save": "save_feed"
+    },
+"feeds": {
+    "title": "Feeds",
+    "type": "ad",
+    "get": "get_feeds"
+    },
+"ads": {
+    "title": "Ads",
+    "type": "ad",
+    "get": "get_ads"
+    },
+"accounts": {
+    "title": "Accounts",
+    "type": "account",
+    "get": "get_accounts"
+    },
+"account": {
+    "title": "Account",
+    "type": "account",
+    "get": "get_account",
+    "save": "save_account"
+    },
+"address": {
+    "title": "Address",
+    "type": "account",
+    "get": "get_address",
+    "save": "save_address"
+    },
+"gateways": {
+    "title": "Gateways",
+    "type": "gateway",
+    "get": "get_gateways"
+    },
+"creative": {
+    "title": "Creative",
+    "type": "creative",
+    "get": "get_creative",
+    "save": "save_creative",
+    "delete": "delete_creative"
+    },
+"creative_template": {
+    "title": "Creative Template",
+    "type": "creative",
+    "get": "get_template"
+    },
+"creatives": {
+    "title": "Creatives",
+    "type": "creative",
+    "get": "get_creatives_detail"
+    },
+"creative_instances": {
+    "title": "Creative Instances",
+    "type": "creative",
+    "get": "get_instances"
+    },
+"creative_instance": {
+    "title": "Creative Instance",
+    "type": "creative",
+    "get": "get_instance",
+    "save": "save_instance"
+    },
+"gateway": {
+    "title": "Gateway",
+    "type": "gateway",
+    "#get": "get_gateway",
+    "save": "save_gateway",
+    "delete": "delete_gateway"
+    },
+"hive": {
+    "title": "Hive",
+    "type": "hive",
+    "#get": "get_hives",
+    "save": "save_hive"
+    },
+"product": {
+    "title": "Pipeline",
+    "type": "pipeline",
+    "save": "save_new_product",
+    "delete": "delete_product"
+    }
+}

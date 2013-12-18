@@ -1,18 +1,18 @@
 
-module.exports = (list, values, class_name, number_of_items=10, order=[], exclude=[]) ->
+module.exports = (schema, values, class_name, number_of_items=10, order=[], exclude=[]) ->
   $main = $('<div/>').addClass class_name+'_form'
-  if typeof list is 'string'
-    list = this.schemas.tables[list].fields
+  if typeof schema is 'string'
+    schema = this.schemas.tables[schema].fields
 
   tmp = []
   if order.length > 0
     for handle in order
       tmp.push handle
-    for handle, item of list
+    for handle, item of schema
       if tmp.indexOf(handle) == -1
         tmp.push handle
   else
-    for handle, item of list
+    for handle, item of schema
       tmp.push handle
 
   field_number = 0
@@ -21,7 +21,7 @@ module.exports = (list, values, class_name, number_of_items=10, order=[], exclud
   for name in tmp
     if exclude.indexOf(name) > -1
       continue
-    item = list[name]
+    item = schema[name]
     if field_number == number_of_items or $current == false
       form_number++
       field_number = 0

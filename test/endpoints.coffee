@@ -4,22 +4,36 @@ PapiClient = require '..'
 pc = new PapiClient
 
 
+testset = []
 
 test "get", (t) ->
-  testset = []
   for handle, data of pc.endpoints
     if data.get
       testset.push handle
   t.plan testset.length
 
-  for item in testset
+  testEndpoint(t)
+
+
+testEndpoint = (t) ->
+  if testset.length > 0
+    item = testset.pop()
     url = pc.get item, {}, ( err, result ) ->
       if typeof result == 'undefined'
         t.fail('Request for endpoint returned undefined')
       else if typeof result.result != 'undefined' and result.result == 'error'
-        t.fail(result.message)
+        fail_msg = ''
+        for msg in result.message_collective
+          console.log msg
+        t.fail('caught api error')
       else
-        t.pass('result: '+result.length)
+        if typeof result.length == 'undefined'
+          for handle, value of result
+            t.ok(result, 'attribute - '+handle+': '+value)
+            break
+        else
+          t.ok(result, 'result length: '+result.length)
+      testEndpoint(t)
     console.log "testing url: ", url
 
 ###
