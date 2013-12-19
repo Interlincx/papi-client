@@ -1,5 +1,10 @@
 
 
+
+1.0.2 / 2013-12-19
+===================
+  - better error messaging
+
 1.0.1 / 2013-12-18
 ===================
   - figuring out versioning
