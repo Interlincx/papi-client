@@ -36,17 +36,28 @@ PapiClient::delete = (what, opts, cb) ->
   pieces = {type:endpoint.type, module:endpoint.delete}
 
   url = @getUrl( pieces, opts )
-  gj url, cb
+  _this = this
+  gj url, (err, result) ->
+    _this.checkForError( err, result, cb )
 
 PapiClient::get = (what, opts, cb) ->
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.get}
 
   url = @getUrl( pieces, opts )
-  gj url, cb
+  _this = @
+  gj url, (err, result) ->
+    _this.checkForError( err, result, cb )
 
   return url
 
+PapiClient::checkForError = (err, result, cb) ->
+  if result.success is false
+    @showError( result.message_collective )
+  else if result.result is 'error'
+    @showError( result.message_collective )
+  else
+    cb( err, result )
 
 PapiClient::save = (what, obj, cb) ->
   console.log "json stringify: ", obj
@@ -66,9 +77,9 @@ PapiClient::save = (what, obj, cb) ->
     success: (data, textStatus, jqXHR) ->
       console.log "success data: ", data
       if data.success is false
-        _this.saveError()
+        _this.showError( data.message_collective )
       else if data.result is 'error'
-        _this.saveError()
+        _this.showError( data.message_collective )
       else
         $.gritter.add
           title: 'Notice'
@@ -77,15 +88,21 @@ PapiClient::save = (what, obj, cb) ->
         cb( data )
 
     error: (err) ->
-      _this.saveError()
+      _this.showError()
 
   $.ajax options
 
-PapiClient::saveError = ->
+PapiClient::showError = (msg) ->
+  m = ''
+  if typeof msg[0] != 'undefined'
+    for item in msg
+      m += "\n"+item
+  else
+    m = msg
   $.gritter.add
-    title: 'Notice'
-    text: 'Save Failed!!!!'
-    time: 3000
+    title: 'Papi Error!!'
+    text: m
+    time: 6000
 
 PapiClient::getCreativeTypes = (index, index_value) ->
   result = []
