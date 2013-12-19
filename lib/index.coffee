@@ -52,7 +52,9 @@ PapiClient::get = (what, opts, cb) ->
   return url
 
 PapiClient::checkForError = (err, result, cb) ->
-  if result.success is false
+  if typeof result == 'undefined'
+    @showError( 'Uncaught Papi Error' )
+  else if result.success is false
     @showError( result.message_collective )
   else if result.result is 'error'
     @showError( result.message_collective )
