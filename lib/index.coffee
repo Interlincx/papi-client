@@ -4,6 +4,9 @@ endpoints = require './endpoints.json'
 
 
 module.exports = PapiClient = (opts={}) ->
+  @message_type = 'display'
+  #@message_type = 'json'
+
   @baseUrl = opts.baseUrl or 'http://tyler.thankyoupath.com/papi/'
   #@script_options = @populateScriptOptions()
   @schemas = schemas
@@ -52,14 +55,14 @@ PapiClient::get = (what, opts, cb) ->
   return url
 
 PapiClient::checkForError = (err, result, cb) ->
-  if typeof result == 'undefined'
-    @showError( 'Uncaught Papi Error' )
-  else if result.success is false
-    @showError( result.message_collective )
-  else if result.result is 'error'
-    @showError( result.message_collective )
-  else
-    cb( err, result )
+  if @message_type == 'display'
+    if typeof result == 'undefined'
+      return @showError( 'Uncaught Papi Error' )
+    else if result.success is false
+      return @showError( result.message_collective )
+    else if result.result is 'error'
+      return @showError( result.message_collective )
+  cb( err, result )
 
 PapiClient::save = (what, obj, cb) ->
   console.log "json stringify: ", obj
@@ -83,14 +86,15 @@ PapiClient::save = (what, obj, cb) ->
       else if data.result is 'error'
         _this.showError( data.message_collective )
       else
-        $.gritter.add
-          title: 'Notice'
-          text: 'Saved Successfully!'
-          time: 3000
+        if _this.message_type == 'display'
+          $.gritter.add
+            title: 'Notice'
+            text: 'Saved Successfully!'
+            time: 3000
         cb( data )
 
     error: (err) ->
-      _this.showError()
+      return _this.showError()
 
   $.ajax options
 
@@ -101,10 +105,14 @@ PapiClient::showError = (msg) ->
       m += "\n"+item
   else
     m = msg
-  $.gritter.add
-    title: 'Papi Error!!'
-    text: m
-    time: 6000
+
+  if @message_type == 'display'
+    $.gritter.add
+      title: 'Papi Error!!'
+      text: m
+      time: 6000
+  else
+    return {result:'error',message:m}
 
 PapiClient::getCreativeTypes = (index, index_value) ->
   result = []
