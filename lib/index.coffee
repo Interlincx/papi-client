@@ -34,6 +34,15 @@ PapiClient::deleteProduct = (hive, product_id, cb) ->
 
   @save( 'hive', hive, cb )
 
+PapiClient::archives = (what, opts, cb) ->
+  endpoint = @endpoints[what]
+  pieces = {type:endpoint.type, module:endpoint.archives}
+
+  url = @getUrl( pieces, opts )
+  _this = this
+  gj url, (err, result) ->
+    _this.checkForError( err, result, cb )
+
 PapiClient::delete = (what, opts, cb) ->
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.delete}

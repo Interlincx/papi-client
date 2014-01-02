@@ -27,6 +27,7 @@
     "get": "get_decision_tree",
     "save": "save_decision_tree",
     "delete": "delete_decision_tree"
+    "archives": "archives_decision_tree"
     },
 "decision_trees": {
     "title": "Decision Trees",
@@ -59,8 +60,7 @@
     "title": "Account",
     "type": "account",
     "get": "get_account",
-    "save": "save_account",
-    "delete": "delete_account"
+    "save": "save_account"
     },
 "address": {
     "title": "Address",

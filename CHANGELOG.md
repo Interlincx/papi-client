@@ -1,4 +1,9 @@
 
+
+1.0.4 / 2014-01-02
+===================
+  - added archives to decison trees
+
 1.0.4 / 2014-01-02
 ===================
   - added delete endpoints to most types
