@@ -18,13 +18,15 @@
     "title": "Ad",
     "type": "ad",
     "get": "get_ad",
-    "save": "save_ad"
+    "save": "save_ad",
+    "delete": "delete_ad"
     },
 "decision_tree": {
     "title": "Decision Tree",
     "type": "decision_tree",
     "get": "get_decision_tree",
-    "save": "save_decision_tree"
+    "save": "save_decision_tree",
+    "delete": "delete_decision_tree"
     },
 "decision_trees": {
     "title": "Decision Trees",
@@ -35,7 +37,8 @@
     "title": "Feed",
     "type": "ad",
     "get": "get_feed",
-    "save": "save_feed"
+    "save": "save_feed",
+    "delete": "delete_feed"
     },
 "feeds": {
     "title": "Feeds",
@@ -56,13 +59,15 @@
     "title": "Account",
     "type": "account",
     "get": "get_account",
-    "save": "save_account"
+    "save": "save_account",
+    "delete": "delete_account"
     },
 "address": {
     "title": "Address",
     "type": "account",
     "get": "get_address",
-    "save": "save_address"
+    "save": "save_address",
+    "delete": "delete_address"
     },
 "gateways": {
     "title": "Gateways",
@@ -95,7 +100,8 @@
     "title": "Creative Instance",
     "type": "creative",
     "get": "get_instance",
-    "save": "save_instance"
+    "save": "save_instance",
+    "delete": "delete_instance"
     },
 "gateway": {
     "title": "Gateway",
