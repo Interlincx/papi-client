@@ -26,7 +26,7 @@
     "type": "decision_tree",
     "get": "get_decision_tree",
     "save": "save_decision_tree",
-    "delete": "delete_decision_tree"
+    "delete": "delete_decision_tree",
     "archives": "archives_decision_tree"
     },
 "decision_trees": {
