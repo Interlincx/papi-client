@@ -25,7 +25,8 @@
     "async": "~0.2.9"
   },
   "dependencies": {
-    "get-json-hq": "~0.1.5"
+    "get-json-hq": "~0.1.5",
+    "rainbow-load": "0.0.5"
   },
   "browser": "./index.coffee",
   "browserify": {

@@ -1,4 +1,5 @@
 gj = require 'get-json-hq'
+rainbow = require 'rainbow-load'
 schemas = require './schemas.json'
 endpoints = require './endpoints.json'
 
@@ -56,10 +57,19 @@ PapiClient::get = (what, opts, cb) ->
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.get}
 
+  rainbow.config
+    barThickness: 5
+    barColors:
+      0: "rgba(0,  0, 0, .7)"
+    shadowColor  : 'rgba(0, 0, 0, 0)'
+
+  rainbow.show()
+
   url = @getUrl( pieces, opts )
   _this = @
   gj url, (err, result) ->
     _this.checkForError( err, result, cb )
+    rainbow.hide()
 
   return url
 
