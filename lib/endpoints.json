@@ -1,4 +1,8 @@
 {
+"page_url": { 
+    "type": "page",
+    "get": "get_page_url"
+    },
 "adpage_pieces": { 
     "type": "decision_tree",
     "get": "get_adpage_pieces"
