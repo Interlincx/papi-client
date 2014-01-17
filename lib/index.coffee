@@ -63,6 +63,46 @@ PapiClient::get = (what, opts, cb) ->
 
   return url
 
+
+PapiClient::ajax = (options) ->
+  if window.XMLHttpRequest
+    req = new XMLHttpRequest()
+  else
+    # IE6, IE5
+    req = new ActiveXObject("Microsoft.XMLHTTP")
+
+  sendData = {}
+  if options.data?
+    sendData = options.data
+
+  req.onreadystatechange = ->
+    if req.readyState == 4 && req.status == 200
+      if options.success?
+        console.log "REQ", req
+        options.success(req.response, req.statusText)
+    ###
+    else
+      if options.error?
+        options.error(req.statusText)
+    ###
+
+  contentType = 'application/x-www-form-urlencoded'
+  if options.contentType?
+    contentType = options.contentType
+
+  type = 'POST'
+  if options.type?
+    type = options.type
+
+  req.open(type, options.url, true)
+  req.setRequestHeader("Content-type", contentType)
+  req.responseType = 'json'
+  if options.data?
+    req.send(options.data)
+  else
+    req.send()
+
+
 PapiClient::checkForError = (err, result, cb) ->
   if @message_type == 'display'
     if typeof result == 'undefined'
@@ -88,7 +128,7 @@ PapiClient::save = (what, obj, cb) ->
     processData: false
     url: url
     data: post_data
-    success: (data, textStatus, jqXHR) ->
+    success: (data, textStatus) ->
       console.log "success data: ", data
       if data.success is false
         _this.showError( data.message_collective )
@@ -96,30 +136,26 @@ PapiClient::save = (what, obj, cb) ->
         _this.showError( data.message_collective )
       else
         if _this.message_type == 'display'
-          $.gritter.add
-            title: 'Notice'
-            text: 'Saved Successfully!'
-            time: 3000
+          console.log 'Successful Save!'
         cb( data )
 
     error: (err) ->
-      return _this.showError()
+      return _this.showError(err)
 
-  $.ajax options
+  @ajax options
 
 PapiClient::showError = (msg) ->
   m = ''
-  if typeof msg[0] != 'undefined'
-    for item in msg
-      m += "\n"+item
-  else
-    m = msg
+  if msg?
+    if typeof msg[0] != 'undefined'
+      console.log msg.join("\n")
+      for item in msg
+        m += "\n"+item
+    else
+      m = msg
 
   if @message_type == 'display'
-    $.gritter.add
-      title: 'Papi Error!!'
-      text: m
-      time: 6000
+    console.log 'Some Error!! '+m
   else
     return {result:'error',message:m}
 
