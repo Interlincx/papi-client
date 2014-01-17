@@ -1,7 +1,7 @@
 test = require 'tape'
 
 PapiClient = require '..'
-pc = new PapiClient
+pc = new PapiClient baseUrl:'http://production.lincx.co/'
 pc.message_type = 'json'
 
 
