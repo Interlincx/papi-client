@@ -19,9 +19,9 @@ for handle, url of schemas
   urls.push url
 
 
+
 async.mapSeries urls, gj, (err, result) ->
-  return console.error err if err
-  console.log 'SCHAD', schemas.length
+  #return console.error err if err
   final = {}
   i = 0
   for handle, url of schemas
@@ -43,3 +43,5 @@ async.mapSeries urls, gj, (err, result) ->
  
     i++
   fs.writeFileSync targetFile, (JSON.stringify final, null, 2)
+
+

@@ -1,4 +1,6 @@
 test = require 'tape'
+gj = require 'get-json-hq'
+
 
 PapiClient = require '..'
 pc = new PapiClient baseUrl:'http://production.lincx.co/'
@@ -59,13 +61,20 @@ sample_ids =
       {creative_id: '95629a93-61b4-4a8f-afcf-c8063e443eb9'}
     ]
 
+schema_endpoints = require '../lib/schema_endpoints.json'
+schemas = []
+for handle, data of schema_endpoints
+  schemas.push handle
+
+
 item = ''
 
 test "get", (t) ->
   for handle, data of pc.endpoints
     if data.get
       testset.push handle
-  t.plan testset.length
+  tests = testset.length + schemas.length
+  t.plan tests
 
   testEndpoint(t)
 
@@ -76,64 +85,63 @@ getParams = (item) ->
   return params
 
 
-getNext = () ->
-  if testset.length > 0
-    item = testset.pop()
+startMsg = (item, params) ->
+  console.log "\n"
+  console.log "----Start-----------------"
+  console.log "------"+item+"----------"
+  console.log "passing params: ", params
+
+
+receiveResult = (t, item, params, result) ->
+  if typeof result == 'undefined'
+    console.log "\n\nOMG\n\n"
+    t.fail("\nRequest for endpoint returned undefined")
+  else if typeof result.result != 'undefined' and result.result == 'error'
+    console.log "\n\nOMG\n\n"
+    fail_msg = ''
+    for msg in result.message_collective
+      console.log msg
+    t.fail("\ncaught api error")
   else
-    return false
-  params = getParams(item)
-  return {item:item, params:params}
+    obj_item = "Unknown result type\n"
+    if result instanceof Array
+      type = "ARRAY"
+      obj_item = "length: "+result.length
+    else if typeof result == 'object'
+      type = "OBJECT"
+      for handle, value of result
+        obj_item = "attribute - "+handle+': '+value
+        break
+    else if typeof result == 'string' || typeof result.length == 'undefined'
+      type = "STRING?"
+      obj_item = "String returned - possible error\n"
+    console.log "RESULT\ntype: "+type
+    console.log obj_item
+    console.log "\n"
+    t.ok(result, " - endpoint: "+item)
+  console.log "------"+item+"----------"
+  console.log "----Done-----------------"
+
 
 testEndpoint = (t) ->
-  if cur = getNext()
-    {item,params} = cur
-    console.log "\n"
-    console.log "----Start-----------------"
-    console.log "------"+item+"----------"
-    console.log "passing params: ", params
+  if testset.length > 0
+    item = testset.pop()
+    params = getParams(item)
+
+    startMsg(item, params)
     url = pc.get item, params, ( err, result ) ->
-      if typeof result == 'undefined'
-        console.log "\n\nOMG\n\n"
-        t.fail("\nRequest for endpoint returned undefined")
-      else if typeof result.result != 'undefined' and result.result == 'error'
-        console.log "\n\nOMG\n\n"
-        fail_msg = ''
-        for msg in result.message_collective
-          console.log msg
-        t.fail("\ncaught api error")
-      else
-        obj_item = "Unknown result type\n"
-        if result instanceof Array
-          type = "ARRAY"
-          obj_item = "length: "+result.length
-        else if typeof result == 'object'
-          type = "OBJECT"
-          for handle, value of result
-            obj_item = "attribute - "+handle+': '+value
-            break
-        else if typeof result == 'string' || typeof result.length == 'undefined'
-          type = "STRING?"
-          obj_item = "String returned - possible error\n"
-        console.log "RESULT\ntype: "+type
-        console.log obj_item
-        console.log "\n"
-        t.ok(result, " - endpoint: "+item)
-      console.log "------"+item+"----------"
-      console.log "----Done-----------------"
+      receiveResult(t, item, params, result)
       testEndpoint(t)
-    console.log "testing url: ", url
+  else if schemas.length > 0
+    item = schemas.pop()
+    params = []
 
-###
-test "schemas", (t) ->
-  testset = []
-  schemas = pc.getSchemaUrls()
-  for url in schemas
-    gj url, resultCheck
-
-resultCheck = (err, result) ->
-  if result.result == 'error'
-    test.fail(result.message)
+    url = pc.getUrl schema_endpoints[item]
+    startMsg(item, params)
+    gj url, (err, result) ->
+      receiveResult(t, item, params, result)
+      testEndpoint(t)
   else
-    test.pass(item+': '+result.length)
-###
+    return false
+  console.log "testing url: ", url
 

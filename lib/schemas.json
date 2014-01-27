@@ -35,7 +35,7 @@
     "classic_textad": {
       "title": "Classic Text Ads",
       "file_name": "modules/creative/_sub_templates/classic_textad/index.html",
-      "file_css": "style.css",
+      "file_css": "modules/creative/_sub_templates/classic_textad/style.css",
       "ad_data_type": "text_simple",
       "sample_values": {
         "title": "Example Headline",
@@ -72,12 +72,13 @@
           "handle": "color_domain"
         }
       },
-      "template": "<div class=\"ad_box\">\n  <div class=\"buttonswrapper\">\n    <div class=\"buttons buttons|counter|\"></div>\n  </div>\n  <div class=\"right_side\">\n    <div><a href=\"#\" class=\"color_title\" >Example Headline</a></div>\n    <div><a href=\"#\" class=\"color_description\" >Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqum</a></div>\n    <div><a href=\"#\" class=\"color_domain\" >www.example.com</a></div>\n  </div>\n</div>  \n"
+      "css": "\n*{\n  font-size: 13px;\n}\n\nbody{\n}\n\n.ad_image {\n  background-repeat: no-repeat;\n}\n\n.buttonswrapper {\n  float:left;\n  display: -webkit-box;\n  -webkit-box-orient: horizontal;\n  -webkit-box-pack: center;\n  -webkit-box-align: center;\n  height: 100px;\n  margin-right: 12px;\n}\n\n.color_title {\n  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif, \"Trebuchet MS\";\n  font-size: 115%;\n  color: |color_title|;\n  text-decoration: underline;\n  line-height: 35px;\n  font-weight: bold;\n}\n\n\n.color_description {\n  display: block;\n  width: 350px;\n  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif, \"Trebuchet MS\";\n  font-size: 95%;\n  font-weight: normal;\n  color: |color_description|;\n  text-decoration: none;\n  float:  left;\n  line-height: 20px;\n  padding: 0px 0px 0px 0px;\n}\n\n\n.color_domain {\n  padding: 5px 0px 0px 0px;\n  font-family: Verdana, Arial, Helvetica, sans-serif, \"Trebuchet MS\";\n  font-size: 11px;\n  color: |color_domain|;\n  font-weight: bold;\n  float:  left;\n  width: 450px;\n  line-height: 21px;\n}\n\ndiv.ad_box div.right_side {\n\tfloat: left;\n\twidth: 350px;\n}\n\n.color_domain {\n  color: |color_domain|;\n  text-decoration: none;\n}\n\n.ad_box {\n  margin-bottom: 12px;\n\twidth: 600px;\n\tfloat: left;\n}\n\n",
+      "template": "<div class=\"ad_box\">\n  <div class=\"buttonswrapper\">\n    <div class=\"buttons buttons|counter|\"></div>\n  </div>\n  <div class=\"right_side\">\n    <div><a href=\"|click_url|\" class=\"color_title\" |settings__open_new|>|title|</a></div>\n    <div><a href=\"|click_url|\" class=\"color_description\" |settings__open_new|>|description|</a></div>\n    <div><a href=\"|click_url|\" class=\"color_domain\" |settings__open_new|>|display_url|</a></div>\n  </div>\n</div>  \n"
     },
     "mobile_textad": {
       "title": "Mobile Text Ads",
       "file_name": "modules/creative/_sub_templates/mobile_textad/index.html",
-      "file_css": "style.css",
+      "file_css": "modules/creative/_sub_templates/mobile_textad/style.css",
       "ad_data_type": "text_simple",
       "sample_values": {
         "title": "Example Headline",
@@ -114,7 +115,8 @@
           "handle": "color_domain"
         }
       },
-      "template": "<div class=\"ad_box\">\n  <div class=\"right_side\">\n    <div><a href=\"#\" class=\"color_title\" >Example Headline</a></div>\n    <div><a href=\"#\" class=\"color_description\" >Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqum</a></div>\n    <div><a href=\"#\" class=\"color_domain\" >www.example.com</a></div>\n  </div>\n</div>  \n"
+      "css": "\n\n*{\n  font-size: 13px;\n}\n\n\nbody{\n        background: filter:alpha(opacity=0);\n        margin: 0;\n        padding: 0;\n}\n.ad_box{\n        margin: 10px 0;\n}\n.color_description {\n        display: block;\n        width: 300px;\n        font-family: Arial, Helvetica, sans-serif, \"Trebuchet MS\";\n        font-size: 75%;\n        font-weight: normal;\n        color: |color_description|;\n        text-decoration: none;\n}\n.color_title {\n        font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n        font-size: 107%;\n        color: |color_title|;\n        font-weight: bold;\n        text-decoration: underline;\n}\n.color_domain {\n        font-family: Verdana, Arial, Helvetica, sans-serif, \"Trebuchet MS\";\n        font-size: 9px;\n        color: |color_domain|;\n}\n",
+      "template": "<div class=\"ad_box\">\n  <div class=\"right_side\">\n    <div><a href=\"|click_url|\" class=\"color_title\" |settings__open_new|>|title|</a></div>\n    <div><a href=\"|click_url|\" class=\"color_description\" |settings__open_new|>|description|</a></div>\n    <div><a href=\"|click_url|\" class=\"color_domain\" |settings__open_new|>|display_url|</a></div>\n  </div>\n</div>  \n"
     }
   },
   "ad_templates": {
@@ -153,7 +155,7 @@
   "creative_templates": {
     "classic_adpage": {
       "title": "Basic AdPage",
-      "file_name": "index.html",
+      "file_name": "modules/creative/_templates/classic_adpage/index.html",
       "sample_values": {
         "background_fullpage__width": 1080,
         "background_fullpage__height": 960,
@@ -273,7 +275,7 @@
     },
     "twoclick": {
       "title": "2 Click Page",
-      "file_name": "index.html",
+      "file_name": "modules/creative/_templates/twoclick/index.html",
       "settings": {
         "ad_link": {
           "shared": false,
@@ -347,7 +349,7 @@
     },
     "mobile_adpage": {
       "title": "Mobile Adpage",
-      "file_name": "index.html",
+      "file_name": "modules/creative/_templates/mobile_adpage/index.html",
       "settings": {
         "main_feed": {
           "shared": false,
@@ -462,7 +464,7 @@
     },
     "test_page": {
       "title": "Test Template",
-      "file_name": "index.html",
+      "file_name": "modules/creative/_templates/test_page/index.html",
       "sample_values": {
         "background_fullpage__width": 1080,
         "background_fullpage__height": 960,
@@ -2582,6 +2584,46 @@
           "table": "decision_path",
           "local_key": "decision_tree_version_id",
           "foreign_key": "decision_tree_version_id"
+        },
+        {
+          "table": "decision_tree_tag",
+          "local_key": "decision_tree_version_id",
+          "foreign_key": "decision_tree_version_id"
+        }
+      ]
+    },
+    "decision_tree_tag": {
+      "fields": {
+        "decision_tree_tag_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "client_editable": false,
+          "key": "primary"
+        },
+        "decision_tree_version_id": {
+          "type": "varchar",
+          "length": "36",
+          "data_type": "uuid",
+          "title": "Ad Version ID",
+          "key": {
+            "table": "ad"
+          }
+        },
+        "tag_id": {
+          "type": "int",
+          "title": "Tag ID",
+          "key": {
+            "table": "tag"
+          }
+        }
+      },
+      "joins": [
+        {
+          "table": "tag",
+          "local_key": "tag_id",
+          "foreign_key": "tag_id",
+          "module_parent": "tag",
+          "class": "Tag"
         }
       ]
     },
@@ -3001,7 +3043,7 @@
         "payment_frequency": {
           "type": "varchar",
           "length": "24",
-          "title": "Payment Frequency",
+          "title": "Payment Period",
           "options": {
             "monthly": "Monthly",
             "biweekly": "Bi-Weekly",
@@ -3018,6 +3060,14 @@
             "45": "Net 45",
             "07": "Net 07"
           }
+        },
+        "payment_start_date": {
+          "type": "date",
+          "title": "Payment Start Date"
+        },
+        "payment_threshold": {
+          "type": "int",
+          "title": "Payment Threshold"
         },
         "payment_method": {
           "type": "varchar",
@@ -3524,6 +3574,11 @@
       "joins": [
         {
           "table": "ad_feed_map",
+          "local_key": "ad_feed_version_id",
+          "foreign_key": "ad_feed_version_id"
+        },
+        {
+          "table": "ad_feed_tag",
           "local_key": "ad_feed_version_id",
           "foreign_key": "ad_feed_version_id"
         }
