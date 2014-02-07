@@ -3,6 +3,36 @@
     "type": "page",
     "get": "get_page_url"
     },
+"invoice_lineitem": { 
+    "type": "invoice",
+    "get": "get_lineitem"
+    },
+"external_revenue": { 
+    "type": "invoice",
+    "get": "get_external_items"
+    },
+"no_pay": { 
+    "type": "invoice",
+    "get": "get_no_pay"
+    },
+"invoice": { 
+    "type": "invoice",
+    "get": "get_invoice",
+    "save": "save_invoice"
+    },
+"invoices": { 
+    "type": "invoice",
+    "get": "get_invoices",
+    "save": "update_invoices"
+    },
+"account_last_paid": { 
+    "type": "invoice",
+    "get": "get_last_paid"
+    },
+"build_account_revenue": { 
+    "type": "invoice",
+    "get": "build_account_revenue"
+    },
 "adpage_pieces": { 
     "type": "decision_tree",
     "get": "get_adpage_pieces"

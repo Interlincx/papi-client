@@ -1,4 +1,5 @@
 gj = require 'get-json-hq'
+pj = require './post-json'
 schemas = require './schemas.json'
 endpoints = require './endpoints.json'
 
@@ -7,7 +8,8 @@ module.exports = PapiClient = (opts={}) ->
   @message_type = 'display'
   #@message_type = 'json'
 
-  @baseUrl = opts.baseUrl or 'http://tyler.thankyoupath.com/papi/'
+  #@baseUrl = opts.baseUrl or 'http://tyler.thankyoupath.com/papi/'
+  @baseUrl = opts.baseUrl or 'http://production.lincx.co/'
   #@script_options = @populateScriptOptions()
   @schemas = schemas
   @endpoints = endpoints
@@ -21,6 +23,8 @@ PapiClient::getUrl = (endpoint, opts={}) ->
   else
     url = @baseUrl+'?key=45c71a73-e335-4eb0-bce7-31da3cd558b1&e='+endpoint
   for handle, val of opts
+    if typeof val == 'object'
+      val = JSON.stringify(val)
     url += '&'+handle+'='+val
   return url
 
@@ -53,19 +57,28 @@ PapiClient::delete = (what, opts, cb) ->
     _this.checkForError( err, result, cb )
 
 PapiClient::get = (what, opts, cb) ->
+  post_data = JSON.stringify opts
+  _this = this
+
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.get}
 
+  ###
   url = @getUrl( pieces, opts )
-  _this = @
   gj url, (err, result) ->
     _this.checkForError( err, result, cb )
+  ###
+  url = @getUrl( pieces )
+  console.log url
+  pj url, opts, (err, result) ->
+    body = JSON.parse(result.body)
+    _this.checkForError( err, body, cb )
 
   return url
 
 
 PapiClient::ajax = (options) ->
-  if window.XMLHttpRequest
+  if window? and window.XMLHttpRequest
     req = new XMLHttpRequest()
   else
     # IE6, IE5
@@ -108,7 +121,7 @@ PapiClient::checkForError = (err, result, cb) ->
     if typeof result == 'undefined'
       return @showError( 'Uncaught Papi Error' )
     else if result.success is false
-      return @showError( result.message_collective )
+      return @showError( result.message )
     else if result.result is 'error'
       return @showError( result.message_collective )
   cb( err, result )
@@ -147,7 +160,7 @@ PapiClient::save = (what, obj, cb) ->
 PapiClient::showError = (msg) ->
   m = ''
   if msg?
-    if typeof msg[0] != 'undefined'
+    if typeof msg[0] != 'undefined' and typeof msg != 'string'
       console.log msg.join("\n")
       for item in msg
         m += "\n"+item
@@ -155,7 +168,7 @@ PapiClient::showError = (msg) ->
       m = msg
 
   if @message_type == 'display'
-    console.log 'Some Error!! '+m
+    console.log 'Papi Error!! '+m
   else
     return {result:'error',message:m}
 
@@ -167,58 +180,4 @@ PapiClient::getCreativeTypes = (index, index_value) ->
   return result
 
 
-###
-PapiClient::adpagePieceSelect = (callback, params, e) ->
-  if typeof params.selected_id == 'undefined'
-    params.selected_id = ''
-  pass = {}
-
-  if params.type is 'account'
-    what = 'accounts'
-    item_label = 'company_name'
-    item_id_handle = 'account_id'
-    title = 'Pick an Account'
-  if params.type is 'creative_instance'
-    what = 'creative_instances'
-    item_label = 'creative_instance_name'
-    item_id_handle = 'creative_instance_id'
-    title = 'Pick a Creative Instance'
-  if params.type is 'decision_tree'
-    what = 'decision_trees'
-    item_label = 'decision_tree_name'
-    item_id_handle = 'decision_tree_id'
-    title = 'Pick a Decision Tree'
-  if params.type is 'ad_feed'
-    what = 'feeds'
-    item_label = 'feed_title'
-    item_id_handle = 'ad_feed_id'
-    title = 'Pick a Feed'
-  if params.type is 'ad'
-    what = 'ads'
-    item_label = 'ad_name'
-    item_id_handle = 'ad_id'
-    title = 'Pick an Ad'
-
-  options =
-    item_label: item_label
-    item_id_handle: item_id_handle
-    selected_id: params.selected_id
-    title: title
-    original_event: e
-
-  _this = @
-  @listModal.createModal options, (err) ->
-    _this.get what, pass, (err, results) ->
-      _this.listModal.populateModal(results, callback, params, e)
-
-
-
-
-PapiClient::formification = require './formify.coffee'
-PapiClient::formify = (attrs, input, value, class_name) ->
-  return @formification.init(attrs, input, value, class_name)
-
-PapiClient::printForm = require './print_form.coffee'
-
-###
 PapiClient::listModal = require './modal.coffee'

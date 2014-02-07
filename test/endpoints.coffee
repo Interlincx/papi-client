@@ -3,7 +3,7 @@ gj = require 'get-json-hq'
 
 
 PapiClient = require '..'
-pc = new PapiClient baseUrl:'http://production.lincx.co/'
+pc = new PapiClient baseUrl:'http://development.lincx.co/'
 pc.message_type = 'json'
 
 

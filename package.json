@@ -26,7 +26,9 @@
   },
   "dependencies": {
     "get-json-hq": "~0.1.5",
-    "rainbow-load": "0.0.5"
+    "rainbow-load": "0.0.5",
+    "post-json": "~0.2.3",
+    "hyperquest": "~0.2.0"
   },
   "browser": "./index.coffee",
   "browserify": {

@@ -1662,6 +1662,105 @@
         }
       }
     },
+    "invoice": {
+      "identity_key": "invoice_id",
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary",
+          "client_editable": false
+        },
+        "invoice_id": {
+          "type": "char",
+          "length": "36",
+          "data_type": "uuid",
+          "title": "Invoice ID",
+          "key": "column",
+          "client_editable": false
+        },
+        "account_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Account ID",
+          "key": "column"
+        },
+        "legacy_account_id": {
+          "type": "int",
+          "title": "Legacy Account ID",
+          "client_editable": false
+        },
+        "revenue": {
+          "type": "double",
+          "title": "Revenue"
+        },
+        "date_start": {
+          "type": "date",
+          "title": "Start Date",
+          "client_editable": false
+        },
+        "date_end": {
+          "type": "date",
+          "title": "End Date",
+          "client_editable": false
+        },
+        "date_due": {
+          "type": "date",
+          "title": "Due Date",
+          "client_editable": false
+        },
+        "net_terms": {
+          "type": "varchar",
+          "length": 16,
+          "title": "Net Terms",
+          "client_editable": false
+        },
+        "payment_period": {
+          "type": "varchar",
+          "length": 24,
+          "title": "Payment Period",
+          "client_editable": false
+        },
+        "payment_method": {
+          "type": "varchar",
+          "length": 5,
+          "title": "Payment Method",
+          "client_editable": false
+        },
+        "payment_threshold": {
+          "type": "double",
+          "title": "Payment Threshold",
+          "client_editable": false
+        },
+        "source": {
+          "type": "varchar",
+          "length": 16,
+          "title": "Source",
+          "client_editable": false,
+          "default": "typ"
+        },
+        "payment_status": {
+          "type": "char",
+          "length": 1,
+          "title": "Payment Status",
+          "options": {
+            "y": "Paid",
+            "n": "Not Paid"
+          }
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date",
+          "client_editable": false
+        },
+        "notes": {
+          "type": "text",
+          "title": "Notes"
+        }
+      }
+    },
     "hive": {
       "fields": {
         "id": {
@@ -3045,15 +3144,17 @@
           "length": "24",
           "title": "Payment Period",
           "options": {
+            "7": "Weekly",
+            "14": "Bi-Weekly",
             "monthly": "Monthly",
-            "biweekly": "Bi-Weekly",
-            "weekly": "Weekly"
+            "threshold": "Threshold"
           }
         },
         "net_terms": {
           "type": "char",
           "length": "2",
           "title": "Net Terms",
+          "default": "30",
           "options": {
             "15": "Net 15",
             "30": "Net 30",
@@ -3074,9 +3175,9 @@
           "length": 5,
           "title": "Payment Method",
           "options": {
-            "check": "Check",
-            "wire": "Wire",
-            "ach": "ACH"
+            "Check": "Check",
+            "Wire": "Wire",
+            "ACH": "ACH"
           }
         },
         "payment_currency": {
@@ -3084,14 +3185,10 @@
           "length": 3,
           "title": "Payment Currency"
         },
-        "payment_status": {
-          "type": "char",
-          "length": 1,
-          "title": "Payment Status",
-          "options": {
-            "y": "Pay",
-            "n": "No Pay"
-          }
+        "external_revenue": {
+          "type": "boolean",
+          "default": 0,
+          "title": "External Revenue Source"
         },
         "payment_notes": {
           "type": "text",
@@ -3125,6 +3222,15 @@
           "type": "varchar",
           "length": 36,
           "title": "Bank Account ID #"
+        },
+        "bank_account_type": {
+          "type": "varchar",
+          "length": 16,
+          "title": "Bank Account Type",
+          "options": {
+            "checking": "Checking",
+            "saving": "Saving"
+          }
         },
         "swift_code": {
           "type": "varchar",
