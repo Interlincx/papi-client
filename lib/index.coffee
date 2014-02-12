@@ -1,5 +1,5 @@
 gj = require 'get-json-hq'
-pj = require './post-json' #this is a custom post-json that adds in teh port handling
+pj = require './post-json.coffee' #this is a custom post-json that adds in teh port handling
 schemas = require './schemas.json'
 endpoints = require './endpoints.json'
 
