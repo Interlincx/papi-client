@@ -1,4 +1,8 @@
 
+1.0.13 / 2014-02-11
+===================
+  - explicit pathing
+
 1.0.12 / 2014-02-07
 ===================
   - added endpoints, switched get to post

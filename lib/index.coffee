@@ -1,15 +1,13 @@
 gj = require 'get-json-hq'
-pj = require './post-json'
+pj = require 'post-json'
 schemas = require './schemas.json'
 endpoints = require './endpoints.json'
 
 
 module.exports = PapiClient = (opts={}) ->
-  @message_type = 'display'
-  #@message_type = 'json'
 
-  #@baseUrl = opts.baseUrl or 'http://tyler.thankyoupath.com/papi/'
-  @baseUrl = opts.baseUrl or 'http://production.lincx.co/'
+  @baseUrl = opts.baseUrl or 'http://tyler.thankyoupath.com/papi/'
+  #@baseUrl = opts.baseUrl or 'http://production.lincx.co/'
   #@script_options = @populateScriptOptions()
   @schemas = schemas
   @endpoints = endpoints
@@ -63,101 +61,48 @@ PapiClient::get = (what, opts, cb) ->
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.get}
 
-  ###
-  url = @getUrl( pieces, opts )
-  gj url, (err, result) ->
-    _this.checkForError( err, result, cb )
-  ###
   url = @getUrl( pieces )
   console.log url
   pj url, opts, (err, result) ->
-    body = JSON.parse(result.body)
-    _this.checkForError( err, body, cb )
+    _this.checkForError( err, result, cb )
+    #body = JSON.parse(result.body)
+    #_this.checkForError( err, body, cb )
 
   return url
 
 
-PapiClient::ajax = (options) ->
-  if window? and window.XMLHttpRequest
-    req = new XMLHttpRequest()
-  else
-    # IE6, IE5
-    req = new ActiveXObject("Microsoft.XMLHTTP")
-
-  sendData = {}
-  if options.data?
-    sendData = options.data
-
-  req.onreadystatechange = ->
-    if req.readyState == 4 && req.status == 200
-      if options.success?
-        console.log "REQ", req
-        options.success(req.response, req.statusText)
-    ###
-    else
-      if options.error?
-        options.error(req.statusText)
-    ###
-
-  contentType = 'application/x-www-form-urlencoded'
-  if options.contentType?
-    contentType = options.contentType
-
-  type = 'POST'
-  if options.type?
-    type = options.type
-
-  req.open(type, options.url, true)
-  req.setRequestHeader("Content-type", contentType)
-  req.responseType = 'json'
-  if options.data?
-    req.send(options.data)
-  else
-    req.send()
-
 
 PapiClient::checkForError = (err, result, cb) ->
-  if @message_type == 'display'
-    if typeof result == 'undefined'
-      return @showError( 'Uncaught Papi Error' )
-    else if result.success is false
-      return @showError( result.message )
-    else if result.result is 'error'
-      return @showError( result.message_collective )
-  cb( err, result )
+  body = result.body
+  if err?
+    console.log "Error"
+    console.log err
+    cb( err, body )
+  if typeof body == 'undefined'
+    err = @buildError( 'Uncaught Papi Error' )
+  else
+    body = JSON.parse(body)
+    if body.success is false
+      err = @buildError( body.message )
+    else if body.result is 'error'
+      err = @buildError( body.message_collective )
+  cb( err, body )
 
-PapiClient::save = (what, obj, cb) ->
-  console.log "json stringify: ", obj
-  post_data = JSON.stringify obj
-  console.log 'POST', post_data
+PapiClient::save = (what, opts, cb) ->
+  post_data = JSON.stringify opts
   _this = this
 
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.save}
+
   url = @getUrl( pieces )
-  options =
-    type: 'POST'
-    contentType: 'application/json'
-    processData: false
-    url: url
-    data: post_data
-    success: (data, textStatus) ->
-      console.log "success data: ", data
-      if data.success is false
-        _this.showError( data.message_collective )
-      else if data.result is 'error'
-        _this.showError( data.message_collective )
-      else
-        if _this.message_type == 'display'
-          console.log 'Successful Save!'
-        cb( data )
+  pj url, opts, (err, result) ->
+    _this.checkForError( err, result, cb )
 
-    error: (err) ->
-      return _this.showError(err)
+  return url
 
-  @ajax options
 
-PapiClient::showError = (msg) ->
+PapiClient::buildError = (msg) ->
   m = ''
   if msg?
     if typeof msg[0] != 'undefined' and typeof msg != 'string'
@@ -166,11 +111,7 @@ PapiClient::showError = (msg) ->
         m += "\n"+item
     else
       m = msg
-
-  if @message_type == 'display'
-    console.log 'Papi Error!! '+m
-  else
-    return {result:'error',message:m}
+  return new Error(m)
 
 PapiClient::getCreativeTypes = (index, index_value) ->
   result = []
