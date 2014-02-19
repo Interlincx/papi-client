@@ -1674,7 +1674,7 @@
         },
         "invoice_id": {
           "type": "char",
-          "length": "36",
+          "length": 36,
           "data_type": "uuid",
           "title": "Invoice ID",
           "key": "column",
@@ -1707,7 +1707,7 @@
         },
         "date_due": {
           "type": "date",
-          "title": "Due Date",
+          "title": "Payment Date",
           "client_editable": false
         },
         "net_terms": {
@@ -1737,8 +1737,7 @@
           "type": "varchar",
           "length": 16,
           "title": "Source",
-          "client_editable": false,
-          "default": "typ"
+          "client_editable": false
         },
         "payment_status": {
           "type": "char",
@@ -1753,6 +1752,18 @@
           "type": "datetime",
           "default": "_NOW_",
           "title": "Created Date",
+          "client_editable": false
+        },
+        "human_edited": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Human Edited",
+          "client_editable": false
+        },
+        "last_updated": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Last Updated",
           "client_editable": false
         },
         "notes": {
@@ -3087,7 +3098,8 @@
           "default": "auto_increment",
           "title": "Table ID",
           "key": "primary",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "account_version_id": {
           "type": "char",
@@ -3095,7 +3107,8 @@
           "data_type": "uuid",
           "title": "Account Version ID",
           "key": "unique",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "account_id": {
           "type": "varchar",
@@ -3111,7 +3124,8 @@
           "length": 36,
           "data_type": "uuid",
           "title": "Permissions ID",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "legacy_id": {
           "type": "int",
@@ -3122,7 +3136,8 @@
           "type": "varchar",
           "length": "43",
           "title": "Legacy Long ID",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "company_name": {
           "type": "varchar",
@@ -3146,8 +3161,7 @@
           "options": {
             "7": "Weekly",
             "14": "Bi-Weekly",
-            "monthly": "Monthly",
-            "threshold": "Threshold"
+            "monthly": "Monthly"
           }
         },
         "net_terms": {
@@ -3251,6 +3265,17 @@
           "type": "varchar",
           "length": 64,
           "title": "Company Name At Bank"
+        },
+        "no_pay": {
+          "type": "boolean",
+          "title": "No Pay",
+          "description": "If checked, do not run any billing for this client"
+        },
+        "active": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Active",
+          "description": "Hide inactive clients from most views"
         },
         "archive": {
           "type": "tinyint",
@@ -3366,7 +3391,8 @@
           "type": "tinyint",
           "default": 0,
           "title": "Archived",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "create_date": {
           "type": "datetime",
@@ -3377,7 +3403,8 @@
         "archive_date": {
           "type": "datetime",
           "title": "Archived Date",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         }
       }
     },

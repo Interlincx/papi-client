@@ -3,7 +3,7 @@
     "type": "page",
     "get": "get_page_url"
     },
-"invoice_lineitem": { 
+"bill_lineitem": { 
     "type": "invoice",
     "get": "get_lineitem"
     },
@@ -15,12 +15,12 @@
     "type": "invoice",
     "get": "get_no_pay"
     },
-"invoice": { 
+"bill": { 
     "type": "invoice",
     "get": "get_invoice",
     "save": "save_invoice"
     },
-"invoices": { 
+"payables": { 
     "type": "invoice",
     "get": "get_invoices",
     "save": "update_invoices"
