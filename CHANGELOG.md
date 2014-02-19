@@ -1,4 +1,8 @@
 
+1.0.16 / 2014-02-17
+===================
+  - invoice endpoints changed
+
 1.0.15 / 2014-02-12
 ===================
   - fixed post json again
