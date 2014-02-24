@@ -33,6 +33,10 @@
     "type": "invoice",
     "get": "build_account_revenue"
     },
+"build_payment_groups": { 
+    "type": "invoice",
+    "get": "build_payment_groups"
+    },
 "adpage_pieces": { 
     "type": "decision_tree",
     "get": "get_adpage_pieces"

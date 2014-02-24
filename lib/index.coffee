@@ -81,11 +81,15 @@ PapiClient::checkForError = (err, result, cb) ->
   if typeof body == 'undefined'
     err = @buildError( 'Uncaught Papi Error' )
   else
-    body = JSON.parse(body)
-    if body.success is false
-      err = @buildError( body.message )
-    else if body.result is 'error'
-      err = @buildError( body.message_collective )
+    try
+      body = JSON.parse(body)
+      if body.success is false
+        err = @buildError( body.message )
+      else if body.result is 'error'
+        err = @buildError( body.message_collective )
+    catch error
+      err = @buildError( body )
+
   cb( err, body )
 
 PapiClient::save = (what, opts, cb) ->
