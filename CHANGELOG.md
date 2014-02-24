@@ -1,4 +1,9 @@
 
+1.0.17 / 2014-02-24
+===================
+  - invoice endpoints added
+
+
 1.0.16 / 2014-02-17
 ===================
   - invoice endpoints changed
