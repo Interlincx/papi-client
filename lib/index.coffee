@@ -124,5 +124,29 @@ PapiClient::getCreativeTypes = (index, index_value) ->
       result.push item
   return result
 
+PapiClient::getTableColumns = (table_name, additional) ->
+  columns = []
+  for hand, att of @schemas.tables[table_name].fields
+    if typeof att.client_visible == 'undefined' or att.client_visible
+      c =
+        property: hand
+        title: att.title
+      columns.push c
+
+      for add in additional
+        if add.property is hand
+          for p, v of add
+            c[p] = v
+
+  for add in additional
+    found = false
+    for hand, att of @schemas.tables[table_name].fields
+      if add.property is hand
+        found = true
+    if !found
+      columns.push add
+  return columns
+
+
 
 PapiClient::listModal = require './modal.coffee'

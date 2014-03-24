@@ -1,4 +1,9 @@
 
+1.0.18 / 2014-03-24
+===================
+  - added getTableColumns function
+
+
 1.0.17 / 2014-02-24
 ===================
   - invoice endpoints added
