@@ -1,4 +1,9 @@
 
+
+1.0.19 / 2014-04-03
+===================
+  - fixed endpoint addresses
+
 1.0.18 / 2014-03-24
 ===================
   - added getTableColumns function
@@ -6,12 +11,12 @@
 
 1.0.17 / 2014-02-24
 ===================
-  - invoice endpoints added
+  - bill endpoints added
 
 
 1.0.16 / 2014-02-17
 ===================
-  - invoice endpoints changed
+  - bill endpoints changed
 
 1.0.15 / 2014-02-12
 ===================

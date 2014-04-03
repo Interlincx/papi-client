@@ -62,7 +62,6 @@ PapiClient::get = (what, opts, cb) ->
   pieces = {type:endpoint.type, module:endpoint.get}
 
   url = @getUrl( pieces )
-  console.log url
   pj url, opts, (err, result) ->
     _this.checkForError( err, result, cb )
     #body = JSON.parse(result.body)
@@ -70,6 +69,8 @@ PapiClient::get = (what, opts, cb) ->
 
   return url
 
+PapiClient::getField = (table, field) ->
+  return @schemas.tables[table].fields[field]
 
 
 PapiClient::checkForError = (err, result, cb) ->
@@ -124,19 +125,35 @@ PapiClient::getCreativeTypes = (index, index_value) ->
       result.push item
   return result
 
+PapiClient::getTableColumn = (table_name, field) ->
+  att = @getField( table_name, field )
+  c =
+    property: field
+    title: att.title
+
+  if att.options?
+    c.options = att.options
+    c.template = (val, row) ->
+      if this.options?[val]?
+        return this.options[val]
+      else
+        return ''
+
+  return c
+
 PapiClient::getTableColumns = (table_name, additional) ->
   columns = []
   for hand, att of @schemas.tables[table_name].fields
     if typeof att.client_visible == 'undefined' or att.client_visible
-      c =
-        property: hand
-        title: att.title
-      columns.push c
+      c = @getTableColumn table_name, hand
 
       for add in additional
         if add.property is hand
           for p, v of add
             c[p] = v
+
+      columns.push c
+
 
   for add in additional
     found = false

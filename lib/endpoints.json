@@ -3,39 +3,40 @@
     "type": "page",
     "get": "get_page_url"
     },
-"bill_lineitem": { 
-    "type": "invoice",
+"bill": { 
+    "type": "bill",
+    "save": "save_bill",
     "get": "get_lineitem"
     },
 "external_revenue": { 
-    "type": "invoice",
+    "type": "bill",
     "get": "get_external_items"
     },
 "no_pay": { 
-    "type": "invoice",
+    "type": "bill",
     "get": "get_no_pay"
     },
-"bill": { 
-    "type": "invoice",
-    "get": "get_invoice",
-    "save": "save_invoice"
+"bill_group": { 
+    "type": "bill",
+    "get": "get_bill_group",
+    "save": "save_bill_group"
     },
 "payables": { 
-    "type": "invoice",
-    "get": "get_invoices",
-    "save": "update_invoices"
+    "type": "bill",
+    "get": "get_bill_groups",
+    "save": "update_bills"
     },
 "account_last_paid": { 
-    "type": "invoice",
+    "type": "bill",
     "get": "get_last_paid"
     },
 "build_account_revenue": { 
-    "type": "invoice",
+    "type": "bill",
     "get": "build_account_revenue"
     },
-"build_payment_groups": { 
-    "type": "invoice",
-    "get": "build_payment_groups"
+"build_bill_groups": { 
+    "type": "bill",
+    "get": "build_bill_groups"
     },
 "adpage_pieces": { 
     "type": "decision_tree",
