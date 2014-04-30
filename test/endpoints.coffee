@@ -97,11 +97,16 @@ receiveResult = (t, item, params, result) ->
     console.log "\n\nOMG\n\n"
     t.fail("\nRequest for endpoint returned undefined")
   else if typeof result.result != 'undefined' and result.result == 'error'
-    console.log "\n\nOMG\n\n"
     fail_msg = ''
+    is_ok = false
     for msg in result.message_collective
+    	if msg.indexOf "Missing module parameter" > -1
+        t.ok(result, "\nEndpoint requires a parameter. Skipping this endpoint.")
+        is_ok = true
+        break
       console.log msg
-    t.fail("\ncaught api error")
+    unless is_ok
+      t.fail("\ncaught api error")
   else
     obj_item = "Unknown result type\n"
     if result instanceof Array
