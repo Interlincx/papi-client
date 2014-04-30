@@ -1593,8 +1593,7 @@
           "key": "unique"
         },
         "account_id": {
-          "type": "varchar",
-          "length": "8",
+          "type": "int",
           "title": "Account ID",
           "key": "column"
         },
@@ -2430,8 +2429,7 @@
           "title": "Creative Instance Name"
         },
         "account_id": {
-          "type": "varchar",
-          "length": "8",
+          "type": "int",
           "title": "Account ID"
         }
       },
@@ -2466,8 +2464,7 @@
           "key": "column"
         },
         "account_id": {
-          "type": "varchar",
-          "length": 8,
+          "type": "int",
           "title": "Account ID"
         },
         "type": {
@@ -3015,15 +3012,9 @@
           "client_editable": false
         },
         "account_id": {
-          "type": "varchar",
-          "length": 8,
+          "type": "int",
           "title": "Account ID",
           "key": "column"
-        },
-        "legacy_account_id": {
-          "type": "int",
-          "title": "Legacy Account ID",
-          "client_editable": false
         },
         "revenue": {
           "type": "double",
@@ -3267,31 +3258,24 @@
           "client_visible": false
         },
         "account_id": {
-          "type": "varchar",
-          "length": "8",
+          "type": "int",
           "title": "Account ID",
           "key": "column",
-          "data_type": "minid",
-          "minid_precursor": "C",
-          "client_editable": false
-        },
-        "permissions_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Permissions ID",
-          "client_editable": false,
-          "client_visible": false
-        },
-        "legacy_id": {
-          "type": "int",
-          "title": "Legacy ID",
+          "data_type": "numid",
           "client_editable": false
         },
         "legacy_long_id": {
           "type": "varchar",
           "length": "43",
           "title": "Legacy Long ID",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "permissions_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Permissions ID",
           "client_editable": false,
           "client_visible": false
         },
@@ -3303,6 +3287,16 @@
           "options": {
             "0": "Inactive",
             "1": "Active"
+          }
+        },
+        "internal_account": {
+          "type": "boolean",
+          "default": 0,
+          "title": "Internal Account",
+          "description": "Exclude from billing",
+          "options": {
+            "0": "Client",
+            "1": "Internal"
           }
         },
         "company_name": {
@@ -3320,6 +3314,11 @@
           "length": "64",
           "title": "Company Alias 2"
         },
+        "company_name_accounting": {
+          "type": "varchar",
+          "length": "64",
+          "title": "Accounting Company Name"
+        },
         "payment_frequency": {
           "type": "varchar",
           "length": "24",
@@ -3330,11 +3329,34 @@
             "monthly": "Monthly"
           }
         },
+        "payment_frequency_current": {
+          "type": "varchar",
+          "length": "24",
+          "title": "Payment Frequency - Current Cycle",
+          "client_editable": false,
+          "options": {
+            "7": "Weekly",
+            "14": "Bi-Weekly",
+            "monthly": "Monthly"
+          }
+        },
         "net_terms": {
-          "type": "char",
+          "type": "varchar",
           "length": "2",
           "title": "Net Terms",
           "default": "30",
+          "options": {
+            "15": "Net 15",
+            "30": "Net 30",
+            "45": "Net 45",
+            "07": "Net 07"
+          }
+        },
+        "net_terms_current": {
+          "type": "varchar",
+          "length": "2",
+          "title": "Net Terms - Current Cycle",
+          "client_editable": false,
           "options": {
             "15": "Net 15",
             "30": "Net 30",
@@ -3347,13 +3369,24 @@
           "title": "Payment Start Date"
         },
         "payment_threshold": {
-          "type": "int",
+          "type": "double",
           "title": "Payment Threshold"
         },
         "payment_method": {
           "type": "varchar",
           "length": 5,
           "title": "Payment Method",
+          "options": {
+            "Check": "Check",
+            "Wire": "Wire",
+            "ACH": "ACH"
+          }
+        },
+        "payment_method_current": {
+          "type": "varchar",
+          "length": 5,
+          "title": "Payment Method - Current Cycle",
+          "client_editable": false,
           "options": {
             "Check": "Check",
             "Wire": "Wire",
@@ -3502,8 +3535,7 @@
           "client_editable": false
         },
         "account_id": {
-          "type": "char",
-          "length": "8",
+          "type": "int",
           "data_type": "uuid",
           "client_editable": false
         },
@@ -3600,8 +3632,7 @@
           "key": "column"
         },
         "account_id": {
-          "type": "varchar",
-          "length": 8,
+          "type": "int",
           "title": "Advertiser Account Id"
         },
         "active": {
