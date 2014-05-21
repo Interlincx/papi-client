@@ -12,7 +12,9 @@
     "type": "git",
     "url": "git@git.lincx.me:modules/papi-client.git"
   },
-  "author": "Tyler Bushnell",
+  "author": {
+    "name": "Tyler Bushnell"
+  },
   "license": "BSD",
   "readmeFilename": "README.md",
   "gitHead": "45e87b0c356a6ee9823b1a95debf1bc28c630d0a",
@@ -33,5 +35,12 @@
   "browser": "./index.coffee",
   "browserify": {
     "transform": "coffeeify"
-  }
+  },
+  "readme": "# PapiClient\n\na module to interact with the papi api to access accounts & adpage pieces\n",
+  "_id": "papi-client@1.0.20",
+  "dist": {
+    "shasum": "c76aa20495e2a7768e20514f606fd75623ec755e"
+  },
+  "_resolved": "git+ssh://git@git.lincx.me/:modules/papi-client.git#87ec1ecc67d11ffe01f6b7c90aecdebec264e7c5",
+  "_from": "papi-client@git+ssh://git@git.lincx.me:modules/papi-client.git#v1.0.20"
 }
