@@ -1,0 +1,46 @@
+{
+  "name": "papi-client",
+  "version": "1.0.20",
+  "description": "papi-client interfaces with papi api to make life easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/coffee test/endpoints.coffee",
+    "example": "node_modules/.bin/beefy example/index.coffee",
+    "gs": "node_modules/.bin/coffee script/retrieve-schemas.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.lincx.me:modules/papi-client.git"
+  },
+  "author": {
+    "name": "Tyler Bushnell"
+  },
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "45e87b0c356a6ee9823b1a95debf1bc28c630d0a",
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "tape": "~2.1.0",
+    "beefy": "~0.4.5",
+    "browserify": "~2.35.1",
+    "coffeeify": "~0.5.2",
+    "async": "~0.2.9"
+  },
+  "dependencies": {
+    "get-json-hq": "~0.1.5",
+    "rainbow-load": "0.0.5",
+    "post-json": "~0.2.3",
+    "hyperquest": "~0.2.0"
+  },
+  "browser": "./index.coffee",
+  "browserify": {
+    "transform": "coffeeify"
+  },
+  "readme": "# PapiClient\n\na module to interact with the papi api to access accounts & adpage pieces\n",
+  "_id": "papi-client@1.0.20",
+  "dist": {
+    "shasum": "c76aa20495e2a7768e20514f606fd75623ec755e"
+  },
+  "_resolved": "git+ssh://git@git.lincx.me/:modules/papi-client.git#87ec1ecc67d11ffe01f6b7c90aecdebec264e7c5",
+  "_from": "papi-client@git+ssh://git@git.lincx.me:modules/papi-client.git#v1.0.20"
+}
