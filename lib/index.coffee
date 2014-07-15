@@ -6,7 +6,7 @@ endpoints = require './endpoints.json'
 
 module.exports = PapiClient = (opts={}) ->
 
-  @baseUrl = opts.baseUrl or 'http://tyler.thankyoupath.com/papi/'
+  @baseUrl = opts.baseUrl or 'http://development.papi.lincx.co/'
   @schemas = schemas
   @endpoints = endpoints
   return this
@@ -58,6 +58,9 @@ PapiClient::get = (what, opts, cb) ->
 
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.get}
+
+  console.log 'Endpoint:',endpoint
+  console.log 'params:',opts
 
   url = @getUrl( pieces )
   pj url, opts, (err, result) ->
