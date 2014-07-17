@@ -38,18 +38,18 @@ PapiClient::archives = (what, opts, cb) ->
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.archives}
 
-  url = @getUrl( pieces, opts )
+  url = @getUrl( pieces )
   _this = this
-  gj url, (err, result) ->
+  pj url, opts, (err, result) ->
     _this.checkForError( err, result, cb )
 
 PapiClient::delete = (what, opts, cb) ->
   endpoint = @endpoints[what]
   pieces = {type:endpoint.type, module:endpoint.delete}
 
-  url = @getUrl( pieces, opts )
+  url = @getUrl( pieces )
   _this = this
-  gj url, (err, result) ->
+  pj url, opts, (err, result) ->
     _this.checkForError( err, result, cb )
 
 PapiClient::get = (what, opts, cb) ->

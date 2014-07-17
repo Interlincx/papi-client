@@ -26,9 +26,9 @@
     "get": "get_bill_groups",
     "save": "update_bills"
     },
-"account_last_paid": { 
+"last_end_date": { 
     "type": "bill",
-    "get": "get_last_paid"
+    "get": "get_last_end_date"
     },
 "build_account_revenue": { 
     "type": "bill",
