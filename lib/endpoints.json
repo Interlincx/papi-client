@@ -1,4 +1,8 @@
 {
+    "user_accounts": {
+        "type": "user",
+        "get": "get_user_accounts"
+    },
     "page_url": {
         "type": "page",
         "get": "get_page_url"
