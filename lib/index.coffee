@@ -1,4 +1,4 @@
-gj = require 'get-json-hq'
+gj = require './get-json.coffee'
 pj = require './post-json.coffee' #this is a custom post-json that adds in teh port handling
 schemas = require './schemas.json'
 endpoints = require './endpoints.json'
@@ -62,8 +62,8 @@ PapiClient::get = (what, opts, cb) ->
   console.log 'Endpoint:',endpoint
   console.log 'params:',opts
 
-  url = @getUrl( pieces )
-  pj url, opts, (err, result) ->
+  url = @getUrl( pieces, opts )
+  gj url, opts, (err, result) ->
     _this.checkForError( err, result, cb )
     #body = JSON.parse(result.body)
     #_this.checkForError( err, body, cb )
