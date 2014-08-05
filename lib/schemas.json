@@ -1748,7 +1748,7 @@
           "client_editable": false
         },
         "internal_account": {
-          "type": "tinyint",
+          "type": "boolean",
           "title": "Internal Account",
           "default": 0
         },
@@ -1783,9 +1783,9 @@
           "length": 24,
           "title": "Payment Frequency - Pending",
           "options": {
-            "7": "Weekly",
-            "14": "Bi-Weekly",
-            "monthly": "Monthly"
+            "Monthly": "Monthly",
+            "BiWeekly": "BiWeekly",
+            "Weekly": "Weekly"
           }
         },
         "payment_frequency": {
@@ -1794,9 +1794,9 @@
           "title": "Payment Frequency",
           "client_editable": false,
           "options": {
-            "7": "Weekly",
-            "14": "Bi-Weekly",
-            "monthly": "Monthly"
+            "Monthly": "Monthly",
+            "BiWeekly": "BiWeekly",
+            "Weekly": "Weekly"
           }
         },
         "net_terms_pending": {
@@ -1804,10 +1804,10 @@
           "length": 2,
           "title": "Net Terms - Pending",
           "options": {
+            "7": "Net 7",
             "15": "Net 15",
             "30": "Net 30",
-            "45": "Net 45",
-            "07": "Net 07"
+            "45": "Net 45"
           }
         },
         "net_terms": {
@@ -1816,10 +1816,10 @@
           "title": "Net Terms",
           "client_editable": false,
           "options": {
+            "7": "Net 7",
             "15": "Net 15",
             "30": "Net 30",
-            "45": "Net 45",
-            "07": "Net 07"
+            "45": "Net 45"
           }
         },
         "payment_start_date": {
@@ -1869,10 +1869,6 @@
           "length": 1,
           "title": "No Pay",
           "default": 0
-        },
-        "payment_notes": {
-          "type": "text",
-          "title": "Payment Notes"
         },
         "phone": {
           "type": "varchar",
@@ -1958,6 +1954,10 @@
           "type": "text",
           "title": "Bank Address"
         },
+        "payment_notes": {
+          "type": "text",
+          "title": "Payment Notes"
+        },
         "notes": {
           "type": "text",
           "title": "Notes"
@@ -2000,13 +2000,23 @@
         "account_id": {
           "type": "char",
           "length": 8,
-          "data_type": "uuid",
           "client_editable": false
         },
         "label": {
           "type": "varchar",
           "length": 255,
           "title": "Label"
+        },
+        "type": {
+          "type": "varchar",
+          "length": 16,
+          "title": "Type",
+          "default": "primary",
+          "client_editable": false,
+          "options": {
+            "primary": "Primary",
+            "secondary": "Secondary"
+          }
         },
         "address_1": {
           "type": "varchar",
@@ -3722,19 +3732,27 @@
       }
     },
     "user": {
+      "identity_key": "user_id",
       "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary",
+          "client_editable": false
+        },
         "user_id": {
           "type": "varchar",
           "length": 8,
           "title": "User ID",
-          "key": "primary",
+          "key": "column",
           "client_editable": false
         },
         "email": {
           "type": "varchar",
           "length": 128,
           "title": "Email",
-          "key": "unique"
+          "key": "column"
         },
         "password": {
           "type": "char",
@@ -3759,10 +3777,21 @@
           "title": "Last Login",
           "client_editable": false
         },
-        "created": {
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived",
+          "client_editable": false
+        },
+        "create_date": {
           "type": "datetime",
-          "extra": "now()",
-          "title": "Created",
+          "default": "_NOW_",
+          "title": "Created Date",
+          "client_editable": false
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date",
           "client_editable": false
         },
         "title": {
