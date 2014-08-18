@@ -73,7 +73,7 @@
         }
       },
       "css": "\n*{\n  font-size: 13px;\n}\n\nbody{\n}\n\n.ad_image {\n  background-repeat: no-repeat;\n}\n\n.buttonswrapper {\n  float:left;\n  display: -webkit-box;\n  -webkit-box-orient: horizontal;\n  -webkit-box-pack: center;\n  -webkit-box-align: center;\n  height: 100px;\n  margin-right: 12px;\n}\n\n.color_title {\n  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif, \"Trebuchet MS\";\n  font-size: 115%;\n  color: |color_title|;\n  text-decoration: underline;\n  line-height: 35px;\n  font-weight: bold;\n}\n\n\n.color_description {\n  display: block;\n  width: 350px;\n  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif, \"Trebuchet MS\";\n  font-size: 95%;\n  font-weight: normal;\n  color: |color_description|;\n  text-decoration: none;\n  float:  left;\n  line-height: 20px;\n  padding: 0px 0px 0px 0px;\n}\n\n\n.color_domain {\n  padding: 5px 0px 0px 0px;\n  font-family: Verdana, Arial, Helvetica, sans-serif, \"Trebuchet MS\";\n  font-size: 11px;\n  color: |color_domain|;\n  font-weight: bold;\n  float:  left;\n  width: 450px;\n  line-height: 21px;\n}\n\ndiv.ad_box div.right_side {\n\tfloat: left;\n\twidth: 350px;\n}\n\n.color_domain {\n  color: |color_domain|;\n  text-decoration: none;\n}\n\n.ad_box {\n  margin-bottom: 12px;\n\twidth: 600px;\n\tfloat: left;\n}\n\n",
-      "template": "<div class=\"ad_box\">\n  <div class=\"buttonswrapper\">\n    <div class=\"buttons buttons|counter|\"></div>\n  </div>\n  <div class=\"right_side\">\n    <div><a href=\"|click_url|\" class=\"color_title\" |settings__open_new|>|title|</a></div>\n    <div><a href=\"|click_url|\" class=\"color_description\" |settings__open_new|>|description|</a></div>\n    <div><a href=\"|click_url|\" class=\"color_domain\" |settings__open_new|>|display_url|</a></div>\n  </div>\n</div>  \n"
+      "template": "<div class=\"ad_box\">\n  <div class=\"buttonswrapper\">\n    <div class=\"buttons buttons\"></div>\n  </div>\n  <div class=\"right_side\">\n    <div><a href=\"#\" class=\"color_title\" >Example Headline</a></div>\n    <div><a href=\"#\" class=\"color_description\" >Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqum</a></div>\n    <div><a href=\"#\" class=\"color_domain\" >www.example.com</a></div>\n  </div>\n</div>  \n"
     },
     "mobile_textad": {
       "title": "Mobile Text Ads",
@@ -116,7 +116,7 @@
         }
       },
       "css": "\n\n*{\n  font-size: 13px;\n}\n\n\nbody{\n        background: filter:alpha(opacity=0);\n        margin: 0;\n        padding: 0;\n}\n.ad_box{\n        margin: 10px 0;\n}\n.color_description {\n        display: block;\n        width: 300px;\n        font-family: Arial, Helvetica, sans-serif, \"Trebuchet MS\";\n        font-size: 75%;\n        font-weight: normal;\n        color: |color_description|;\n        text-decoration: none;\n}\n.color_title {\n        font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n        font-size: 107%;\n        color: |color_title|;\n        font-weight: bold;\n        text-decoration: underline;\n}\n.color_domain {\n        font-family: Verdana, Arial, Helvetica, sans-serif, \"Trebuchet MS\";\n        font-size: 9px;\n        color: |color_domain|;\n}\n",
-      "template": "<div class=\"ad_box\">\n  <div class=\"right_side\">\n    <div><a href=\"|click_url|\" class=\"color_title\" |settings__open_new|>|title|</a></div>\n    <div><a href=\"|click_url|\" class=\"color_description\" |settings__open_new|>|description|</a></div>\n    <div><a href=\"|click_url|\" class=\"color_domain\" |settings__open_new|>|display_url|</a></div>\n  </div>\n</div>  \n"
+      "template": "<div class=\"ad_box\">\n  <div class=\"right_side\">\n    <div><a href=\"#\" class=\"color_title\" >Example Headline</a></div>\n    <div><a href=\"#\" class=\"color_description\" >Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqum</a></div>\n    <div><a href=\"#\" class=\"color_domain\" >www.example.com</a></div>\n  </div>\n</div>  \n"
     }
   },
   "ad_templates": {
@@ -153,15 +153,70 @@
     }
   },
   "creative_templates": {
-    "classic_adpage": {
-      "title": "Basic AdPage",
-      "file_name": "modules/creative/_templates/classic_adpage/index.html",
-      "sample_values": {
-        "background_fullpage__width": 1080,
-        "background_fullpage__height": 960,
-        "standard_adbox__top": 259,
-        "standard_adbox__left": 28
+    "twoclick": {
+      "title": "2 Click Page",
+      "file_name": "modules/creative/_templates/twoclick/index.html",
+      "settings": {
+        "ad_link": {
+          "title": "Ad",
+          "setting_type": "ad",
+          "piece_category": "adpage_selection",
+          "default": ""
+        },
+        "timed_redirect": {
+          "input": {
+            "type": "text"
+          },
+          "title": "Timed Redirect",
+          "type": "int",
+          "piece_category": "text",
+          "default": 0
+        }
       },
+      "pieces": {
+        "twoclick": {
+          "shared": true,
+          "default": "",
+          "count": 1,
+          "resize_element": 1,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 400
+            },
+            "height": {
+              "type": "int",
+              "default": 300
+            }
+          },
+          "title": "2Click Ad Image",
+          "piece_category": "image_groups",
+          "handle": "twoclick"
+        },
+        "background_color": {
+          "title": "Background Color",
+          "piece_category": "color_option",
+          "color_type": "background",
+          "default": "#FFFFFF"
+        },
+        "short_message": {
+          "input": {
+            "type": "textarea",
+            "attributes": {
+              "rows": 10,
+              "cols": 30
+            }
+          },
+          "title": "Short Message",
+          "piece_category": "text",
+          "draggable": true,
+          "default": ""
+        }
+      }
+    },
+    "mobile_adpage": {
+      "title": "Mobile Adpage",
+      "file_name": "modules/creative/_templates/mobile_adpage/index.html",
       "settings": {
         "main_feed": {
           "shared": false,
@@ -174,7 +229,7 @@
         }
       },
       "pieces": {
-        "background_fullpage": {
+        "background_mobile": {
           "shared": true,
           "default": "",
           "count": 1,
@@ -189,35 +244,20 @@
               "default": 50
             }
           },
-          "title": "Background",
+          "title": "Mobile Background",
           "piece_category": "image_groups",
-          "thumb_size": 0.2,
-          "handle": "background_fullpage"
-        },
-        "buttons": {
-          "shared": true,
-          "default": "",
-          "count": 10,
-          "resize_element": 1,
-          "attributes": {
-            "width": {
-              "type": "int",
-              "default": 50
-            },
-            "height": {
-              "type": "int",
-              "default": 50
-            }
-          },
-          "title": "Buttons",
-          "piece_category": "image_groups",
-          "thumb_size": 0.5,
-          "handle": "buttons"
+          "handle": "background_mobile"
         },
         "standard_adbox": {
           "shared": false,
           "sub_template": true,
-          "default": "classic_textad",
+          "default": [
+            {
+              "value": "mobile_textad",
+              "top": 100,
+              "left": 20
+            }
+          ],
           "count": 1,
           "draggable": true,
           "attributes": {
@@ -239,10 +279,23 @@
           "count": 1,
           "type": "tinyint",
           "title": "Ad Count",
-          "piece_category": "text",
+          "piece_category": "custom",
           "target_piece": "standard_adbox",
           "default": 5,
-          "handle": "ad_count"
+          "handle": "ad_count",
+          "input": {
+            "type": "text"
+          }
+        },
+        "background_color": {
+          "title": "Background Color",
+          "piece_category": "color_option",
+          "color_type": "background",
+          "default": [
+            {
+              "value": "#FFFFFF"
+            }
+          ]
         },
         "color_title": {
           "shared": false,
@@ -270,80 +323,6 @@
           "color_type": "text",
           "default": "#09C509",
           "handle": "color_domain"
-        }
-      }
-    },
-    "twoclick": {
-      "title": "2 Click Page",
-      "file_name": "modules/creative/_templates/twoclick/index.html",
-      "settings": {
-        "ad_link": {
-          "shared": false,
-          "count": 1,
-          "title": "Ad",
-          "setting_type": "ad",
-          "piece_category": "adpage_selection",
-          "default": "",
-          "handle": "ad_link"
-        },
-        "timed_redirect": {
-          "shared": false,
-          "count": 1,
-          "type": "int",
-          "input": {
-            "type": "text"
-          },
-          "title": "Timed Redirect",
-          "piece_category": "text",
-          "default": 0,
-          "handle": "timed_redirect"
-        }
-      },
-      "pieces": {
-        "twoclick": {
-          "shared": true,
-          "default": "",
-          "count": 1,
-          "resize_element": 1,
-          "attributes": {
-            "width": {
-              "type": "int",
-              "default": 400
-            },
-            "height": {
-              "type": "int",
-              "default": 300
-            }
-          },
-          "title": "2Click Ad Image",
-          "piece_category": "image_groups",
-          "handle": "twoclick"
-        },
-        "background_color": {
-          "shared": false,
-          "count": 1,
-          "title": "Background Color",
-          "piece_category": "color_option",
-          "color_type": "background",
-          "default": "#FFFFFF",
-          "handle": "background_color"
-        },
-        "short_message": {
-          "shared": false,
-          "count": 1,
-          "type": "text",
-          "input": {
-            "type": "textarea",
-            "attributes": {
-              "rows": 10,
-              "cols": 30
-            }
-          },
-          "title": "Short Message",
-          "piece_category": "text",
-          "draggable": true,
-          "default": "",
-          "handle": "short_message"
         }
       }
     },
@@ -466,17 +445,14 @@
           "handle": "color_domain"
         },
         "seal_location": {
-          "shared": false,
           "count": 1,
           "title": "SEal LOC",
           "target_class": "siteLoc",
           "piece_category": "custom",
           "default": "",
-          "draggable": true,
-          "handle": "seal_location"
+          "draggable": true
         },
         "site_seal": {
-          "shared": true,
           "default": [
             {
               "value": "",
@@ -498,14 +474,19 @@
           },
           "title": "Site SEal",
           "target_class": "siteSeal",
-          "piece_category": "image_groups",
-          "handle": "site_seal"
+          "piece_category": "image_groups"
         }
       }
     },
-    "mobile_adpage": {
-      "title": "Mobile Adpage",
-      "file_name": "modules/creative/_templates/mobile_adpage/index.html",
+    "classic_adpage": {
+      "title": "Basic AdPage",
+      "file_name": "modules/creative/_templates/classic_adpage/index.html",
+      "sample_values": {
+        "background_fullpage__width": 1080,
+        "background_fullpage__height": 960,
+        "standard_adbox__top": 259,
+        "standard_adbox__left": 28
+      },
       "settings": {
         "main_feed": {
           "shared": false,
@@ -518,7 +499,7 @@
         }
       },
       "pieces": {
-        "background_mobile": {
+        "background_fullpage": {
           "shared": true,
           "default": "",
           "count": 1,
@@ -533,20 +514,35 @@
               "default": 50
             }
           },
-          "title": "Mobile Background",
+          "title": "Background",
           "piece_category": "image_groups",
-          "handle": "background_mobile"
+          "thumb_size": 0.2,
+          "handle": "background_fullpage"
+        },
+        "buttons": {
+          "shared": true,
+          "default": "",
+          "count": 10,
+          "resize_element": 1,
+          "attributes": {
+            "width": {
+              "type": "int",
+              "default": 50
+            },
+            "height": {
+              "type": "int",
+              "default": 50
+            }
+          },
+          "title": "Buttons",
+          "piece_category": "image_groups",
+          "thumb_size": 0.5,
+          "handle": "buttons"
         },
         "standard_adbox": {
           "shared": false,
           "sub_template": true,
-          "default": [
-            {
-              "value": "mobile_textad",
-              "top": 100,
-              "left": 20
-            }
-          ],
+          "default": "classic_textad",
           "count": 1,
           "draggable": true,
           "attributes": {
@@ -568,26 +564,10 @@
           "count": 1,
           "type": "tinyint",
           "title": "Ad Count",
-          "piece_category": "custom",
+          "piece_category": "text",
           "target_piece": "standard_adbox",
           "default": 5,
-          "handle": "ad_count",
-          "input": {
-            "type": "text"
-          }
-        },
-        "background_color": {
-          "shared": false,
-          "count": 1,
-          "title": "Background Color",
-          "piece_category": "color_option",
-          "color_type": "background",
-          "default": [
-            {
-              "value": "#FFFFFF"
-            }
-          ],
-          "handle": "background_color"
+          "handle": "ad_count"
         },
         "color_title": {
           "shared": false,
@@ -710,13 +690,7 @@
     "standard_adbox": {
       "shared": false,
       "sub_template": true,
-      "default": [
-        {
-          "value": "mobile_textad",
-          "top": 100,
-          "left": 20
-        }
-      ],
+      "default": "classic_textad",
       "count": 1,
       "draggable": true,
       "attributes": {
@@ -738,13 +712,10 @@
       "count": 1,
       "type": "tinyint",
       "title": "Ad Count",
-      "piece_category": "custom",
+      "piece_category": "text",
       "target_piece": "standard_adbox",
       "default": 5,
-      "handle": "ad_count",
-      "input": {
-        "type": "text"
-      }
+      "handle": "ad_count"
     },
     "color_title": {
       "shared": false,
@@ -772,93 +743,6 @@
       "color_type": "text",
       "default": "#09C509",
       "handle": "color_domain"
-    },
-    "ad_link": {
-      "shared": false,
-      "count": 1,
-      "title": "Ad",
-      "setting_type": "ad",
-      "piece_category": "adpage_selection",
-      "default": "",
-      "handle": "ad_link"
-    },
-    "timed_redirect": {
-      "shared": false,
-      "count": 1,
-      "type": "int",
-      "input": {
-        "type": "text"
-      },
-      "title": "Timed Redirect",
-      "piece_category": "text",
-      "default": 0,
-      "handle": "timed_redirect"
-    },
-    "background_color": {
-      "shared": false,
-      "count": 1,
-      "title": "Background Color",
-      "piece_category": "color_option",
-      "color_type": "background",
-      "default": [
-        {
-          "value": "#FFFFFF"
-        }
-      ],
-      "handle": "background_color"
-    },
-    "short_message": {
-      "shared": false,
-      "count": 1,
-      "type": "text",
-      "input": {
-        "type": "textarea",
-        "attributes": {
-          "rows": 10,
-          "cols": 30
-        }
-      },
-      "title": "Short Message",
-      "piece_category": "text",
-      "draggable": true,
-      "default": "",
-      "handle": "short_message"
-    },
-    "seal_location": {
-      "shared": false,
-      "count": 1,
-      "title": "SEal LOC",
-      "target_class": "siteLoc",
-      "piece_category": "custom",
-      "default": "",
-      "draggable": true,
-      "handle": "seal_location"
-    },
-    "site_seal": {
-      "shared": true,
-      "default": [
-        {
-          "value": "",
-          "width": 200,
-          "height": 200
-        }
-      ],
-      "count": 1,
-      "resize_element": 1,
-      "attributes": {
-        "width": {
-          "type": "int",
-          "default": 50
-        },
-        "height": {
-          "type": "int",
-          "default": 50
-        }
-      },
-      "title": "Site SEal",
-      "target_class": "siteSeal",
-      "piece_category": "image_groups",
-      "handle": "site_seal"
     }
   },
   "script_info": {
@@ -1570,7 +1454,364 @@
     }
   },
   "tables": {
-    "hive": {
+    "ad": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "client_editable": false,
+          "key": "primary"
+        },
+        "ad_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad ID",
+          "client_editable": false,
+          "key": "unique"
+        },
+        "ad_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "client_editable": false,
+          "key": "column"
+        },
+        "account_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Advertiser Account ID"
+        },
+        "active": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Active"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "client_editable": false,
+          "title": "Archived"
+        },
+        "cpc": {
+          "type": "float",
+          "length": "(5,2)",
+          "title": "CPC"
+        },
+        "cpi": {
+          "type": "float",
+          "length": "(5,4)",
+          "title": "CPI"
+        },
+        "weight": {
+          "type": "smallint",
+          "title": "Weight"
+        },
+        "start_time": {
+          "type": "datetime",
+          "title": "Start Date/Time",
+          "input": {
+            "type": "date",
+            "attributes": {
+              "minYear": 2012,
+              "maxYear": 2014
+            }
+          }
+        },
+        "end_time": {
+          "type": "datetime",
+          "title": "End Date/Time",
+          "input": {
+            "type": "date",
+            "attributes": {
+              "minYear": 2012,
+              "maxYear": 2014
+            }
+          }
+        },
+        "daily_start_time": {
+          "type": "time",
+          "title": "Daily Start Time"
+        },
+        "daily_end_time": {
+          "type": "time",
+          "title": "Daily End Time"
+        },
+        "cur_imp_count": {
+          "type": "int",
+          "default": 0,
+          "title": "Current Imp Count"
+        },
+        "max_imp_count": {
+          "type": "int",
+          "title": "Max Imp Count"
+        },
+        "cur_click_count": {
+          "type": "mediumint",
+          "default": 0,
+          "title": "Current Click Count"
+        },
+        "max_click_count": {
+          "type": "mediumint",
+          "title": "Max Click Count"
+        },
+        "allow_sunday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Sunday"
+        },
+        "allow_monday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Monday"
+        },
+        "allow_tuesday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Tuesday"
+        },
+        "allow_wednesday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Wednesday"
+        },
+        "allow_thursday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Thursday"
+        },
+        "allow_friday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Friday"
+        },
+        "allow_saturday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Saturday"
+        },
+        "ad_name": {
+          "type": "varchar",
+          "length": 128,
+          "title": "Ad Name"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "client_editable": false,
+          "title": "Created Date"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date",
+          "client_editable": false
+        },
+        "access_date": {
+          "type": "timestamp",
+          "title": "Access Date",
+          "client_editable": false
+        },
+        "tracker_url": {
+          "type": "text",
+          "title": "Tracker URL"
+        }
+      },
+      "joins": [
+        {
+          "table": "ad_creative",
+          "local_key": "ad_version_id",
+          "foreign_key": "ad_version_id"
+        }
+      ]
+    },
+    "ad_creative": {
+      "fields": {
+        "ad_creative_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "client_editable": false,
+          "key": "primary"
+        },
+        "ad_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad Version ID",
+          "client_editable": false,
+          "key": {
+            "table": "ad"
+          }
+        },
+        "ad_template_id": {
+          "type": "int",
+          "title": "Tag ID"
+        },
+        "content": {
+          "type": "text",
+          "data_type": "json",
+          "title": "Content",
+          "conversion": [
+            "json",
+            "base64"
+          ]
+        },
+        "content_merged": {
+          "type": "text",
+          "data_type": "json",
+          "title": "Merged Content",
+          "conversion": [
+            "json",
+            "base64"
+          ]
+        }
+      }
+    },
+    "ad_tag": {
+      "fields": {
+        "ad_tag_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "client_editable": false,
+          "key": "primary"
+        },
+        "ad_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad Version ID",
+          "key": {
+            "table": "ad"
+          }
+        },
+        "tag_id": {
+          "type": "int",
+          "title": "Tag ID",
+          "key": {
+            "table": "tag"
+          }
+        }
+      },
+      "joins": [
+        {
+          "table": "tag",
+          "local_key": "tag_id",
+          "foreign_key": "tag_id",
+          "module_parent": "tag",
+          "class": "Tag"
+        }
+      ]
+    },
+    "ad_feed": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "client_editable": false,
+          "key": "primary"
+        },
+        "ad_feed_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad Feed Version ID",
+          "client_editable": false,
+          "key": "unique"
+        },
+        "ad_feed_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "client_editable": false,
+          "key": "column"
+        },
+        "feed_title": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Title"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archive"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archive Date"
+        },
+        "ad_template_id": {
+          "type": "int",
+          "title": "Ad Template ID"
+        }
+      },
+      "joins": [
+        {
+          "table": "ad_feed_map",
+          "local_key": "ad_feed_version_id",
+          "foreign_key": "ad_feed_version_id"
+        }
+      ]
+    },
+    "ad_feed_map": {
+      "fields": {
+        "ad_feed_map_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "key": "primary"
+        },
+        "ad_feed_version_id": {
+          "type": "char",
+          "length": 36,
+          "key": {
+            "table": "ad_feed"
+          }
+        },
+        "ad_id": {
+          "type": "char",
+          "length": 36,
+          "title": "Ad ID",
+          "key": {
+            "table": "ad"
+          }
+        },
+        "position": {
+          "type": "tinyint",
+          "title": "Position"
+        }
+      },
+      "joins": [
+        {
+          "table": "ad",
+          "local_key": "ad_id",
+          "foreign_key": "ad_id"
+        }
+      ]
+    },
+    "ad_feed_tag": {
+      "fields": {
+        "ad_feed_tag_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "client_editable": false,
+          "key": "primary"
+        },
+        "ad_feed_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad Feed Version ID",
+          "key": {
+            "table": "ad_feed"
+          }
+        },
+        "tag_id": {
+          "type": "int",
+          "title": "Tag ID"
+        }
+      }
+    },
+    "swarm": {
       "fields": {
         "id": {
           "type": "int",
@@ -1578,39 +1819,52 @@
           "title": "Table ID",
           "key": "primary"
         },
-        "hive_version_id": {
+        "swarm_version_id": {
           "type": "char",
           "length": 36,
           "data_type": "uuid",
-          "title": "Hive Version ID",
+          "title": "Swarm Version ID",
           "key": "unique"
         },
-        "hive_id": {
+        "swarm_id": {
           "type": "char",
-          "length": 36,
-          "data_type": "uuid"
-        },
-        "gateway_id": {
-          "type": "varchar",
           "length": 8,
-          "title": "Gateway ID",
+          "title": "Swarm ID",
           "key": "column"
         },
-        "legacy_setting_id": {
-          "type": "int"
+        "creative_instance_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Instance ID"
+        },
+        "decision_tree_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Decision Tree ID"
+        },
+        "ad_feed_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Static Feed ID"
+        },
+        "ad_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Forward Ad ID"
+        },
+        "legacy_sid": {
+          "type": "char",
+          "length": 43,
+          "title": "Legacy Site ID"
         },
         "archive": {
           "type": "tinyint",
           "default": 0,
           "title": "Archived"
-        },
-        "script_type": {
-          "type": "varchar",
-          "length": 32
-        },
-        "script_version": {
-          "type": "varchar",
-          "length": 32
         },
         "create_date": {
           "type": "datetime",
@@ -1624,78 +1878,60 @@
       },
       "joins": [
         {
-          "table": "hive_product",
-          "local_key": "hive_version_id",
-          "foreign_key": "hive_version_id"
+          "table": "creative_instance",
+          "local_key": "creative_instance_id",
+          "foreign_key": "creative_instance_id",
+          "module_parent": "creative",
+          "class": "Creative"
         },
         {
-          "table": "hive_setting",
-          "local_key": "hive_version_id",
-          "foreign_key": "hive_type_id"
+          "table": "decision_tree",
+          "local_key": "decision_tree_id",
+          "foreign_key": "decision_tree_id",
+          "module_parent": "decision_tree",
+          "class": "Decisiontree"
+        },
+        {
+          "table": "ad_feed",
+          "local_key": "ad_feed_id",
+          "foreign_key": "ad_feed_id",
+          "module_parent": "ad",
+          "class": "Ad"
+        },
+        {
+          "table": "ad",
+          "local_key": "ad_id",
+          "foreign_key": "ad_id",
+          "module_parent": "ad",
+          "class": "Ad"
+        },
+        {
+          "table": "swarm_setting",
+          "local_key": "swarm_version_id",
+          "foreign_key": "swarm_version_id"
         }
       ]
     },
-    "hive_product": {
+    "swarm_setting": {
+      "key_by": "handle",
       "fields": {
-        "id": {
+        "swarm_setting_id": {
           "type": "int",
           "default": "auto_increment",
-          "title": "Table ID",
+          "title": "Swarm Setting ID",
           "key": "primary"
         },
-        "hive_product_id": {
+        "swarm_version_id": {
           "type": "char",
           "length": 36,
           "data_type": "uuid",
-          "title": "Hive Version ID",
-          "key": "unique"
-        },
-        "hive_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Hive Version ID",
-          "key": "column"
-        },
-        "swarm_id": {
-          "type": "char",
-          "length": 8,
-          "title": "Swarm ID"
-        },
-        "product": {
-          "type": "varchar",
-          "length": 32
-        }
-      },
-      "joins": [
-        {
-          "table": "swarm",
-          "local_key": "swarm_id",
-          "foreign_key": "swarm_id",
-          "module_parent": "swarm",
-          "class": "Swarm"
-        },
-        {
-          "table": "hive_setting",
-          "local_key": "hive_product_id",
-          "foreign_key": "hive_type_id"
-        }
-      ]
-    },
-    "hive_setting": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Hive Setting ID",
-          "key": "primary"
-        },
-        "hive_type_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Hive Version ID",
-          "key": "column"
+          "title": "Swarm Version ID",
+          "key": {
+            "table": "swarm",
+            "cascade": [
+              "delete"
+            ]
+          }
         },
         "type": {
           "type": "varchar",
@@ -1777,6 +2013,12 @@
           "type": "varchar",
           "length": 64,
           "title": "Quickbooks Company Name"
+        },
+        "admin_email": {
+          "type": "varchar",
+          "length": 128,
+          "title": "Account Owner",
+          "client_editable": false
         },
         "payment_frequency_pending": {
           "type": "varchar",
@@ -1903,6 +2145,7 @@
           "type": "varchar",
           "length": 16,
           "title": "Bank Account Type",
+          "default": "checking",
           "options": {
             "checking": "Checking",
             "saving": "Saving"
@@ -2075,6 +2318,432 @@
           "client_editable": false
         }
       }
+    },
+    "creative_instance": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "creative_instance_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Instance Version ID",
+          "key": "unique"
+        },
+        "creative_instance_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Group UUID",
+          "key": "column"
+        },
+        "creative_template": {
+          "type": "varchar",
+          "length": 16
+        },
+        "instance_type": {
+          "type": "tinyint",
+          "title": "Instance Type",
+          "options": [
+            "One-off",
+            "Global"
+          ]
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archive Date"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date"
+        },
+        "creative_instance_name": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Creative Instance Name"
+        },
+        "account_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Account ID"
+        }
+      },
+      "joins": [
+        {
+          "table": "creative_map",
+          "local_key": "creative_instance_version_id",
+          "foreign_key": "creative_instance_version_id"
+        }
+      ]
+    },
+    "creative": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "creative_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Version ID",
+          "key": "column"
+        },
+        "creative_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative ID",
+          "key": "column"
+        },
+        "account_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Account ID"
+        },
+        "type": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Type"
+        },
+        "sort_order": {
+          "type": "tinyint",
+          "title": "Sort Order"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archive Date"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date"
+        },
+        "value": {
+          "type": "text",
+          "title": "Value"
+        },
+        "attributes": {
+          "type": "text",
+          "data_type": "json",
+          "title": "Extra Data"
+        }
+      }
+    },
+    "creative_map": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "creative_instance_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Group Version ID",
+          "key": {
+            "table": "creative_instance",
+            "fields": [
+              "creative_instance_version_id"
+            ]
+          }
+        },
+        "creative_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Associate ID",
+          "key": {
+            "table": "creative",
+            "fields": [
+              "creative_id"
+            ]
+          }
+        }
+      },
+      "joins": [
+        {
+          "table": "creative",
+          "local_key": "creative_id",
+          "foreign_key": "creative_id"
+        }
+      ]
+    },
+    "hive": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "hive_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Hive Version ID",
+          "key": "unique"
+        },
+        "hive_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid"
+        },
+        "gateway_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Gateway ID",
+          "key": "column"
+        },
+        "legacy_setting_id": {
+          "type": "int"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived"
+        },
+        "script_type": {
+          "type": "varchar",
+          "length": 32
+        },
+        "script_version": {
+          "type": "varchar",
+          "length": 32
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date"
+        }
+      },
+      "joins": [
+        {
+          "table": "hive_product",
+          "local_key": "hive_version_id",
+          "foreign_key": "hive_version_id"
+        },
+        {
+          "table": "hive_setting",
+          "local_key": "hive_version_id",
+          "foreign_key": "hive_type_id"
+        }
+      ]
+    },
+    "hive_product": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "hive_product_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Hive Version ID",
+          "key": "unique"
+        },
+        "hive_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Hive Version ID",
+          "key": "column"
+        },
+        "swarm_id": {
+          "type": "char",
+          "length": 8,
+          "title": "Swarm ID"
+        },
+        "product": {
+          "type": "varchar",
+          "length": 32
+        }
+      },
+      "joins": [
+        {
+          "table": "swarm",
+          "local_key": "swarm_id",
+          "foreign_key": "swarm_id",
+          "module_parent": "swarm",
+          "class": "Swarm"
+        },
+        {
+          "table": "hive_setting",
+          "local_key": "hive_product_id",
+          "foreign_key": "hive_type_id"
+        }
+      ]
+    },
+    "hive_setting": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Hive Setting ID",
+          "key": "primary"
+        },
+        "hive_type_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Hive Version ID",
+          "key": "column"
+        },
+        "type": {
+          "type": "varchar",
+          "length": 40,
+          "title": "Setting Type"
+        },
+        "handle": {
+          "type": "varchar",
+          "length": 40,
+          "title": "Setting Handle"
+        },
+        "value": {
+          "type": "text",
+          "title": "Setting Value"
+        }
+      }
+    },
+    "tag": {
+      "fields": {
+        "tag_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "category": {
+          "type": "varchar",
+          "length": 32,
+          "title": "Category"
+        },
+        "name": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Tag Name"
+        }
+      }
+    },
+    "tag_map": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "tag_id": {
+          "type": "int",
+          "title": "Tag ID",
+          "key": "column"
+        },
+        "item_id": {
+          "type": "varchar",
+          "length": 128,
+          "key": "column"
+        },
+        "type": {
+          "type": "varchar",
+          "length": 36
+        }
+      },
+      "joins": [
+        {
+          "table": "tag",
+          "local_key": "tag_id",
+          "foreign_key": "tag_id"
+        }
+      ]
+    },
+    "gateway": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "gateway_id": {
+          "type": "varchar",
+          "length": 8,
+          "key": "unique"
+        },
+        "account_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Account ID",
+          "key": "column"
+        },
+        "swarm_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Swarm ID"
+        },
+        "gateway_name": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Gateway Name"
+        },
+        "gateway_type": {
+          "type": "varchar",
+          "length": 6,
+          "title": "Gateway Type",
+          "options": {
+            "path": "Path",
+            "script": "Script"
+          }
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date"
+        }
+      },
+      "joins": [
+        {
+          "module_parent": "swarm",
+          "class": "Swarm",
+          "table": "swarm",
+          "local_key": "swarm_id",
+          "foreign_key": "swarm_id"
+        }
+      ]
     },
     "pipeline": {
       "fields": {
@@ -2639,6 +3308,177 @@
         }
       }
     },
+    "user": {
+      "identity_key": "user_id",
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary",
+          "client_editable": false
+        },
+        "user_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "User ID",
+          "key": "column",
+          "client_editable": false
+        },
+        "email": {
+          "type": "varchar",
+          "length": 128,
+          "title": "Email",
+          "key": "column"
+        },
+        "password": {
+          "type": "char",
+          "length": 64,
+          "title": "Password"
+        },
+        "first_name": {
+          "type": "varchar",
+          "length": 32,
+          "title": "First Name",
+          "column_definition": {
+            "nowrap": true
+          }
+        },
+        "last_name": {
+          "type": "varchar",
+          "length": 32,
+          "title": "Last Name"
+        },
+        "last_login": {
+          "type": "datetime",
+          "title": "Last Login",
+          "client_editable": false
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived",
+          "client_editable": false
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date",
+          "client_editable": false
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date",
+          "client_editable": false
+        },
+        "title": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Title"
+        },
+        "notes": {
+          "type": "text",
+          "title": "Notes"
+        }
+      }
+    },
+    "permissions_profile": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "permissions_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid"
+        },
+        "user_id": {
+          "type": "varchar",
+          "length": 8
+        },
+        "group_id": {
+          "type": "int"
+        },
+        "access_level": {
+          "type": "varchar",
+          "length": 2,
+          "default": "rw",
+          "options": {
+            "r": "Read",
+            "w": "Write",
+            "rw": "Read & Write"
+          }
+        },
+        "type": {
+          "type": "varchar",
+          "length": 36,
+          "options": {
+            "account": "Account"
+          }
+        }
+      }
+    },
+    "permissions_groups": {
+      "fields": {
+        "group_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "group_type": {
+          "type": "char",
+          "length": 1,
+          "options": {
+            "i": "Internal",
+            "e": "External"
+          }
+        },
+        "group_handle": {
+          "type": "varchar",
+          "length": 32
+        },
+        "group_title": {
+          "type": "varchar",
+          "length": 64
+        }
+      }
+    },
+    "permissions_group_users": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "group_id": {
+          "type": "int",
+          "data_source": {
+            "type": "element",
+            "handle": "all_groups"
+          }
+        },
+        "user_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_source": {
+            "type": "element",
+            "handle": "all_users"
+          }
+        }
+      },
+      "joins": [
+        {
+          "table": "permissions_groups",
+          "local_key": "group_id",
+          "foreign_key": "group_id"
+        }
+      ]
+    },
     "decision_tree": {
       "fields": {
         "id": {
@@ -2761,207 +3601,6 @@
           "default": "_NOW_"
         }
       }
-    },
-    "swarm": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "swarm_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Swarm Version ID",
-          "key": "unique"
-        },
-        "swarm_id": {
-          "type": "char",
-          "length": 8,
-          "title": "Swarm ID",
-          "key": "column"
-        },
-        "creative_instance_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Instance ID"
-        },
-        "decision_tree_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Decision Tree ID"
-        },
-        "ad_feed_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Static Feed ID"
-        },
-        "ad_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Forward Ad ID"
-        },
-        "legacy_sid": {
-          "type": "char",
-          "length": 43,
-          "title": "Legacy Site ID"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date"
-        }
-      },
-      "joins": [
-        {
-          "table": "creative_instance",
-          "local_key": "creative_instance_id",
-          "foreign_key": "creative_instance_id",
-          "module_parent": "creative",
-          "class": "Creative"
-        },
-        {
-          "table": "decision_tree",
-          "local_key": "decision_tree_id",
-          "foreign_key": "decision_tree_id",
-          "module_parent": "decision_tree",
-          "class": "Decisiontree"
-        },
-        {
-          "table": "ad_feed",
-          "local_key": "ad_feed_id",
-          "foreign_key": "ad_feed_id",
-          "module_parent": "ad",
-          "class": "Ad"
-        },
-        {
-          "table": "ad",
-          "local_key": "ad_id",
-          "foreign_key": "ad_id",
-          "module_parent": "ad",
-          "class": "Ad"
-        },
-        {
-          "table": "swarm_setting",
-          "local_key": "swarm_version_id",
-          "foreign_key": "swarm_version_id"
-        }
-      ]
-    },
-    "swarm_setting": {
-      "key_by": "handle",
-      "fields": {
-        "swarm_setting_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Swarm Setting ID",
-          "key": "primary"
-        },
-        "swarm_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Swarm Version ID",
-          "key": {
-            "table": "swarm",
-            "cascade": [
-              "delete"
-            ]
-          }
-        },
-        "type": {
-          "type": "varchar",
-          "length": 40,
-          "title": "Setting Type"
-        },
-        "handle": {
-          "type": "varchar",
-          "length": 40,
-          "title": "Setting Handle"
-        },
-        "value": {
-          "type": "text",
-          "title": "Setting Value"
-        }
-      }
-    },
-    "gateway": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "gateway_id": {
-          "type": "varchar",
-          "length": 8,
-          "key": "unique"
-        },
-        "account_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Account ID",
-          "key": "column"
-        },
-        "swarm_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Swarm ID"
-        },
-        "gateway_name": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Gateway Name"
-        },
-        "gateway_type": {
-          "type": "varchar",
-          "length": 6,
-          "title": "Gateway Type",
-          "options": {
-            "path": "Path",
-            "script": "Script"
-          }
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date"
-        }
-      },
-      "joins": [
-        {
-          "module_parent": "swarm",
-          "class": "Swarm",
-          "table": "swarm",
-          "local_key": "swarm_id",
-          "foreign_key": "swarm_id"
-        }
-      ]
     },
     "bill": {
       "identity_key": "bill_id",
@@ -3179,718 +3818,6 @@
           "relationship": "one_to_many"
         }
       ]
-    },
-    "creative_instance": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "creative_instance_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Instance Version ID",
-          "key": "unique"
-        },
-        "creative_instance_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Group UUID",
-          "key": "column"
-        },
-        "creative_template": {
-          "type": "varchar",
-          "length": 16
-        },
-        "instance_type": {
-          "type": "tinyint",
-          "title": "Instance Type",
-          "options": [
-            "One-off",
-            "Global"
-          ]
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archive Date"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date"
-        },
-        "creative_instance_name": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Creative Instance Name"
-        },
-        "account_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Account ID"
-        }
-      },
-      "joins": [
-        {
-          "table": "creative_map",
-          "local_key": "creative_instance_version_id",
-          "foreign_key": "creative_instance_version_id"
-        }
-      ]
-    },
-    "creative": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "creative_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Version ID",
-          "key": "column"
-        },
-        "creative_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative ID",
-          "key": "column"
-        },
-        "account_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Account ID"
-        },
-        "type": {
-          "type": "varchar",
-          "length": 36,
-          "title": "Type"
-        },
-        "sort_order": {
-          "type": "tinyint",
-          "title": "Sort Order"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archive Date"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date"
-        },
-        "value": {
-          "type": "text",
-          "title": "Value"
-        },
-        "attributes": {
-          "type": "text",
-          "data_type": "json",
-          "title": "Extra Data"
-        }
-      }
-    },
-    "creative_map": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "creative_instance_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Group Version ID",
-          "key": {
-            "table": "creative_instance",
-            "fields": [
-              "creative_instance_version_id"
-            ]
-          }
-        },
-        "creative_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Associate ID",
-          "key": {
-            "table": "creative",
-            "fields": [
-              "creative_id"
-            ]
-          }
-        }
-      },
-      "joins": [
-        {
-          "table": "creative",
-          "local_key": "creative_id",
-          "foreign_key": "creative_id"
-        }
-      ]
-    },
-    "tag": {
-      "fields": {
-        "tag_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "category": {
-          "type": "varchar",
-          "length": 32,
-          "title": "Category"
-        },
-        "name": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Tag Name"
-        }
-      }
-    },
-    "ad": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "client_editable": false,
-          "key": "primary"
-        },
-        "ad_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad ID",
-          "client_editable": false,
-          "key": "unique"
-        },
-        "ad_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "client_editable": false,
-          "key": "column"
-        },
-        "account_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Advertiser Account ID"
-        },
-        "active": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Active"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "client_editable": false,
-          "title": "Archived"
-        },
-        "cpc": {
-          "type": "float",
-          "length": "(5,2)",
-          "title": "CPC"
-        },
-        "cpi": {
-          "type": "float",
-          "length": "(5,4)",
-          "title": "CPI"
-        },
-        "weight": {
-          "type": "smallint",
-          "title": "Weight"
-        },
-        "start_time": {
-          "type": "datetime",
-          "title": "Start Date/Time",
-          "input": {
-            "type": "date",
-            "attributes": {
-              "minYear": 2012,
-              "maxYear": 2014
-            }
-          }
-        },
-        "end_time": {
-          "type": "datetime",
-          "title": "End Date/Time",
-          "input": {
-            "type": "date",
-            "attributes": {
-              "minYear": 2012,
-              "maxYear": 2014
-            }
-          }
-        },
-        "daily_start_time": {
-          "type": "time",
-          "title": "Daily Start Time"
-        },
-        "daily_end_time": {
-          "type": "time",
-          "title": "Daily End Time"
-        },
-        "cur_imp_count": {
-          "type": "int",
-          "default": 0,
-          "title": "Current Imp Count"
-        },
-        "max_imp_count": {
-          "type": "int",
-          "title": "Max Imp Count"
-        },
-        "cur_click_count": {
-          "type": "mediumint",
-          "default": 0,
-          "title": "Current Click Count"
-        },
-        "max_click_count": {
-          "type": "mediumint",
-          "title": "Max Click Count"
-        },
-        "allow_sunday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Sunday"
-        },
-        "allow_monday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Monday"
-        },
-        "allow_tuesday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Tuesday"
-        },
-        "allow_wednesday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Wednesday"
-        },
-        "allow_thursday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Thursday"
-        },
-        "allow_friday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Friday"
-        },
-        "allow_saturday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Saturday"
-        },
-        "ad_name": {
-          "type": "varchar",
-          "length": 128,
-          "title": "Ad Name"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "client_editable": false,
-          "title": "Created Date"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date",
-          "client_editable": false
-        },
-        "access_date": {
-          "type": "timestamp",
-          "title": "Access Date",
-          "client_editable": false
-        },
-        "tracker_url": {
-          "type": "text",
-          "title": "Tracker URL"
-        }
-      },
-      "joins": [
-        {
-          "table": "ad_creative",
-          "local_key": "ad_version_id",
-          "foreign_key": "ad_version_id"
-        },
-        {
-          "table": "ad_tag",
-          "local_key": "ad_version_id",
-          "foreign_key": "ad_version_id"
-        }
-      ]
-    },
-    "ad_creative": {
-      "fields": {
-        "ad_creative_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "client_editable": false,
-          "key": "primary"
-        },
-        "ad_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad Version ID",
-          "client_editable": false,
-          "key": {
-            "table": "ad"
-          }
-        },
-        "ad_template_id": {
-          "type": "int",
-          "title": "Tag ID"
-        },
-        "content": {
-          "type": "text",
-          "data_type": "json",
-          "title": "Content",
-          "conversion": [
-            "json",
-            "base64"
-          ]
-        },
-        "content_merged": {
-          "type": "text",
-          "data_type": "json",
-          "title": "Merged Content",
-          "conversion": [
-            "json",
-            "base64"
-          ]
-        }
-      }
-    },
-    "ad_tag": {
-      "fields": {
-        "ad_tag_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "client_editable": false,
-          "key": "primary"
-        },
-        "ad_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad Version ID",
-          "key": {
-            "table": "ad"
-          }
-        },
-        "tag_id": {
-          "type": "int",
-          "title": "Tag ID",
-          "key": {
-            "table": "tag"
-          }
-        }
-      },
-      "joins": [
-        {
-          "table": "tag",
-          "local_key": "tag_id",
-          "foreign_key": "tag_id",
-          "module_parent": "tag",
-          "class": "Tag"
-        }
-      ]
-    },
-    "ad_feed": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "client_editable": false,
-          "key": "primary"
-        },
-        "ad_feed_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad Feed Version ID",
-          "client_editable": false,
-          "key": "unique"
-        },
-        "ad_feed_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "client_editable": false,
-          "key": "column"
-        },
-        "feed_title": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Title"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archive"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archive Date"
-        },
-        "ad_template_id": {
-          "type": "int",
-          "title": "Ad Template ID"
-        }
-      },
-      "joins": [
-        {
-          "table": "ad_feed_map",
-          "local_key": "ad_feed_version_id",
-          "foreign_key": "ad_feed_version_id"
-        }
-      ]
-    },
-    "ad_feed_map": {
-      "fields": {
-        "ad_feed_map_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "key": "primary"
-        },
-        "ad_feed_version_id": {
-          "type": "char",
-          "length": 36,
-          "key": {
-            "table": "ad_feed"
-          }
-        },
-        "ad_id": {
-          "type": "char",
-          "length": 36,
-          "title": "Ad ID",
-          "key": {
-            "table": "ad"
-          }
-        },
-        "position": {
-          "type": "tinyint",
-          "title": "Position"
-        }
-      },
-      "joins": [
-        {
-          "table": "ad",
-          "local_key": "ad_id",
-          "foreign_key": "ad_id"
-        }
-      ]
-    },
-    "ad_feed_tag": {
-      "fields": {
-        "ad_feed_tag_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "client_editable": false,
-          "key": "primary"
-        },
-        "ad_feed_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad Feed Version ID",
-          "key": {
-            "table": "ad_feed"
-          }
-        },
-        "tag_id": {
-          "type": "int",
-          "title": "Tag ID"
-        }
-      }
-    },
-    "user": {
-      "identity_key": "user_id",
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary",
-          "client_editable": false
-        },
-        "user_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "User ID",
-          "key": "column",
-          "client_editable": false
-        },
-        "email": {
-          "type": "varchar",
-          "length": 128,
-          "title": "Email",
-          "key": "column"
-        },
-        "password": {
-          "type": "char",
-          "length": 64,
-          "title": "Password"
-        },
-        "first_name": {
-          "type": "varchar",
-          "length": 32,
-          "title": "First Name",
-          "column_definition": {
-            "nowrap": true
-          }
-        },
-        "last_name": {
-          "type": "varchar",
-          "length": 32,
-          "title": "Last Name"
-        },
-        "last_login": {
-          "type": "datetime",
-          "title": "Last Login",
-          "client_editable": false
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived",
-          "client_editable": false
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date",
-          "client_editable": false
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date",
-          "client_editable": false
-        },
-        "title": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Title"
-        },
-        "notes": {
-          "type": "text",
-          "title": "Notes"
-        }
-      }
-    },
-    "permissions_profile": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "permissions_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid"
-        },
-        "user_id": {
-          "type": "varchar",
-          "length": 8
-        },
-        "group_id": {
-          "type": "int"
-        },
-        "type": {
-          "type": "varchar",
-          "length": 36,
-          "options": {
-            "account": "Account"
-          }
-        }
-      }
-    },
-    "permissions_groups": {
-      "fields": {
-        "group_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "group_type": {
-          "type": "char",
-          "length": 1,
-          "options": {
-            "i": "Internal",
-            "e": "External"
-          }
-        },
-        "group_handle": {
-          "type": "varchar",
-          "length": 32
-        },
-        "group_title": {
-          "type": "varchar",
-          "length": 64
-        }
-      }
-    },
-    "permissions_group_users": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "group_id": {
-          "type": "int",
-          "data_source": {
-            "type": "element",
-            "handle": "all_groups"
-          }
-        },
-        "user_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_source": {
-            "type": "element",
-            "handle": "all_users"
-          }
-        }
-      },
-      "joins": [
-        {
-          "table": "permissions_groups",
-          "local_key": "group_id",
-          "foreign_key": "group_id"
-        }
-      ]
     }
   },
   "path_options": {
@@ -3919,8 +3846,7 @@
           "twoclick": [],
           "background_mobile": [],
           "background_fullpage": [],
-          "buttons": [],
-          "site_seal": []
+          "buttons": []
         }
       },
       "creative_instance": {
@@ -3958,140 +3884,6 @@
       }
     },
     "decision": {
-      "uk_provinces_nuts": {
-        "title": "UK Greater Regions",
-        "handle": "uk_provinces_nuts",
-        "options": {
-          "uk_nuts": {
-            "type": "csv",
-            "input": {
-              "title": "UK Greater Regions",
-              "type": "select",
-              "attributes": {
-                "multiple": true,
-                "size": 10
-              },
-              "options": {
-                "UKC": "North East, England",
-                "UKC1": " - Tees Valley and Durham",
-                "UKC2": " - Northumberland and Tyne and Wear",
-                "UKD": "North West, England",
-                "UKD1": " - Cumbria",
-                "UKD6": " - Cheshire",
-                "UKD3": " - Greater Manchester",
-                "UKD4": " - Lancashire",
-                "UKD7": " - Merseyside",
-                "UKE": "Yorkshire and the Humber, England",
-                "UKE1": " - East Riding and North Lincolnshire",
-                "UKE2": " - North Yorkshire",
-                "UKE3": " - South Yorkshire",
-                "UKE4": " - West Yorkshire",
-                "UKF": "East Midlands, England",
-                "UKF1": " - Derbyshire and Nottinghamshire",
-                "UKF2": " - Leicestershire, Rutland and Northamptonshire",
-                "UKF3": " - Lincolnshire",
-                "UKG": "West Midlands, England",
-                "UKG1": " - Herefordshire, Worcestershire and Warwickshire",
-                "UKG2": " - Shropshire and Staffordshire",
-                "UKG3": " - West Midlands",
-                "UKH": "East of England",
-                "UKH1": " - East Anglia",
-                "UKH2": " - Bedfordshire and Hertfordshire",
-                "UKH3": " - Essex",
-                "UKI": "London, England",
-                "UKI1": " - Inner London",
-                "UKI2": " - Outer London",
-                "UKJ": "South East, England",
-                "UKJ1": " - Berkshire, Buckinghamshire, and Oxfordshire",
-                "UKJ2": " - Surrey, East and West Sussex",
-                "UKJ3": " - Hampshire and Isle of Wight",
-                "UKJ4": " - Kent",
-                "UKK": "South West, England",
-                "UKK1": " - Gloucestershire, Wiltshire and Bristol/Bath area",
-                "UKK2": " - Dorset and Somerset",
-                "UKK3": " - Cornwall and Isles of Scilly",
-                "UKK4": " - Devon",
-                "UKL": "Wales",
-                "UKL1": " - West Wales and The Valleys",
-                "UKL2": " - East Wales",
-                "UKM": "Scotland",
-                "UKM2": " - Eastern Scotland",
-                "UKM3": " - South Western Scotland",
-                "UKM5": " - North Eastern Scotland",
-                "UKM6": " - Highlands and Islands",
-                "UKN": "Northern Ireland",
-                "UKN0": " - Northern Ireland"
-              }
-            }
-          }
-        }
-      },
-      "dailytime": {
-        "title": "Daily Time",
-        "handle": "dailytime",
-        "options": {
-          "days": {
-            "type": "csv",
-            "input": {
-              "title": "Days",
-              "type": "select",
-              "attributes": {
-                "multiple": true,
-                "size": 7
-              },
-              "options": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-              ]
-            }
-          },
-          "start_time_hour": {
-            "type": "int",
-            "input": {
-              "title": "<br/>Start",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "start_time_min": {
-            "type": "int",
-            "input": {
-              "title": "&nbsp;:",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "end_time_hour": {
-            "type": "int",
-            "input": {
-              "title": "<br/>End",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "end_time_min": {
-            "type": "int",
-            "input": {
-              "title": "&nbsp;:",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          }
-        }
-      },
       "persistent_percentage": {
         "title": "Persistent Percentage",
         "handle": "persistent_percentage",
@@ -4109,39 +3901,6 @@
               "title": "P%",
               "attributes": {
                 "size": 1
-              }
-            }
-          }
-        }
-      },
-      "click_cap": {
-        "title": "Click Cap",
-        "handle": "click_cap",
-        "options": {
-          "clicks": {
-            "type": "int",
-            "input": {
-              "type": "text",
-              "title": "Click Cap",
-              "attributes": {
-                "size": 1
-              }
-            }
-          }
-        }
-      },
-      "mobile": {
-        "title": "Mobile",
-        "handle": "mobile",
-        "options": {
-          "mobile_on": {
-            "type": "int",
-            "input": {
-              "type": "select",
-              "title": "Mobile",
-              "options": {
-                "0": "No",
-                "1": "Yes"
               }
             }
           }
@@ -4229,28 +3988,528 @@
           }
         }
       },
-      "visits": {
-        "title": "Visits",
-        "handle": "visits",
+      "get_var": {
+        "title": "Param",
+        "handle": "get_var",
         "options": {
-          "visits": {
+          "param_name": {
+            "type": "alnum",
+            "input": {
+              "title": "Param",
+              "type": "text",
+              "attributes": {
+                "size": 2
+              }
+            }
+          },
+          "value": {
+            "type": "alnum",
+            "input": {
+              "title": "&nbsp;&nbsp;=",
+              "type": "text",
+              "attributes": {
+                "size": 4
+              }
+            }
+          },
+          "value_exact": {
+            "type": "alnum",
+            "value": "exact",
+            "input": {
+              "title": "",
+              "type": "select",
+              "options": {
+                "exact": "Exact",
+                "contains": "Contains"
+              }
+            }
+          }
+        }
+      },
+      "dailytime": {
+        "title": "Daily Time",
+        "handle": "dailytime",
+        "options": {
+          "days": {
+            "type": "csv",
+            "input": {
+              "title": "Days",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 7
+              },
+              "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "start_time_hour": {
             "type": "int",
             "input": {
-              "title": "Visits",
+              "title": "<br/>Start",
               "type": "text",
               "attributes": {
                 "size": 1
               }
             }
           },
-          "visit_type": {
-            "type": "alnum",
+          "start_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_time_hour": {
+            "type": "int",
+            "input": {
+              "title": "<br/>End",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
+      "imp_cap": {
+        "title": "Imp Cap",
+        "handle": "imp_cap",
+        "options": {
+          "imps": {
+            "type": "int",
+            "input": {
+              "type": "text",
+              "title": "Imp Cap",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
+      "mobile": {
+        "title": "Mobile",
+        "handle": "mobile",
+        "options": {
+          "mobile_on": {
+            "type": "int",
+            "input": {
+              "type": "select",
+              "title": "Mobile",
+              "options": {
+                "0": "No",
+                "1": "Yes"
+              }
+            }
+          }
+        }
+      },
+      "countries": {
+        "title": "Countries",
+        "handle": "countries",
+        "options": {
+          "countries": {
+            "type": "csv",
+            "input": {
+              "title": "Countries",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 10
+              },
+              "options": {
+                "us": "United States",
+                "gb": "United Kingdom",
+                "au": "Australia",
+                "ca": "Canada",
+                "fr": "France",
+                "ch": "Switzerland",
+                "mx": "Mexico",
+                "es": "Spain",
+                "it": "Italy",
+                "no": "Norway",
+                "nl": "Netherlands",
+                "se": "Sweden",
+                "fi": "Finland",
+                "de": "Germany",
+                "at": "Austria",
+                "dk": "Denmark",
+                "sa": "Saudi Arabia",
+                "cn": "China",
+                "za": "South Africa",
+                "id": "Indonesia",
+                "eg": "Egypt",
+                "pt": "Portugal",
+                "ae": "United Arab Emirates",
+                "br": "Brazil",
+                "af": "Afganistan",
+                "ad": "Andorra",
+                "qa": "Qatar",
+                "co": "Colombia",
+                "ar": "Argentina",
+                "tr": "Turkey",
+                "iq": "Iraq",
+                "ie": "Ireland",
+                "hn": "Honduras",
+                "in": "India",
+                "ye": "Yemen",
+                "sv": "El Salvador",
+                "kw": "Kuwait",
+                "pr": "Puerto Rico",
+                "pe": "Peru",
+                "be": "Belgium",
+                "ph": "Philippines",
+                "gt": "Guatemala",
+                "ru": "Russia",
+                "tt": "Trinidad and Tobago",
+                "sy": "Syria",
+                "jo": "Jordan",
+                "gr": "Greece",
+                "ve": "Venezuela",
+                "cz": "Czech Republic",
+                "cl": "Chile",
+                "jp": "Japan",
+                "jm": "Jamaica",
+                "vn": "Viet Nam",
+                "cr": "Costa Rica",
+                "vi": "Virgin Islands (U.S.)",
+                "ro": "Romania",
+                "lb": "Lebanon",
+                "pa": "Panama",
+                "ir": "Iran",
+                "my": "Malaysia",
+                "ma": "Morocco",
+                "tw": "Taiwan",
+                "th": "Thailand",
+                "ba": "Bosnia and Herzegovina",
+                "bb": "Barbados",
+                "do": "Dominican Republic",
+                "bd": "Bangladesh",
+                "dz": "Algeria",
+                "cs": "Czechoslovakia (former)",
+                "kr": "South Korea",
+                "gh": "Ghana",
+                "sk": "Slovak Republic",
+                "mn": "Mongolia",
+                "ua": "Ukraine",
+                "ni": "Nicaragua",
+                "sg": "Singapore",
+                "py": "Paraguay",
+                "uy": "Uruguay",
+                "om": "Oman",
+                "ng": "Nigeria",
+                "pk": "Pakistan",
+                "ly": "Libya",
+                "bs": "Bahamas",
+                "ht": "Haiti",
+                "la": "Laos",
+                "kz": "Kazakhstan",
+                "il": "Israel",
+                "hk": "Hong Kong",
+                "ec": "Ecuador",
+                "ag": "Antigua and Barbuda",
+                "ai": "Anguilla",
+                "al": "Albania",
+                "am": "Armenia",
+                "an": "Netherlands Antilles",
+                "ao": "Angola",
+                "aq": "Antarctica",
+                "as": "American Samoa",
+                "aw": "Aruba",
+                "az": "Azerbaijan",
+                "bf": "Burkina Faso",
+                "bg": "Bulgaria",
+                "bh": "Bahrain",
+                "bi": "Burundi",
+                "bj": "Benin",
+                "bm": "Bermuda",
+                "bn": "Brunei Darussalam",
+                "bo": "Bolivia",
+                "bt": "Bhutan",
+                "bv": "Bouvet Island",
+                "bw": "Botswana",
+                "by": "Belarus",
+                "bz": "Belize",
+                "cc": "Cocos (Keeling) Islands",
+                "cf": "Central African Republic",
+                "cg": "Congo",
+                "ci": "Cote D'Ivoire (Ivory Coast)",
+                "ck": "Cook Islands",
+                "cm": "Cameroon",
+                "cu": "Cuba",
+                "cv": "Cape Verde",
+                "cx": "Christmas Island",
+                "cy": "Cyprus",
+                "dj": "Djibouti",
+                "dm": "Dominica",
+                "ee": "Estonia",
+                "eh": "Western Sahara",
+                "er": "Eritrea",
+                "et": "Ethiopia",
+                "fj": "Fiji",
+                "fk": "Falkland Islands (Malvinas)",
+                "fm": "Micronesia",
+                "fo": "Faroe Islands",
+                "fx": "France, Metropolitan",
+                "ga": "Gabon",
+                "gd": "Grenada",
+                "ge": "Georgia",
+                "gf": "French Guiana",
+                "gi": "Gibraltar",
+                "gl": "Greenland",
+                "gm": "Gambia",
+                "gn": "Guinea",
+                "gp": "Guadeloupe",
+                "gq": "Equatorial Guinea",
+                "gs": "S. Georgia and S. Sandwich Isls.",
+                "gu": "Guam",
+                "gw": "Guinea-Bissau",
+                "gy": "Guyana",
+                "hm": "Heard and McDonald Islands",
+                "hr": "Croatia (Hrvatska)",
+                "hu": "Hungary",
+                "io": "British Indian Ocean Territory",
+                "is": "Iceland",
+                "ke": "Kenya",
+                "kg": "Kyrgyzstan",
+                "kh": "Cambodia",
+                "ki": "Kiribati",
+                "km": "Comoros",
+                "kn": "Saint Kitts and Nevis",
+                "kp": "Korea (North)",
+                "ky": "Cayman Islands",
+                "lc": "Saint Lucia",
+                "li": "Liechtenstein",
+                "lk": "Sri Lanka",
+                "lr": "Liberia",
+                "ls": "Lesotho",
+                "lt": "Lithuania",
+                "lu": "Luxembourg",
+                "lv": "Latvia",
+                "mc": "Monaco",
+                "mt": "Malta",
+                "np": "Nepal",
+                "nz": "New Zealand (Aotearoa)",
+                "pl": "Poland",
+                "si": "Slovenia",
+                "zm": "Zambia",
+                "zw": "Zimbabwe"
+              }
+            }
+          }
+        }
+      },
+      "uk_provinces_nuts": {
+        "title": "UK Greater Regions",
+        "handle": "uk_provinces_nuts",
+        "options": {
+          "uk_nuts": {
+            "type": "csv",
+            "input": {
+              "title": "UK Greater Regions",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 10
+              },
+              "options": {
+                "UKC": "North East, England",
+                "UKC1": " - Tees Valley and Durham",
+                "UKC2": " - Northumberland and Tyne and Wear",
+                "UKD": "North West, England",
+                "UKD1": " - Cumbria",
+                "UKD6": " - Cheshire",
+                "UKD3": " - Greater Manchester",
+                "UKD4": " - Lancashire",
+                "UKD7": " - Merseyside",
+                "UKE": "Yorkshire and the Humber, England",
+                "UKE1": " - East Riding and North Lincolnshire",
+                "UKE2": " - North Yorkshire",
+                "UKE3": " - South Yorkshire",
+                "UKE4": " - West Yorkshire",
+                "UKF": "East Midlands, England",
+                "UKF1": " - Derbyshire and Nottinghamshire",
+                "UKF2": " - Leicestershire, Rutland and Northamptonshire",
+                "UKF3": " - Lincolnshire",
+                "UKG": "West Midlands, England",
+                "UKG1": " - Herefordshire, Worcestershire and Warwickshire",
+                "UKG2": " - Shropshire and Staffordshire",
+                "UKG3": " - West Midlands",
+                "UKH": "East of England",
+                "UKH1": " - East Anglia",
+                "UKH2": " - Bedfordshire and Hertfordshire",
+                "UKH3": " - Essex",
+                "UKI": "London, England",
+                "UKI1": " - Inner London",
+                "UKI2": " - Outer London",
+                "UKJ": "South East, England",
+                "UKJ1": " - Berkshire, Buckinghamshire, and Oxfordshire",
+                "UKJ2": " - Surrey, East and West Sussex",
+                "UKJ3": " - Hampshire and Isle of Wight",
+                "UKJ4": " - Kent",
+                "UKK": "South West, England",
+                "UKK1": " - Gloucestershire, Wiltshire and Bristol/Bath area",
+                "UKK2": " - Dorset and Somerset",
+                "UKK3": " - Cornwall and Isles of Scilly",
+                "UKK4": " - Devon",
+                "UKL": "Wales",
+                "UKL1": " - West Wales and The Valleys",
+                "UKL2": " - East Wales",
+                "UKM": "Scotland",
+                "UKM2": " - Eastern Scotland",
+                "UKM3": " - South Western Scotland",
+                "UKM5": " - North Eastern Scotland",
+                "UKM6": " - Highlands and Islands",
+                "UKN": "Northern Ireland",
+                "UKN0": " - Northern Ireland"
+              }
+            }
+          }
+        }
+      },
+      "daytime": {
+        "title": "Day+Time",
+        "handle": "daytime",
+        "options": {
+          "start_day": {
+            "type": "int",
+            "input": {
+              "title": "Start",
+              "type": "select",
+              "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "start_time_hour": {
+            "type": "int",
             "input": {
               "title": "",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "start_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_day": {
+            "type": "int",
+            "input": {
+              "title": "<br/>End",
+              "type": "select",
+              "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "end_time_hour": {
+            "type": "int",
+            "input": {
+              "title": "",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
+      "user_history": {
+        "title": "User History",
+        "handle": "user_history",
+        "options": {
+          "trailing_days": {
+            "type": "int",
+            "input": {
+              "title": "Trailing Days",
+              "type": "text",
+              "attributes": {
+                "size": 2
+              }
+            }
+          },
+          "network": {
+            "type": "alnum",
+            "input": {
+              "title": "Network",
               "type": "select",
               "options": {
-                "page": "Page",
-                "global": "Global"
+                "Affmin": "Revnet",
+                "OB Media 6": "OB Media"
+              }
+            }
+          },
+          "operator": {
+            "type": "string",
+            "input": {
+              "title": "Amount",
+              "type": "select",
+              "options": {
+                "gt": ">",
+                "et": "=",
+                "lt": "<"
+              }
+            }
+          },
+          "amount": {
+            "type": "int",
+            "input": {
+              "title": "",
+              "type": "text",
+              "attributes": {
+                "size": 2
               }
             }
           }
@@ -4508,6 +4767,22 @@
           }
         }
       },
+      "click_cap": {
+        "title": "Click Cap",
+        "handle": "click_cap",
+        "options": {
+          "clicks": {
+            "type": "int",
+            "input": {
+              "type": "text",
+              "title": "Click Cap",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
       "random_percentage": {
         "title": "Random Percentage",
         "handle": "random_percentage",
@@ -4530,377 +4805,28 @@
           }
         }
       },
-      "countries": {
-        "title": "Countries",
-        "handle": "countries",
+      "visits": {
+        "title": "Visits",
+        "handle": "visits",
         "options": {
-          "countries": {
-            "type": "csv",
-            "input": {
-              "title": "Countries",
-              "type": "select",
-              "attributes": {
-                "multiple": true,
-                "size": 10
-              },
-              "options": {
-                "us": "United States",
-                "gb": "United Kingdom",
-                "au": "Australia",
-                "ca": "Canada",
-                "fr": "France",
-                "ch": "Switzerland",
-                "mx": "Mexico",
-                "es": "Spain",
-                "it": "Italy",
-                "no": "Norway",
-                "nl": "Netherlands",
-                "se": "Sweden",
-                "fi": "Finland",
-                "de": "Germany",
-                "at": "Austria",
-                "dk": "Denmark",
-                "sa": "Saudi Arabia",
-                "cn": "China",
-                "za": "South Africa",
-                "id": "Indonesia",
-                "eg": "Egypt",
-                "pt": "Portugal",
-                "ae": "United Arab Emirates",
-                "br": "Brazil",
-                "af": "Afganistan",
-                "ad": "Andorra",
-                "qa": "Qatar",
-                "co": "Colombia",
-                "ar": "Argentina",
-                "tr": "Turkey",
-                "iq": "Iraq",
-                "ie": "Ireland",
-                "hn": "Honduras",
-                "in": "India",
-                "ye": "Yemen",
-                "sv": "El Salvador",
-                "kw": "Kuwait",
-                "pr": "Puerto Rico",
-                "pe": "Peru",
-                "be": "Belgium",
-                "ph": "Philippines",
-                "gt": "Guatemala",
-                "ru": "Russia",
-                "tt": "Trinidad and Tobago",
-                "sy": "Syria",
-                "jo": "Jordan",
-                "gr": "Greece",
-                "ve": "Venezuela",
-                "cz": "Czech Republic",
-                "cl": "Chile",
-                "jp": "Japan",
-                "jm": "Jamaica",
-                "vn": "Viet Nam",
-                "cr": "Costa Rica",
-                "vi": "Virgin Islands (U.S.)",
-                "ro": "Romania",
-                "lb": "Lebanon",
-                "pa": "Panama",
-                "ir": "Iran",
-                "my": "Malaysia",
-                "ma": "Morocco",
-                "tw": "Taiwan",
-                "th": "Thailand",
-                "ba": "Bosnia and Herzegovina",
-                "bb": "Barbados",
-                "do": "Dominican Republic",
-                "bd": "Bangladesh",
-                "dz": "Algeria",
-                "cs": "Czechoslovakia (former)",
-                "kr": "South Korea",
-                "gh": "Ghana",
-                "sk": "Slovak Republic",
-                "mn": "Mongolia",
-                "ua": "Ukraine",
-                "ni": "Nicaragua",
-                "sg": "Singapore",
-                "py": "Paraguay",
-                "uy": "Uruguay",
-                "om": "Oman",
-                "ng": "Nigeria",
-                "pk": "Pakistan",
-                "ly": "Libya",
-                "bs": "Bahamas",
-                "ht": "Haiti",
-                "la": "Laos",
-                "kz": "Kazakhstan",
-                "il": "Israel",
-                "hk": "Hong Kong",
-                "ec": "Ecuador",
-                "ag": "Antigua and Barbuda",
-                "ai": "Anguilla",
-                "al": "Albania",
-                "am": "Armenia",
-                "an": "Netherlands Antilles",
-                "ao": "Angola",
-                "aq": "Antarctica",
-                "as": "American Samoa",
-                "aw": "Aruba",
-                "az": "Azerbaijan",
-                "bf": "Burkina Faso",
-                "bg": "Bulgaria",
-                "bh": "Bahrain",
-                "bi": "Burundi",
-                "bj": "Benin",
-                "bm": "Bermuda",
-                "bn": "Brunei Darussalam",
-                "bo": "Bolivia",
-                "bt": "Bhutan",
-                "bv": "Bouvet Island",
-                "bw": "Botswana",
-                "by": "Belarus",
-                "bz": "Belize",
-                "cc": "Cocos (Keeling) Islands",
-                "cf": "Central African Republic",
-                "cg": "Congo",
-                "ci": "Cote D'Ivoire (Ivory Coast)",
-                "ck": "Cook Islands",
-                "cm": "Cameroon",
-                "cu": "Cuba",
-                "cv": "Cape Verde",
-                "cx": "Christmas Island",
-                "cy": "Cyprus",
-                "dj": "Djibouti",
-                "dm": "Dominica",
-                "ee": "Estonia",
-                "eh": "Western Sahara",
-                "er": "Eritrea",
-                "et": "Ethiopia",
-                "fj": "Fiji",
-                "fk": "Falkland Islands (Malvinas)",
-                "fm": "Micronesia",
-                "fo": "Faroe Islands",
-                "fx": "France, Metropolitan",
-                "ga": "Gabon",
-                "gd": "Grenada",
-                "ge": "Georgia",
-                "gf": "French Guiana",
-                "gi": "Gibraltar",
-                "gl": "Greenland",
-                "gm": "Gambia",
-                "gn": "Guinea",
-                "gp": "Guadeloupe",
-                "gq": "Equatorial Guinea",
-                "gs": "S. Georgia and S. Sandwich Isls.",
-                "gu": "Guam",
-                "gw": "Guinea-Bissau",
-                "gy": "Guyana",
-                "hm": "Heard and McDonald Islands",
-                "hr": "Croatia (Hrvatska)",
-                "hu": "Hungary",
-                "io": "British Indian Ocean Territory",
-                "is": "Iceland",
-                "ke": "Kenya",
-                "kg": "Kyrgyzstan",
-                "kh": "Cambodia",
-                "ki": "Kiribati",
-                "km": "Comoros",
-                "kn": "Saint Kitts and Nevis",
-                "kp": "Korea (North)",
-                "ky": "Cayman Islands",
-                "lc": "Saint Lucia",
-                "li": "Liechtenstein",
-                "lk": "Sri Lanka",
-                "lr": "Liberia",
-                "ls": "Lesotho",
-                "lt": "Lithuania",
-                "lu": "Luxembourg",
-                "lv": "Latvia",
-                "mc": "Monaco",
-                "mt": "Malta",
-                "np": "Nepal",
-                "nz": "New Zealand (Aotearoa)",
-                "pl": "Poland",
-                "si": "Slovenia",
-                "zm": "Zambia",
-                "zw": "Zimbabwe"
-              }
-            }
-          }
-        }
-      },
-      "daytime": {
-        "title": "Day+Time",
-        "handle": "daytime",
-        "options": {
-          "start_day": {
+          "visits": {
             "type": "int",
             "input": {
-              "title": "Start",
-              "type": "select",
-              "options": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-              ]
-            }
-          },
-          "start_time_hour": {
-            "type": "int",
-            "input": {
-              "title": "",
+              "title": "Visits",
               "type": "text",
               "attributes": {
                 "size": 1
               }
             }
           },
-          "start_time_min": {
-            "type": "int",
-            "input": {
-              "title": "&nbsp;:",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "end_day": {
-            "type": "int",
-            "input": {
-              "title": "<br/>End",
-              "type": "select",
-              "options": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-              ]
-            }
-          },
-          "end_time_hour": {
-            "type": "int",
-            "input": {
-              "title": "",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "end_time_min": {
-            "type": "int",
-            "input": {
-              "title": "&nbsp;:",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          }
-        }
-      },
-      "imp_cap": {
-        "title": "Imp Cap",
-        "handle": "imp_cap",
-        "options": {
-          "imps": {
-            "type": "int",
-            "input": {
-              "type": "text",
-              "title": "Imp Cap",
-              "attributes": {
-                "size": 1
-              }
-            }
-          }
-        }
-      },
-      "get_var": {
-        "title": "Param",
-        "handle": "get_var",
-        "options": {
-          "param_name": {
+          "visit_type": {
             "type": "alnum",
-            "input": {
-              "title": "Param",
-              "type": "text",
-              "attributes": {
-                "size": 2
-              }
-            }
-          },
-          "value": {
-            "type": "alnum",
-            "input": {
-              "title": "&nbsp;&nbsp;=",
-              "type": "text",
-              "attributes": {
-                "size": 4
-              }
-            }
-          },
-          "value_exact": {
-            "type": "alnum",
-            "value": "exact",
             "input": {
               "title": "",
               "type": "select",
               "options": {
-                "exact": "Exact",
-                "contains": "Contains"
-              }
-            }
-          }
-        }
-      },
-      "user_history": {
-        "title": "User History",
-        "handle": "user_history",
-        "options": {
-          "trailing_days": {
-            "type": "int",
-            "input": {
-              "title": "Trailing Days",
-              "type": "text",
-              "attributes": {
-                "size": 2
-              }
-            }
-          },
-          "network": {
-            "type": "alnum",
-            "input": {
-              "title": "Network",
-              "type": "select",
-              "options": {
-                "Affmin": "Revnet",
-                "OB Media 6": "OB Media"
-              }
-            }
-          },
-          "operator": {
-            "type": "string",
-            "input": {
-              "title": "Amount",
-              "type": "select",
-              "options": {
-                "gt": ">",
-                "et": "=",
-                "lt": "<"
-              }
-            }
-          },
-          "amount": {
-            "type": "int",
-            "input": {
-              "title": "",
-              "type": "text",
-              "attributes": {
-                "size": 2
+                "page": "Page",
+                "global": "Global"
               }
             }
           }

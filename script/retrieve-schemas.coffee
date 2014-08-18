@@ -16,6 +16,7 @@ targetFile = __dirname+'/../lib/schemas.json'
 
 urls = []
 for handle, url of schemas
+  console.log url
   urls.push url
 
 
