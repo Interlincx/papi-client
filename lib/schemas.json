@@ -158,19 +158,25 @@
       "file_name": "modules/creative/_templates/twoclick/index.html",
       "settings": {
         "ad_link": {
+          "shared": false,
+          "count": 1,
           "title": "Ad",
           "setting_type": "ad",
           "piece_category": "adpage_selection",
-          "default": ""
+          "default": "",
+          "handle": "ad_link"
         },
         "timed_redirect": {
+          "shared": false,
+          "count": 1,
+          "type": "int",
           "input": {
             "type": "text"
           },
           "title": "Timed Redirect",
-          "type": "int",
           "piece_category": "text",
-          "default": 0
+          "default": 0,
+          "handle": "timed_redirect"
         }
       },
       "pieces": {
@@ -194,12 +200,18 @@
           "handle": "twoclick"
         },
         "background_color": {
+          "shared": false,
+          "count": 1,
           "title": "Background Color",
           "piece_category": "color_option",
           "color_type": "background",
-          "default": "#FFFFFF"
+          "default": "#FFFFFF",
+          "handle": "background_color"
         },
         "short_message": {
+          "shared": false,
+          "count": 1,
+          "type": "text",
           "input": {
             "type": "textarea",
             "attributes": {
@@ -210,7 +222,8 @@
           "title": "Short Message",
           "piece_category": "text",
           "draggable": true,
-          "default": ""
+          "default": "",
+          "handle": "short_message"
         }
       }
     },
@@ -288,6 +301,8 @@
           }
         },
         "background_color": {
+          "shared": false,
+          "count": 1,
           "title": "Background Color",
           "piece_category": "color_option",
           "color_type": "background",
@@ -295,7 +310,8 @@
             {
               "value": "#FFFFFF"
             }
-          ]
+          ],
+          "handle": "background_color"
         },
         "color_title": {
           "shared": false,
@@ -445,14 +461,17 @@
           "handle": "color_domain"
         },
         "seal_location": {
+          "shared": false,
           "count": 1,
           "title": "SEal LOC",
           "target_class": "siteLoc",
           "piece_category": "custom",
           "default": "",
-          "draggable": true
+          "draggable": true,
+          "handle": "seal_location"
         },
         "site_seal": {
+          "shared": true,
           "default": [
             {
               "value": "",
@@ -474,7 +493,8 @@
           },
           "title": "Site SEal",
           "target_class": "siteSeal",
-          "piece_category": "image_groups"
+          "piece_category": "image_groups",
+          "handle": "site_seal"
         }
       }
     },
@@ -1461,6 +1481,7 @@
           "default": "auto_increment",
           "title": "Table ID",
           "client_editable": false,
+          "client_visible": false,
           "key": "primary"
         },
         "ad_version_id": {
@@ -1469,6 +1490,7 @@
           "data_type": "uuid",
           "title": "Ad ID",
           "client_editable": false,
+          "client_visible": false,
           "key": "unique"
         },
         "ad_id": {
@@ -1476,6 +1498,7 @@
           "length": 36,
           "data_type": "uuid",
           "client_editable": false,
+          "client_visible": false,
           "key": "column"
         },
         "account_id": {
@@ -1492,6 +1515,7 @@
           "type": "tinyint",
           "default": 0,
           "client_editable": false,
+          "client_visible": false,
           "title": "Archived"
         },
         "cpc": {
@@ -2024,10 +2048,12 @@
           "type": "varchar",
           "length": 24,
           "title": "Payment Frequency - Pending",
+          "default": "",
           "options": {
             "Monthly": "Monthly",
             "BiWeekly": "BiWeekly",
-            "Weekly": "Weekly"
+            "Weekly": "Weekly",
+            "": "None"
           }
         },
         "payment_frequency": {
@@ -2035,21 +2061,25 @@
           "length": 24,
           "title": "Payment Frequency",
           "client_editable": false,
+          "default": "",
           "options": {
             "Monthly": "Monthly",
             "BiWeekly": "BiWeekly",
-            "Weekly": "Weekly"
+            "Weekly": "Weekly",
+            "": "None"
           }
         },
         "net_terms_pending": {
           "type": "char",
           "length": 2,
           "title": "Net Terms - Pending",
+          "default": "",
           "options": {
             "7": "Net 7",
             "15": "Net 15",
             "30": "Net 30",
-            "45": "Net 45"
+            "45": "Net 45",
+            "": "None"
           }
         },
         "net_terms": {
@@ -2057,11 +2087,13 @@
           "length": 2,
           "title": "Net Terms",
           "client_editable": false,
+          "default": "",
           "options": {
             "7": "Net 7",
             "15": "Net 15",
             "30": "Net 30",
-            "45": "Net 45"
+            "45": "Net 45",
+            "": "None"
           }
         },
         "payment_start_date": {
@@ -2072,16 +2104,24 @@
         },
         "payment_threshold": {
           "type": "double",
-          "title": "Payment Threshold"
+          "title": "Payment Threshold",
+          "tooltip": "A Payment Threshold value of 0 instead uses a default based on the value selected for Payment Method",
+          "conditional_defaults": {
+            "Check": 50,
+            "Wire": 100,
+            "ACH": 10
+          }
         },
         "payment_method_pending": {
           "type": "varchar",
           "length": 5,
           "title": "Payment Method - Pending",
+          "default": "",
           "options": {
             "Check": "Check",
             "Wire": "Wire",
-            "ACH": "ACH"
+            "ACH": "ACH",
+            "": "None"
           }
         },
         "payment_method": {
@@ -2089,10 +2129,12 @@
           "length": 5,
           "title": "Payment Method",
           "client_editable": false,
+          "default": "",
           "options": {
             "Check": "Check",
             "Wire": "Wire",
-            "ACH": "ACH"
+            "ACH": "ACH",
+            "": "None"
           }
         },
         "payment_currency": {
