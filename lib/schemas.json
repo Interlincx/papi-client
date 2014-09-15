@@ -2048,7 +2048,7 @@
           "type": "varchar",
           "length": 24,
           "title": "Payment Frequency - Pending",
-          "default": "Monthly",
+          "default": "",
           "options": {
             "Monthly": "Monthly",
             "BiWeekly": "BiWeekly",
@@ -2060,7 +2060,6 @@
           "type": "varchar",
           "length": 24,
           "title": "Payment Frequency",
-          "client_editable": false,
           "default": "",
           "options": {
             "Monthly": "Monthly",
@@ -2086,7 +2085,6 @@
           "type": "char",
           "length": 2,
           "title": "Net Terms",
-          "client_editable": false,
           "default": "",
           "options": {
             "7": "Net 7",
@@ -2100,7 +2098,8 @@
           "type": "date",
           "title": "Payment Start Date",
           "default": "_NOW_",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "payment_threshold": {
           "type": "double",
@@ -2116,7 +2115,7 @@
           "type": "varchar",
           "length": 5,
           "title": "Payment Method - Pending",
-          "default": "Check",
+          "default": "",
           "options": {
             "Check": "Check",
             "Wire": "Wire",
@@ -2128,7 +2127,6 @@
           "type": "varchar",
           "length": 5,
           "title": "Payment Method",
-          "client_editable": false,
           "default": "",
           "options": {
             "Check": "Check",
@@ -2140,7 +2138,8 @@
         "payment_currency": {
           "type": "varchar",
           "length": 3,
-          "title": "Payment Currency"
+          "title": "Payment Currency",
+          "default": "USD"
         },
         "external_revenue": {
           "type": "boolean",
