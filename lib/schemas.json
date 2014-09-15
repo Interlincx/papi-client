@@ -2048,7 +2048,7 @@
           "type": "varchar",
           "length": 24,
           "title": "Payment Frequency - Pending",
-          "default": "",
+          "default": "Monthly",
           "options": {
             "Monthly": "Monthly",
             "BiWeekly": "BiWeekly",
@@ -2073,7 +2073,7 @@
           "type": "char",
           "length": 2,
           "title": "Net Terms - Pending",
-          "default": "",
+          "default": 30,
           "options": {
             "7": "Net 7",
             "15": "Net 15",
@@ -2116,7 +2116,7 @@
           "type": "varchar",
           "length": 5,
           "title": "Payment Method - Pending",
-          "default": "",
+          "default": "Check",
           "options": {
             "Check": "Check",
             "Wire": "Wire",
@@ -3712,6 +3712,16 @@
           "type": "varchar",
           "length": 16,
           "title": "Source"
+        },
+        "roll_forward": {
+          "type": "char",
+          "length": 1,
+          "title": "Roll Forward",
+          "default": "n",
+          "options": {
+            "y": "Roll Forward",
+            "n": "Do Not Roll Forward"
+          }
         },
         "payment_ready": {
           "type": "char",
