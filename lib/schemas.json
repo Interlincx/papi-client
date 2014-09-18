@@ -2098,8 +2098,7 @@
           "type": "date",
           "title": "Payment Start Date",
           "default": "_NOW_",
-          "client_editable": false,
-          "client_visible": false
+          "client_editable": false
         },
         "payment_threshold": {
           "type": "double",
