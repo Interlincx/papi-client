@@ -2041,8 +2041,7 @@
         "admin_email": {
           "type": "varchar",
           "length": 128,
-          "title": "Account Owner",
-          "client_editable": false
+          "title": "Account Admin Email"
         },
         "payment_frequency_pending": {
           "type": "varchar",
@@ -2262,7 +2261,8 @@
           "default": "auto_increment",
           "title": "Table ID",
           "key": "primary",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "address_version_id": {
           "type": "char",
@@ -2270,7 +2270,8 @@
           "data_type": "uuid",
           "title": "Address Version ID",
           "key": "unique",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "address_id": {
           "type": "char",
@@ -2278,12 +2279,14 @@
           "data_type": "uuid",
           "title": "Address ID",
           "key": "column",
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "account_id": {
           "type": "char",
           "length": 8,
-          "client_editable": false
+          "client_editable": false,
+          "client_visible": false
         },
         "label": {
           "type": "varchar",
@@ -2296,6 +2299,7 @@
           "title": "Type",
           "default": "primary",
           "client_editable": false,
+          "client_visible": false,
           "options": {
             "primary": "Primary",
             "secondary": "Secondary"
