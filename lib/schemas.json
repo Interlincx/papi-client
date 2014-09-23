@@ -2205,6 +2205,11 @@
           "length": 64,
           "title": "Bank Name"
         },
+        "manager": {
+          "type": "varchar",
+          "length": 32,
+          "title": "Account Manager"
+        },
         "company_name_at_bank": {
           "type": "varchar",
           "length": 64,
