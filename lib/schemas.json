@@ -2041,7 +2041,10 @@
         "admin_email": {
           "type": "varchar",
           "length": 128,
-          "title": "Account Admin Email"
+          "title": "Account Admin Email",
+          "conversion": [
+            "lowercase"
+          ]
         },
         "payment_frequency_pending": {
           "type": "varchar",
@@ -2052,6 +2055,7 @@
             "Monthly": "Monthly",
             "BiWeekly": "BiWeekly",
             "Weekly": "Weekly",
+            "Threshold": "Threshold",
             "": "None"
           }
         },
@@ -2064,6 +2068,7 @@
             "Monthly": "Monthly",
             "BiWeekly": "BiWeekly",
             "Weekly": "Weekly",
+            "Threshold": "Threshold",
             "": "None"
           }
         },
@@ -2071,7 +2076,7 @@
           "type": "char",
           "length": 2,
           "title": "Net Terms - Pending",
-          "default": 30,
+          "default": "",
           "options": {
             "7": "Net 7",
             "15": "Net 15",
@@ -2084,7 +2089,7 @@
           "type": "char",
           "length": 2,
           "title": "Net Terms",
-          "default": "",
+          "default": 30,
           "options": {
             "7": "Net 7",
             "15": "Net 15",
@@ -3378,7 +3383,10 @@
           "type": "varchar",
           "length": 128,
           "title": "Email",
-          "key": "column"
+          "key": "column",
+          "conversion": [
+            "lowercase"
+          ]
         },
         "password": {
           "type": "char",
@@ -3724,7 +3732,9 @@
           "type": "char",
           "length": 1,
           "title": "Roll Forward",
-          "default": "n",
+          "default": "",
+          "client_editable": false,
+          "client_visible": false,
           "options": {
             "y": "Roll Forward",
             "n": "Do Not Roll Forward"
