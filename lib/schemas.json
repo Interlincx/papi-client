@@ -2218,7 +2218,7 @@
         "company_name_at_bank": {
           "type": "varchar",
           "length": 64,
-          "title": "Company Name At Bank (for wires)"
+          "title": "Company Name At Bank (Vendor Name for CSV)"
         },
         "active": {
           "type": "tinyint",
