@@ -88,7 +88,7 @@ PapiClient::checkForError = (err, result, cb) ->
       if body.success is false
         err = @buildError( body.message )
       else if body.result is 'error'
-        err = @buildError( body.message_collective )
+        err = @buildError( body.messages )
     catch error
       err = @buildError( body )
 
@@ -112,9 +112,8 @@ PapiClient::buildError = (msg) ->
   m = ''
   if msg?
     if typeof msg[0] != 'undefined' and typeof msg != 'string'
-      console.log msg.join("\n")
-      for item in msg
-        m += "\n"+item
+      # do something different with an array of messages?
+      m = msg[0]
     else
       m = msg
   return new Error(m)

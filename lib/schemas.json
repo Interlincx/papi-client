@@ -246,7 +246,7 @@
           "shared": true,
           "default": "",
           "count": 1,
-          "resize_element": 0,
+          "resize_element": 1,
           "attributes": {
             "width": {
               "type": "int",
@@ -397,7 +397,7 @@
           "shared": true,
           "default": "",
           "count": 1,
-          "resize_element": 0,
+          "resize_element": 1,
           "attributes": {
             "width": {
               "type": "int",
@@ -523,7 +523,7 @@
           "shared": true,
           "default": "",
           "count": 1,
-          "resize_element": 0,
+          "resize_element": 1,
           "attributes": {
             "width": {
               "type": "int",
@@ -652,7 +652,7 @@
       "shared": true,
       "default": "",
       "count": 1,
-      "resize_element": 0,
+      "resize_element": 1,
       "attributes": {
         "width": {
           "type": "int",
@@ -671,7 +671,7 @@
       "shared": true,
       "default": "",
       "count": 1,
-      "resize_element": 0,
+      "resize_element": 1,
       "attributes": {
         "width": {
           "type": "int",
@@ -3370,6 +3370,7 @@
           "default": "auto_increment",
           "title": "Table ID",
           "key": "primary",
+          "client_visible": false,
           "client_editable": false
         },
         "user_id": {
@@ -3377,6 +3378,7 @@
           "length": 8,
           "title": "User ID",
           "key": "column",
+          "client_visible": false,
           "client_editable": false
         },
         "email": {
@@ -3415,6 +3417,7 @@
           "type": "tinyint",
           "default": 0,
           "title": "Archived",
+          "client_visible": false,
           "client_editable": false
         },
         "create_date": {
@@ -3426,6 +3429,7 @@
         "archive_date": {
           "type": "datetime",
           "title": "Archived Date",
+          "client_visible": false,
           "client_editable": false
         },
         "title": {
@@ -3877,6 +3881,10 @@
           "type": "char",
           "length": 1,
           "title": "Status"
+        },
+        "create_date": {
+          "type": "datetime",
+          "title": "Create Date"
         }
       },
       "joins": [

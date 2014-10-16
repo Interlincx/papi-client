@@ -3,6 +3,10 @@
         "type": "account",
         "get": "get_user_accounts"
     },
+    "account_archives": {
+        "type": "account",
+        "get": "get_archives_account"
+    },
     "page_url": {
         "type": "page",
         "get": "get_page_url"
