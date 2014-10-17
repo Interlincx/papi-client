@@ -20,9 +20,9 @@
         "type": "bill",
         "get": "get_external_items"
     },
-    "no_pay": {
+    "bill_list": {
         "type": "bill",
-        "get": "get_no_pay"
+        "get": "get_bill_list"
     },
     "bill_group": {
         "type": "bill",
