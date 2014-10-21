@@ -14,7 +14,8 @@
     "bill": {
         "type": "bill",
         "save": "save_bill",
-        "get": "get_lineitem"
+        "get": "get_lineitem",
+        "delete": "delete_bill"
     },
     "external_revenue": {
         "type": "bill",
