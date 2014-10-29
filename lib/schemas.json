@@ -1471,6 +1471,11 @@
       "title": "Count forwards as clicks",
       "type": "boolean",
       "default": false
+    },
+    "legacySiteID": {
+      "title": "Legacy Site ID",
+      "type": "int",
+      "default": false
     }
   },
   "tables": {
@@ -1763,6 +1768,12 @@
         "archive_date": {
           "type": "datetime",
           "title": "Archive Date"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "client_editable": false,
+          "title": "Created Date"
         },
         "ad_template_id": {
           "type": "int",
