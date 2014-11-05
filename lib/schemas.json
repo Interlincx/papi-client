@@ -2120,11 +2120,11 @@
           "title": "Net Terms - Pending",
           "default": "",
           "options": {
+            "0": "None",
             "7": "Net 7",
             "15": "Net 15",
             "30": "Net 30",
-            "45": "Net 45",
-            "": "None"
+            "45": "Net 45"
           }
         },
         "net_terms": {
@@ -2133,11 +2133,11 @@
           "title": "Net Terms",
           "default": 30,
           "options": {
+            "0": "None",
             "7": "Net 7",
             "15": "Net 15",
             "30": "Net 30",
-            "45": "Net 45",
-            "": "None"
+            "45": "Net 45"
           }
         },
         "payment_start_date": {
