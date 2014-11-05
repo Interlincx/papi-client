@@ -1485,7 +1485,7 @@
           "type": "int",
           "default": "auto_increment",
           "title": "Table ID",
-          "client_editable": false,
+          "readonly": true,
           "client_visible": false,
           "key": "primary"
         },
@@ -1494,7 +1494,7 @@
           "length": 36,
           "data_type": "uuid",
           "title": "Ad ID",
-          "client_editable": false,
+          "readonly": true,
           "client_visible": false,
           "key": "unique"
         },
@@ -1502,7 +1502,7 @@
           "type": "char",
           "length": 36,
           "data_type": "uuid",
-          "client_editable": false,
+          "readonly": true,
           "client_visible": false,
           "key": "column"
         },
@@ -1519,7 +1519,7 @@
         "archive": {
           "type": "tinyint",
           "default": 0,
-          "client_editable": false,
+          "readonly": true,
           "client_visible": false,
           "title": "Archived"
         },
@@ -1567,23 +1567,18 @@
           "type": "time",
           "title": "Daily End Time"
         },
-        "cur_imp_count": {
-          "type": "int",
-          "default": 0,
-          "title": "Current Imp Count"
-        },
         "max_imp_count": {
           "type": "int",
           "title": "Max Imp Count"
         },
-        "cur_click_count": {
-          "type": "mediumint",
-          "default": 0,
-          "title": "Current Click Count"
-        },
         "max_click_count": {
           "type": "mediumint",
           "title": "Max Click Count"
+        },
+        "locked_to_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Locked To ID"
         },
         "allow_sunday": {
           "type": "boolean",
@@ -1628,18 +1623,18 @@
         "create_date": {
           "type": "datetime",
           "default": "_NOW_",
-          "client_editable": false,
+          "readonly": true,
           "title": "Created Date"
         },
         "archive_date": {
           "type": "datetime",
           "title": "Archived Date",
-          "client_editable": false
+          "readonly": true
         },
         "access_date": {
           "type": "timestamp",
           "title": "Access Date",
-          "client_editable": false
+          "readonly": true
         },
         "tracker_url": {
           "type": "text",
@@ -1659,7 +1654,7 @@
         "ad_creative_id": {
           "type": "int",
           "default": "auto_increment",
-          "client_editable": false,
+          "readonly": true,
           "key": "primary"
         },
         "ad_version_id": {
@@ -1667,7 +1662,7 @@
           "length": 36,
           "data_type": "uuid",
           "title": "Ad Version ID",
-          "client_editable": false,
+          "readonly": true,
           "key": {
             "table": "ad"
           }
@@ -1696,12 +1691,48 @@
         }
       }
     },
+    "ad_caps": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "readonly": true,
+          "key": "primary"
+        },
+        "ad_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "readonly": true,
+          "client_visible": false,
+          "key": "column"
+        },
+        "date": {
+          "type": "date",
+          "title": "Date",
+          "key": "column"
+        },
+        "type": {
+          "type": "char",
+          "length": 3,
+          "title": "Type",
+          "options": {
+            "imp": "Impression",
+            "clk": "Click"
+          }
+        },
+        "count": {
+          "type": "smallint",
+          "title": "Count"
+        }
+      }
+    },
     "ad_tag": {
       "fields": {
         "ad_tag_id": {
           "type": "int",
           "default": "auto_increment",
-          "client_editable": false,
+          "readonly": true,
           "key": "primary"
         },
         "ad_version_id": {
@@ -1737,7 +1768,7 @@
           "type": "int",
           "default": "auto_increment",
           "title": "Table ID",
-          "client_editable": false,
+          "readonly": true,
           "key": "primary"
         },
         "ad_feed_version_id": {
@@ -1745,14 +1776,14 @@
           "length": 36,
           "data_type": "uuid",
           "title": "Ad Feed Version ID",
-          "client_editable": false,
+          "readonly": true,
           "key": "unique"
         },
         "ad_feed_id": {
           "type": "char",
           "length": 36,
           "data_type": "uuid",
-          "client_editable": false,
+          "readonly": true,
           "key": "column"
         },
         "feed_title": {
@@ -1772,7 +1803,7 @@
         "create_date": {
           "type": "datetime",
           "default": "_NOW_",
-          "client_editable": false,
+          "readonly": true,
           "title": "Created Date"
         },
         "ad_template_id": {
@@ -1828,7 +1859,7 @@
         "ad_feed_tag_id": {
           "type": "int",
           "default": "auto_increment",
-          "client_editable": false,
+          "readonly": true,
           "key": "primary"
         },
         "ad_feed_version_id": {
@@ -2063,24 +2094,24 @@
           "title": "Payment Frequency - Pending",
           "default": "",
           "options": {
+            "": "None",
             "Monthly": "Monthly",
             "BiWeekly": "BiWeekly",
             "Weekly": "Weekly",
-            "Threshold": "Threshold",
-            "": "None"
+            "Threshold": "Threshold"
           }
         },
         "payment_frequency": {
           "type": "varchar",
           "length": 24,
           "title": "Payment Frequency",
-          "default": "",
+          "default": "Monthly",
           "options": {
+            "": "None",
             "Monthly": "Monthly",
             "BiWeekly": "BiWeekly",
             "Weekly": "Weekly",
-            "Threshold": "Threshold",
-            "": "None"
+            "Threshold": "Threshold"
           }
         },
         "net_terms_pending": {
@@ -3989,6 +4020,62 @@
               "title": "P%",
               "attributes": {
                 "size": 1
+              }
+            }
+          }
+        }
+      },
+      "ad_bucket": {
+        "title": "Ad Bucket",
+        "handle": "ad_bucket",
+        "options": {
+          "tags": {
+            "type": "csv",
+            "input": {
+              "title": "Tags",
+              "type": "select",
+              "options": [
+                {
+                  "tag_id": 1,
+                  "category": "vertical",
+                  "name": "payday loan"
+                },
+                {
+                  "tag_id": 2,
+                  "category": "vertical",
+                  "name": "cash advance"
+                },
+                {
+                  "tag_id": 3,
+                  "category": "vertical",
+                  "name": "credit card"
+                },
+                {
+                  "tag_id": 4,
+                  "category": "traffic type",
+                  "name": "reject"
+                },
+                {
+                  "tag_id": 5,
+                  "category": "traffic type",
+                  "name": "premium"
+                },
+                {
+                  "tag_id": 6,
+                  "category": "traffic type",
+                  "name": "return user"
+                }
+              ]
+            }
+          },
+          "type": {
+            "type": "alnum",
+            "input": {
+              "title": "",
+              "type": "select",
+              "options": {
+                "imp": "Imp",
+                "clk": "Clk"
               }
             }
           }
