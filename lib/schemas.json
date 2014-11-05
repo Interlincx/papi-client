@@ -1493,7 +1493,7 @@
           "type": "varchar",
           "length": 36,
           "data_type": "uuid",
-          "title": "Ad ID",
+          "title": "Ad Version ID",
           "readonly": true,
           "client_visible": false,
           "key": "unique"
@@ -1501,9 +1501,9 @@
         "ad_id": {
           "type": "char",
           "length": 36,
+          "title": "Ad ID",
           "data_type": "uuid",
           "readonly": true,
-          "client_visible": false,
           "key": "column"
         },
         "account_id": {
@@ -1704,7 +1704,6 @@
           "length": 36,
           "data_type": "uuid",
           "readonly": true,
-          "client_visible": false,
           "key": "column"
         },
         "date": {
