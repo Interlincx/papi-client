@@ -1493,7 +1493,7 @@
           "type": "varchar",
           "length": 36,
           "data_type": "uuid",
-          "title": "Ad Version ID",
+          "title": "Ad ID",
           "readonly": true,
           "client_visible": false,
           "key": "unique"
@@ -1501,7 +1501,6 @@
         "ad_id": {
           "type": "char",
           "length": 36,
-          "title": "Ad ID",
           "data_type": "uuid",
           "readonly": true,
           "key": "column"
@@ -4033,38 +4032,14 @@
             "input": {
               "title": "Tags",
               "type": "select",
-              "options": [
-                {
-                  "tag_id": 1,
-                  "category": "vertical",
-                  "name": "payday loan"
-                },
-                {
-                  "tag_id": 2,
-                  "category": "vertical",
-                  "name": "cash advance"
-                },
-                {
-                  "tag_id": 3,
-                  "category": "vertical",
-                  "name": "credit card"
-                },
-                {
-                  "tag_id": 4,
-                  "category": "traffic type",
-                  "name": "reject"
-                },
-                {
-                  "tag_id": 5,
-                  "category": "traffic type",
-                  "name": "premium"
-                },
-                {
-                  "tag_id": 6,
-                  "category": "traffic type",
-                  "name": "return user"
-                }
-              ]
+              "options": {
+                "1": "payday loan",
+                "2": "cash advance",
+                "3": "credit card",
+                "4": "reject",
+                "5": "premium",
+                "6": "return user"
+              }
             }
           },
           "type": {
