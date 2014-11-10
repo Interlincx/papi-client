@@ -11,6 +11,10 @@
         "type": "page",
         "get": "get_page_url"
     },
+    "calculation_dates": {
+        "type": "bill",
+        "get": "calculate_dates"
+    },
     "bill": {
         "type": "bill",
         "save": "save_bill",
