@@ -1493,16 +1493,18 @@
           "type": "varchar",
           "length": 36,
           "data_type": "uuid",
-          "title": "Ad ID",
+          "title": "Ad Version ID",
           "readonly": true,
           "client_visible": false,
           "key": "unique"
         },
         "ad_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
+          "type": "varchar",
+          "length": 8,
+          "title": "Ad ID",
+          "data_type": "minid",
           "readonly": true,
+          "minid_precursor": "A",
           "key": "column"
         },
         "account_id": {
@@ -1623,7 +1625,7 @@
           "type": "datetime",
           "default": "_NOW_",
           "readonly": true,
-          "title": "Created Date"
+          "title": "Last Modified"
         },
         "archive_date": {
           "type": "datetime",
