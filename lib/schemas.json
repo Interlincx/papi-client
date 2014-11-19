@@ -401,11 +401,11 @@
           "attributes": {
             "width": {
               "type": "int",
-              "default": 50
+              "default": 900
             },
             "height": {
               "type": "int",
-              "default": 50
+              "default": 1000
             }
           },
           "title": "Background",
@@ -527,11 +527,11 @@
           "attributes": {
             "width": {
               "type": "int",
-              "default": 50
+              "default": 900
             },
             "height": {
               "type": "int",
-              "default": 50
+              "default": 1000
             }
           },
           "title": "Background",
@@ -675,11 +675,11 @@
       "attributes": {
         "width": {
           "type": "int",
-          "default": 50
+          "default": 900
         },
         "height": {
           "type": "int",
-          "default": 50
+          "default": 1000
         }
       },
       "title": "Background",
@@ -2353,8 +2353,9 @@
           "client_editable": false,
           "client_visible": false,
           "options": {
-            "primary": "Primary",
-            "secondary": "Secondary"
+            "mailing": "Mailing Address",
+            "billing": "Billing Address",
+            "secondary": "Other Address"
           }
         },
         "address_1": {

@@ -64,7 +64,8 @@
         "title": "User",
         "type": "user",
         "get": "get_user",
-        "save": "save_user"
+        "save": "save_user",
+        "delete": "delete_user"
     },
     "ad": {
         "title": "Ad",
