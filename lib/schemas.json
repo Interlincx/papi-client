@@ -3861,6 +3861,20 @@
           "data_type": "uuid",
           "title": "Bill Group ID",
           "key": "column"
+        },
+        "payment_ready": {
+          "type": "char",
+          "length": 1,
+          "title": "Payment Ready",
+          "default": "n",
+          "options": {
+            "y": "Pay",
+            "n": "No Pay"
+          }
+        },
+        "system_notes": {
+          "type": "text",
+          "title": "System Notes"
         }
       },
       "joins": [
@@ -4978,6 +4992,7 @@
               "type": "select",
               "options": {
                 "page": "Page",
+                "node": "Node",
                 "global": "Global"
               }
             }
