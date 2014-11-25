@@ -2192,6 +2192,12 @@
           "title": "External Revenue",
           "default": 0
         },
+        "no_pay_pending": {
+          "type": "boolean",
+          "length": 1,
+          "title": "No Pay - Pending",
+          "default": 0
+        },
         "no_pay": {
           "type": "boolean",
           "length": 1,
