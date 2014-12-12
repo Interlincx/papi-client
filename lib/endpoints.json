@@ -15,6 +15,10 @@
         "type": "bill",
         "get": "calculate_dates"
     },
+    "recent_periods": {
+        "type": "bill",
+        "get": "get_recent_periods"
+    },
     "bill": {
         "type": "bill",
         "save": "save_bill",
