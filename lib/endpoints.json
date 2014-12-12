@@ -67,6 +67,10 @@
         "type": "decision_tree",
         "get": "get_adpage_pieces"
     },
+    "endpoint_detail": {
+        "type": "decision_tree",
+        "get": "get_endpoint_detail"
+    },
     "users": {
         "title": "Users",
         "type": "user",
