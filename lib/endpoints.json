@@ -67,9 +67,9 @@
         "type": "decision_tree",
         "get": "get_adpage_pieces"
     },
-    "endpoint_detail": {
+    "endpoint_details": {
         "type": "decision_tree",
-        "get": "get_endpoint_detail"
+        "get": "get_endpoint_details"
     },
     "users": {
         "title": "Users",
