@@ -67,6 +67,10 @@
         "type": "decision_tree",
         "get": "get_adpage_pieces"
     },
+    "swarm_details": {
+        "type": "swarm",
+        "get": "get_swarm_details"
+    },
     "endpoint_details": {
         "type": "decision_tree",
         "get": "get_endpoint_details"
