@@ -135,6 +135,13 @@
         "get": "get_account",
         "save": "save_account"
     },
+    "contact": {
+        "title": "Contact",
+        "type": "account",
+        "get": "get_contact",
+        "save": "save_contact",
+        "delete": "delete_contact"
+    },
     "address": {
         "title": "Address",
         "type": "account",
