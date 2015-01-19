@@ -2422,6 +2422,106 @@
         }
       }
     },
+    "contact": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "contact_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "contact Version ID",
+          "key": "unique",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "contact_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "contact ID",
+          "key": "column",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "account_id": {
+          "type": "char",
+          "length": 8,
+          "client_editable": false,
+          "client_visible": false
+        },
+        "address_id": {
+          "type": "char",
+          "length": 36,
+          "client_editable": false,
+          "client_visible": false
+        },
+        "first_name": {
+          "type": "varchar",
+          "length": 32,
+          "title": "First Name",
+          "column_definition": {
+            "nowrap": true
+          }
+        },
+        "last_name": {
+          "type": "varchar",
+          "length": 32,
+          "title": "Last Name"
+        },
+        "title": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Title"
+        },
+        "email": {
+          "type": "varchar",
+          "length": 128,
+          "title": "Email",
+          "key": "column",
+          "conversion": [
+            "lowercase"
+          ]
+        },
+        "phone": {
+          "type": "varchar",
+          "length": 20,
+          "title": "Phone"
+        },
+        "phone_ext": {
+          "type": "varchar",
+          "length": 10,
+          "title": "Extension"
+        },
+        "notes": {
+          "type": "text",
+          "title": "Notes"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived",
+          "client_editable": false
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date",
+          "client_editable": false
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date",
+          "client_editable": false
+        }
+      }
+    },
     "creative_instance": {
       "fields": {
         "id": {
@@ -3735,6 +3835,13 @@
           "title": "Account ID",
           "key": "column"
         },
+        "account_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Account Version ID",
+          "client_editable": false
+        },
         "revenue": {
           "type": "double",
           "title": "Revenue",
@@ -3780,6 +3887,37 @@
           "type": "varchar",
           "length": 16,
           "title": "Source"
+        },
+        "company_name": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Company Name"
+        },
+        "company_name_at_bank": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Company Name At Bank (Vendor Name for CSV)"
+        },
+        "payment_currency": {
+          "type": "varchar",
+          "length": 3,
+          "title": "Payment Currency",
+          "default": "USD"
+        },
+        "bank_id": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Routing #"
+        },
+        "bank_account_id": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Bank Account #"
+        },
+        "bank_account_type": {
+          "type": "varchar",
+          "length": 16,
+          "title": "Bank Account Type"
         },
         "roll_forward": {
           "type": "char",
