@@ -2256,7 +2256,7 @@
         "bank_name": {
           "type": "varchar",
           "length": 64,
-          "title": "Bank Name"
+          "title": "Bank Name (Only for wires)"
         },
         "manager": {
           "type": "varchar",
@@ -2306,6 +2306,12 @@
       "joins": [
         {
           "table": "address",
+          "local_key": "account_id",
+          "foreign_key": "account_id",
+          "relationship": "one_to_many"
+        },
+        {
+          "table": "contact",
           "local_key": "account_id",
           "foreign_key": "account_id",
           "relationship": "one_to_many"
