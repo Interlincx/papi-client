@@ -2091,15 +2091,7 @@
         "payment_frequency_pending": {
           "type": "varchar",
           "length": 24,
-          "title": "Payment Frequency - Pending",
-          "default": "",
-          "options": {
-            "": "None",
-            "Monthly": "Monthly",
-            "BiWeekly": "BiWeekly",
-            "Weekly": "Weekly",
-            "Threshold": "Threshold"
-          }
+          "default": ""
         },
         "payment_frequency": {
           "type": "varchar",
@@ -2117,15 +2109,7 @@
         "net_terms_pending": {
           "type": "char",
           "length": 2,
-          "title": "Net Terms - Pending",
-          "default": "",
-          "options": {
-            "0": "None",
-            "7": "Net 7",
-            "15": "Net 15",
-            "30": "Net 30",
-            "45": "Net 45"
-          }
+          "default": 30
         },
         "net_terms": {
           "type": "char",
@@ -2146,6 +2130,10 @@
           "default": "_NOW_",
           "client_editable": false
         },
+        "payment_threshold_pending": {
+          "type": "double",
+          "title": "Payment Threshold Pending"
+        },
         "payment_threshold": {
           "type": "double",
           "title": "Payment Threshold",
@@ -2159,14 +2147,7 @@
         "payment_method_pending": {
           "type": "varchar",
           "length": 5,
-          "title": "Payment Method - Pending",
-          "default": "",
-          "options": {
-            "Check": "Check",
-            "Wire": "Wire",
-            "ACH": "ACH",
-            "": "None"
-          }
+          "default": ""
         },
         "payment_method": {
           "type": "varchar",
@@ -2186,6 +2167,11 @@
           "title": "Payment Currency",
           "default": "USD"
         },
+        "payment_currency_pending": {
+          "type": "varchar",
+          "length": 3,
+          "default": "USD"
+        },
         "external_revenue": {
           "type": "boolean",
           "length": 1,
@@ -2195,7 +2181,6 @@
         "no_pay_pending": {
           "type": "boolean",
           "length": 1,
-          "title": "No Pay - Pending",
           "default": 0
         },
         "no_pay": {
@@ -2223,15 +2208,28 @@
           "length": 11,
           "title": "SSN"
         },
+        "bank_id_pending": {
+          "type": "varchar",
+          "length": 36
+        },
         "bank_id": {
           "type": "varchar",
           "length": 36,
           "title": "Routing #"
         },
+        "bank_account_id_pending": {
+          "type": "varchar",
+          "length": 36
+        },
         "bank_account_id": {
           "type": "varchar",
           "length": 36,
           "title": "Bank Account #"
+        },
+        "bank_account_type_pending": {
+          "type": "varchar",
+          "length": 16,
+          "default": "checking"
         },
         "bank_account_type": {
           "type": "varchar",
@@ -2243,10 +2241,18 @@
             "saving": "Saving"
           }
         },
+        "swift_code_pending": {
+          "type": "varchar",
+          "length": 36
+        },
         "swift_code": {
           "type": "varchar",
           "length": 36,
           "title": "Swift Code"
+        },
+        "iban_pending": {
+          "type": "varchar",
+          "length": 36
         },
         "iban": {
           "type": "varchar",
@@ -2262,6 +2268,10 @@
           "type": "varchar",
           "length": 32,
           "title": "Account Manager"
+        },
+        "company_name_at_bank_pending": {
+          "type": "varchar",
+          "length": 64
         },
         "company_name_at_bank": {
           "type": "varchar",
@@ -2362,8 +2372,6 @@
           "length": 16,
           "title": "Type",
           "default": "primary",
-          "client_editable": false,
-          "client_visible": false,
           "options": {
             "mailing": "Mailing Address",
             "billing": "Billing Address",
@@ -3924,6 +3932,16 @@
           "type": "varchar",
           "length": 16,
           "title": "Bank Account Type"
+        },
+        "swift_code": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Swift Code"
+        },
+        "iban": {
+          "type": "varchar",
+          "length": 36,
+          "title": "IBAN"
         },
         "roll_forward": {
           "type": "char",
