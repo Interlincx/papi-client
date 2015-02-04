@@ -142,6 +142,11 @@
         "save": "save_contact",
         "delete": "delete_contact"
     },
+    "addresses": {
+        "title": "Addresses",
+        "type": "account",
+        "get": "get_addresses"
+    },
     "address": {
         "title": "Address",
         "type": "account",
