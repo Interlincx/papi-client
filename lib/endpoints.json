@@ -29,6 +29,10 @@
         "type": "bill",
         "get": "get_external_items"
     },
+    "account_bills": {
+        "type": "bill",
+        "get": "get_account_bills"
+    },
     "bill_account_totals": {
         "type": "bill",
         "get": "get_account_totals"
