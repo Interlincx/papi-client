@@ -3998,6 +3998,16 @@
             "n": "Do Not Roll Forward"
           }
         },
+        "user_action": {
+          "type": "char",
+          "length": 1,
+          "title": "User Action",
+          "default": "",
+          "options": {
+            "y": "Pay",
+            "n": "No Pay"
+          }
+        },
         "payment_ready": {
           "type": "char",
           "length": 1,
