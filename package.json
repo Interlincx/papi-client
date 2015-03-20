@@ -1,6 +1,6 @@
 {
   "name": "papi-client",
-  "version": "1.1.35",
+  "version": "1.1.36",
   "description": "papi-client interfaces with papi api to make life easier",
   "main": "index.js",
   "scripts": {
