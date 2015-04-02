@@ -1,4 +1,8 @@
 {
+    "tags": {
+        "type": "tag",
+        "get": "get_tags"
+    },
     "user_accounts": {
         "type": "account",
         "get": "get_user_accounts"
