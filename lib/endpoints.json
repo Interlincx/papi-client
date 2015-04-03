@@ -3,6 +3,10 @@
         "type": "tag",
         "get": "get_tags"
     },
+    "site_lookup": {
+        "type": "legacy",
+        "get": "get_site_lookup"
+    },
     "user_accounts": {
         "type": "account",
         "get": "get_user_accounts"
