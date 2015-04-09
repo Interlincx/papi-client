@@ -57,6 +57,8 @@ PapiClient::get = (what, opts, cb) ->
   _this = this
 
   endpoint = @endpoints[what]
+  if !endpoint
+    console.log "Endpoint '"+what+"' is not defined"
   pieces = {type:endpoint.type, module:endpoint.get}
 
   console.log 'Endpoint:',endpoint
