@@ -1,4 +1,8 @@
 {
+    "bill_status": {
+        "type": "bill",
+        "save": "save_status"
+    },
     "tags": {
         "type": "tag",
         "get": "get_tags"
