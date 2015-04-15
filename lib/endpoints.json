@@ -140,6 +140,11 @@
         "type": "ad",
         "get": "get_ads"
     },
+    "accounts_basic": {
+        "title": "Accounts Basic",
+        "type": "account",
+        "get": "get_accounts_basic"
+    },
     "accounts": {
         "title": "Accounts",
         "type": "account",
