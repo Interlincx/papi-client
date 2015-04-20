@@ -29,6 +29,41 @@
       "tag_id": 6,
       "category": "traffic type",
       "name": "return user"
+    },
+    {
+      "tag_id": 9,
+      "category": null,
+      "name": "test"
+    },
+    {
+      "tag_id": 10,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 11,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 12,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 13,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 14,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 15,
+      "category": null,
+      "name": ""
     }
   ],
   "creative_sub_templates": {
@@ -2034,9 +2069,16 @@
           "client_editable": false
         },
         "account_id": {
-          "type": "varchar",
-          "length": 8,
+          "type": "int",
           "title": "Account ID",
+          "key": "column",
+          "data_type": "minid",
+          "minid_precursor": "C",
+          "client_editable": false
+        },
+        "account_parent_id": {
+          "type": "int",
+          "title": "Account Parent ID",
           "key": "column",
           "data_type": "minid",
           "minid_precursor": "C",
@@ -2090,6 +2132,7 @@
         },
         "payment_frequency_pending": {
           "type": "varchar",
+          "title": "Payment Frequency Pending",
           "length": 24,
           "default": "",
           "options": {
@@ -2115,6 +2158,7 @@
         },
         "net_terms_pending": {
           "type": "char",
+          "title": "Net Terms Pending",
           "length": 2,
           "default": 30,
           "options": {
@@ -2159,6 +2203,7 @@
         },
         "payment_method_pending": {
           "type": "varchar",
+          "title": "Payment Method Pending",
           "length": 5,
           "default": "",
           "options": {
@@ -2188,11 +2233,13 @@
         },
         "payment_currency_pending": {
           "type": "varchar",
+          "title": "Payment Currency Pending",
           "length": 3,
           "default": "USD"
         },
         "external_revenue_pending": {
           "type": "boolean",
+          "title": "External Revenue Pending",
           "length": 1,
           "default": 0
         },
@@ -2204,6 +2251,7 @@
         },
         "no_pay_pending": {
           "type": "boolean",
+          "title": "No Pay Pending",
           "length": 1,
           "default": 0
         },
@@ -2243,6 +2291,7 @@
         },
         "bank_account_id_pending": {
           "type": "varchar",
+          "title": "Bank Account # Pending",
           "length": 36
         },
         "bank_account_id": {
@@ -2254,6 +2303,7 @@
           "type": "varchar",
           "length": 16,
           "default": "checking",
+          "title": "Bank Account Type Pending",
           "options": {
             "checking": "Checking",
             "saving": "Saving"
@@ -2271,6 +2321,7 @@
         },
         "swift_code_pending": {
           "type": "varchar",
+          "title": "Swift Code Pending",
           "length": 36
         },
         "swift_code": {
@@ -2280,6 +2331,7 @@
         },
         "iban_pending": {
           "type": "varchar",
+          "title": "IBAN Pending",
           "length": 36
         },
         "iban": {
@@ -2289,6 +2341,7 @@
         },
         "bank_name_pending": {
           "type": "varchar",
+          "title": "Bank Name Pending",
           "length": 64
         },
         "bank_name": {
@@ -2303,6 +2356,7 @@
         },
         "company_name_at_bank_pending": {
           "type": "varchar",
+          "title": "Company Name At Bank Pending",
           "length": 64
         },
         "company_name_at_bank": {
@@ -2333,14 +2387,16 @@
           "client_editable": false
         },
         "bank_address_pending": {
-          "type": "text"
+          "type": "text",
+          "title": "Bank Address Pending"
         },
         "bank_address": {
           "type": "text",
           "title": "Bank Address"
         },
         "payment_notes_pending": {
-          "type": "text"
+          "type": "text",
+          "title": "Payment Notes Pending"
         },
         "payment_notes": {
           "type": "text",
@@ -2439,7 +2495,7 @@
         "state": {
           "type": "char",
           "length": 2,
-          "title": "State / Region",
+          "title": "State / Province",
           "special": "province"
         },
         "country": {
@@ -3896,6 +3952,11 @@
           "title": "Account Version ID",
           "client_editable": false
         },
+        "account_parent_id": {
+          "type": "int",
+          "title": "Account Parent ID",
+          "key": "column"
+        },
         "revenue": {
           "type": "double",
           "title": "Revenue",
@@ -4288,7 +4349,14 @@
                 "3": "credit card",
                 "4": "reject",
                 "5": "premium",
-                "6": "return user"
+                "6": "return user",
+                "9": "test",
+                "10": "",
+                "11": "",
+                "12": "",
+                "13": "",
+                "14": "",
+                "15": ""
               }
             }
           },
