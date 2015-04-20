@@ -2282,7 +2282,8 @@
         },
         "bank_id_pending": {
           "type": "varchar",
-          "length": 36
+          "length": 36,
+          "title": "Routing # Pending"
         },
         "bank_id": {
           "type": "varchar",
