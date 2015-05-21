@@ -61,8 +61,8 @@ PapiClient::get = (what, opts, cb) ->
     console.log "Endpoint '"+what+"' is not defined"
   pieces = {type:endpoint.type, module:endpoint.get}
 
-  console.log 'Endpoint:',endpoint
-  console.log 'params:',opts
+  # console.log 'Endpoint:',endpoint
+  # console.log 'params:',opts
 
   url = @getUrl( pieces, opts )
   gj url, opts, (err, result) ->
