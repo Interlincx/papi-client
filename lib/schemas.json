@@ -64,6 +64,271 @@
       "tag_id": 15,
       "category": null,
       "name": ""
+    },
+    {
+      "tag_id": 16,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 17,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 18,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 19,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 20,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 21,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 22,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 23,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 24,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 25,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 26,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 27,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 28,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 29,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 30,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 31,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 32,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 33,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 34,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 35,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 36,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 37,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 38,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 39,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 40,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 41,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 42,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 43,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 44,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 45,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 46,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 47,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 48,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 49,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 50,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 51,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 52,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 53,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 54,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 55,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 56,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 57,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 58,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 59,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 60,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 61,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 62,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 63,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 64,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 65,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 66,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 67,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 68,
+      "category": null,
+      "name": ""
     }
   ],
   "creative_sub_templates": {
@@ -1514,403 +1779,68 @@
     }
   },
   "tables": {
-    "ad": {
+    "gateway": {
       "fields": {
         "id": {
           "type": "int",
           "default": "auto_increment",
           "title": "Table ID",
-          "readonly": true,
-          "client_visible": false,
           "key": "primary"
         },
-        "ad_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad Version ID",
-          "readonly": true,
-          "client_visible": false,
-          "key": "unique"
-        },
-        "ad_id": {
+        "gateway_id": {
           "type": "varchar",
           "length": 8,
-          "title": "Ad ID",
-          "data_type": "minid",
-          "readonly": true,
-          "minid_precursor": "A",
-          "key": "column"
+          "key": "unique"
         },
         "account_id": {
           "type": "varchar",
           "length": 8,
-          "title": "Advertiser Account ID"
+          "title": "Account ID",
+          "key": "column"
         },
-        "active": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Active"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "readonly": true,
-          "client_visible": false,
-          "title": "Archived"
-        },
-        "cpc": {
-          "type": "float",
-          "length": "(5,2)",
-          "title": "CPC"
-        },
-        "cpi": {
-          "type": "float",
-          "length": "(5,4)",
-          "title": "CPI"
-        },
-        "weight": {
-          "type": "smallint",
-          "title": "Weight"
-        },
-        "start_time": {
-          "type": "datetime",
-          "title": "Start Date/Time",
-          "input": {
-            "type": "date",
-            "attributes": {
-              "minYear": 2012,
-              "maxYear": 2014
-            }
-          }
-        },
-        "end_time": {
-          "type": "datetime",
-          "title": "End Date/Time",
-          "input": {
-            "type": "date",
-            "attributes": {
-              "minYear": 2012,
-              "maxYear": 2014
-            }
-          }
-        },
-        "daily_start_time": {
-          "type": "time",
-          "title": "Daily Start Time"
-        },
-        "daily_end_time": {
-          "type": "time",
-          "title": "Daily End Time"
-        },
-        "max_imp_count": {
-          "type": "int",
-          "title": "Max Imp Count"
-        },
-        "max_click_count": {
-          "type": "mediumint",
-          "title": "Max Click Count"
-        },
-        "locked_to_id": {
+        "swarm_id": {
           "type": "varchar",
           "length": 8,
-          "title": "Locked To ID"
+          "title": "Swarm ID"
         },
-        "allow_sunday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Sunday"
-        },
-        "allow_monday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Monday"
-        },
-        "allow_tuesday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Tuesday"
-        },
-        "allow_wednesday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Wednesday"
-        },
-        "allow_thursday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Thursday"
-        },
-        "allow_friday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Friday"
-        },
-        "allow_saturday": {
-          "type": "boolean",
-          "default": 1,
-          "title": "Saturday"
-        },
-        "ad_name": {
-          "type": "varchar",
-          "length": 128,
-          "title": "Ad Name"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "readonly": true,
-          "title": "Last Modified"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date",
-          "readonly": true
-        },
-        "access_date": {
-          "type": "timestamp",
-          "title": "Access Date",
-          "readonly": true
-        },
-        "tracker_url": {
-          "type": "text",
-          "title": "Tracker URL"
-        }
-      },
-      "joins": [
-        {
-          "table": "ad_creative",
-          "local_key": "ad_version_id",
-          "foreign_key": "ad_version_id"
-        }
-      ]
-    },
-    "ad_creative": {
-      "fields": {
-        "ad_creative_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "readonly": true,
-          "key": "primary"
-        },
-        "ad_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad Version ID",
-          "readonly": true,
-          "key": {
-            "table": "ad"
-          }
-        },
-        "ad_template_id": {
-          "type": "int",
-          "title": "Tag ID"
-        },
-        "content": {
-          "type": "text",
-          "data_type": "json",
-          "title": "Content",
-          "conversion": [
-            "json",
-            "base64"
-          ]
-        },
-        "content_merged": {
-          "type": "text",
-          "data_type": "json",
-          "title": "Merged Content",
-          "conversion": [
-            "json",
-            "base64"
-          ]
-        }
-      }
-    },
-    "ad_caps": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "readonly": true,
-          "key": "primary"
-        },
-        "ad_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "readonly": true,
-          "key": "column"
-        },
-        "date": {
-          "type": "date",
-          "title": "Date",
-          "key": "column"
-        },
-        "type": {
-          "type": "char",
-          "length": 3,
-          "title": "Type",
-          "options": {
-            "imp": "Impression",
-            "clk": "Click"
-          }
-        },
-        "count": {
-          "type": "smallint",
-          "title": "Count"
-        }
-      }
-    },
-    "ad_tag": {
-      "fields": {
-        "ad_tag_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "readonly": true,
-          "key": "primary"
-        },
-        "ad_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad Version ID",
-          "key": {
-            "table": "ad"
-          }
-        },
-        "tag_id": {
-          "type": "int",
-          "title": "Tag ID",
-          "key": {
-            "table": "tag"
-          }
-        }
-      },
-      "joins": [
-        {
-          "table": "tag",
-          "local_key": "tag_id",
-          "foreign_key": "tag_id",
-          "module_parent": "tag",
-          "class": "Tag"
-        }
-      ]
-    },
-    "ad_feed": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "readonly": true,
-          "key": "primary"
-        },
-        "ad_feed_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad Feed Version ID",
-          "readonly": true,
-          "key": "unique"
-        },
-        "ad_feed_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "readonly": true,
-          "key": "column"
-        },
-        "feed_title": {
+        "gateway_name": {
           "type": "varchar",
           "length": 64,
-          "title": "Title"
+          "title": "Gateway Name"
+        },
+        "gateway_type": {
+          "type": "varchar",
+          "length": 6,
+          "title": "Gateway Type",
+          "options": {
+            "path": "Path",
+            "script": "Script"
+          }
         },
         "archive": {
           "type": "tinyint",
           "default": 0,
-          "title": "Archive"
+          "title": "Archived"
         },
         "archive_date": {
           "type": "datetime",
-          "title": "Archive Date"
+          "title": "Archived Date"
         },
         "create_date": {
           "type": "datetime",
           "default": "_NOW_",
-          "readonly": true,
           "title": "Created Date"
-        },
-        "ad_template_id": {
-          "type": "int",
-          "title": "Ad Template ID"
         }
       },
       "joins": [
         {
-          "table": "ad_feed_map",
-          "local_key": "ad_feed_version_id",
-          "foreign_key": "ad_feed_version_id"
+          "module_parent": "swarm",
+          "class": "Swarm",
+          "table": "swarm",
+          "local_key": "swarm_id",
+          "foreign_key": "swarm_id"
         }
       ]
-    },
-    "ad_feed_map": {
-      "fields": {
-        "ad_feed_map_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "key": "primary"
-        },
-        "ad_feed_version_id": {
-          "type": "char",
-          "length": 36,
-          "key": {
-            "table": "ad_feed"
-          }
-        },
-        "ad_id": {
-          "type": "char",
-          "length": 36,
-          "title": "Ad ID",
-          "key": {
-            "table": "ad"
-          }
-        },
-        "position": {
-          "type": "tinyint",
-          "title": "Position"
-        }
-      },
-      "joins": [
-        {
-          "table": "ad",
-          "local_key": "ad_id",
-          "foreign_key": "ad_id"
-        }
-      ]
-    },
-    "ad_feed_tag": {
-      "fields": {
-        "ad_feed_tag_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "readonly": true,
-          "key": "primary"
-        },
-        "ad_feed_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Ad Feed Version ID",
-          "key": {
-            "table": "ad_feed"
-          }
-        },
-        "tag_id": {
-          "type": "int",
-          "title": "Tag ID"
-        }
-      }
     },
     "swarm": {
       "fields": {
@@ -2049,1015 +1979,6 @@
           "title": "Setting Value"
         }
       }
-    },
-    "account": {
-      "identity_key": "account_id",
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary",
-          "client_editable": false
-        },
-        "account_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Account Version ID",
-          "key": "unique",
-          "client_editable": false
-        },
-        "account_id": {
-          "type": "int",
-          "title": "Account ID",
-          "key": "column",
-          "data_type": "minid",
-          "minid_precursor": "C",
-          "client_editable": false
-        },
-        "account_parent_id": {
-          "type": "int",
-          "title": "Account Parent ID",
-          "key": "column",
-          "data_type": "minid",
-          "minid_precursor": "C",
-          "client_editable": false
-        },
-        "permissions_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Permissions ID",
-          "client_editable": false
-        },
-        "internal_account": {
-          "type": "boolean",
-          "title": "Internal Account",
-          "default": 0
-        },
-        "legacy_long_id": {
-          "type": "varchar",
-          "length": 43,
-          "title": "Legacy Long ID",
-          "client_editable": false
-        },
-        "company_name": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Company Name"
-        },
-        "company_alias1": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Company Alias 1"
-        },
-        "company_alias2": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Company Alias 2"
-        },
-        "company_name_accounting": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Quickbooks Company Name"
-        },
-        "admin_email": {
-          "type": "varchar",
-          "length": 128,
-          "title": "Account Admin Email",
-          "conversion": [
-            "lowercase"
-          ]
-        },
-        "payment_frequency_pending": {
-          "type": "varchar",
-          "title": "Payment Frequency Pending",
-          "length": 24,
-          "default": "",
-          "options": {
-            "": "None",
-            "Monthly": "Monthly",
-            "BiWeekly": "BiWeekly",
-            "Weekly": "Weekly",
-            "Threshold": "Threshold"
-          }
-        },
-        "payment_frequency": {
-          "type": "varchar",
-          "length": 24,
-          "title": "Payment Frequency",
-          "default": "Monthly",
-          "options": {
-            "": "None",
-            "Monthly": "Monthly",
-            "BiWeekly": "BiWeekly",
-            "Weekly": "Weekly",
-            "Threshold": "Threshold"
-          }
-        },
-        "net_terms_pending": {
-          "type": "char",
-          "title": "Net Terms Pending",
-          "length": 2,
-          "default": 30,
-          "options": {
-            "0": "None",
-            "7": "Net 7",
-            "15": "Net 15",
-            "30": "Net 30",
-            "45": "Net 45"
-          }
-        },
-        "net_terms": {
-          "type": "char",
-          "length": 2,
-          "title": "Net Terms",
-          "default": 30,
-          "options": {
-            "0": "None",
-            "7": "Net 7",
-            "15": "Net 15",
-            "30": "Net 30",
-            "45": "Net 45"
-          }
-        },
-        "payment_threshold_pending": {
-          "type": "double",
-          "title": "Payment Threshold Pending",
-          "conditional_defaults": {
-            "Check": 50,
-            "Wire": 100,
-            "ACH": 10
-          }
-        },
-        "payment_threshold": {
-          "type": "double",
-          "title": "Payment Threshold",
-          "tooltip": "A Payment Threshold value of 0 instead uses a default based on the value selected for Payment Method",
-          "conditional_defaults": {
-            "Check": 50,
-            "Wire": 100,
-            "ACH": 10
-          }
-        },
-        "payment_method_pending": {
-          "type": "varchar",
-          "title": "Payment Method Pending",
-          "length": 5,
-          "default": "",
-          "options": {
-            "Check": "Check",
-            "Wire": "Wire",
-            "ACH": "ACH",
-            "": "None"
-          }
-        },
-        "payment_method": {
-          "type": "varchar",
-          "length": 5,
-          "title": "Payment Method",
-          "default": "",
-          "options": {
-            "Check": "Check",
-            "Wire": "Wire",
-            "ACH": "ACH",
-            "": "None"
-          }
-        },
-        "payment_currency": {
-          "type": "varchar",
-          "length": 3,
-          "title": "Payment Currency",
-          "default": "USD"
-        },
-        "payment_currency_pending": {
-          "type": "varchar",
-          "title": "Payment Currency Pending",
-          "length": 3,
-          "default": "USD"
-        },
-        "external_revenue_pending": {
-          "type": "boolean",
-          "title": "External Revenue Pending",
-          "length": 1,
-          "default": 0
-        },
-        "external_revenue": {
-          "type": "boolean",
-          "length": 1,
-          "title": "External Revenue",
-          "default": 0
-        },
-        "no_pay_pending": {
-          "type": "boolean",
-          "title": "No Pay Pending",
-          "length": 1,
-          "default": 0
-        },
-        "no_pay": {
-          "type": "boolean",
-          "length": 1,
-          "title": "No Pay",
-          "default": 0
-        },
-        "phone": {
-          "type": "varchar",
-          "length": 20,
-          "title": "Phone"
-        },
-        "default_revenue_cut": {
-          "type": "double",
-          "title": "Default Revenue Share"
-        },
-        "tax_id": {
-          "type": "varchar",
-          "length": 12,
-          "title": "Tax ID"
-        },
-        "ssn": {
-          "type": "char",
-          "length": 11,
-          "title": "SSN"
-        },
-        "bank_id_pending": {
-          "type": "varchar",
-          "length": 36,
-          "title": "Routing # Pending"
-        },
-        "bank_id": {
-          "type": "varchar",
-          "length": 36,
-          "title": "Routing #"
-        },
-        "bank_account_id_pending": {
-          "type": "varchar",
-          "title": "Bank Account # Pending",
-          "length": 36
-        },
-        "bank_account_id": {
-          "type": "varchar",
-          "length": 36,
-          "title": "Bank Account #"
-        },
-        "bank_account_type_pending": {
-          "type": "varchar",
-          "length": 16,
-          "default": "checking",
-          "title": "Bank Account Type Pending",
-          "options": {
-            "checking": "Checking",
-            "saving": "Saving"
-          }
-        },
-        "bank_account_type": {
-          "type": "varchar",
-          "length": 16,
-          "title": "Bank Account Type",
-          "default": "checking",
-          "options": {
-            "checking": "Checking",
-            "saving": "Saving"
-          }
-        },
-        "swift_code_pending": {
-          "type": "varchar",
-          "title": "Swift Code Pending",
-          "length": 36
-        },
-        "swift_code": {
-          "type": "varchar",
-          "length": 36,
-          "title": "Swift Code"
-        },
-        "iban_pending": {
-          "type": "varchar",
-          "title": "IBAN Pending",
-          "length": 36
-        },
-        "iban": {
-          "type": "varchar",
-          "length": 36,
-          "title": "IBAN"
-        },
-        "bank_name_pending": {
-          "type": "varchar",
-          "title": "Bank Name Pending",
-          "length": 64
-        },
-        "bank_name": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Bank Name (Only for wires)"
-        },
-        "manager": {
-          "type": "varchar",
-          "length": 32,
-          "title": "Account Manager"
-        },
-        "company_name_at_bank_pending": {
-          "type": "varchar",
-          "title": "Company Name At Bank Pending",
-          "length": 64
-        },
-        "company_name_at_bank": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Company Name At Bank (Vendor Name for CSV)"
-        },
-        "active": {
-          "type": "tinyint",
-          "default": 1,
-          "title": "Active"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived",
-          "client_editable": false
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date",
-          "client_editable": false
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date",
-          "client_editable": false
-        },
-        "bank_address_pending": {
-          "type": "text",
-          "title": "Bank Address Pending"
-        },
-        "bank_address": {
-          "type": "text",
-          "title": "Bank Address"
-        },
-        "payment_notes_pending": {
-          "type": "text",
-          "title": "Payment Notes Pending"
-        },
-        "payment_notes": {
-          "type": "text",
-          "title": "Payment Notes"
-        },
-        "notes": {
-          "type": "text",
-          "title": "Notes"
-        }
-      },
-      "joins": [
-        {
-          "table": "address",
-          "local_key": "account_id",
-          "foreign_key": "account_id",
-          "relationship": "one_to_many"
-        },
-        {
-          "table": "contact",
-          "local_key": "account_id",
-          "foreign_key": "account_id",
-          "relationship": "one_to_many"
-        }
-      ]
-    },
-    "address": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary",
-          "client_editable": false,
-          "client_visible": false
-        },
-        "address_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Address Version ID",
-          "key": "unique",
-          "client_editable": false,
-          "client_visible": false
-        },
-        "address_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Address ID",
-          "key": "column",
-          "client_editable": false,
-          "client_visible": false
-        },
-        "account_id": {
-          "type": "char",
-          "length": 8,
-          "client_editable": false,
-          "client_visible": false
-        },
-        "label": {
-          "type": "varchar",
-          "length": 255,
-          "title": "Label"
-        },
-        "type": {
-          "type": "varchar",
-          "length": 16,
-          "title": "Type",
-          "default": "primary",
-          "options": {
-            "mailing": "Mailing Address",
-            "billing": "Billing Address",
-            "secondary": "Other Address"
-          }
-        },
-        "address_1": {
-          "type": "varchar",
-          "length": 255,
-          "title": "Address 1"
-        },
-        "address_2": {
-          "type": "varchar",
-          "length": 255,
-          "title": "Address 2"
-        },
-        "zip_code": {
-          "type": "varchar",
-          "length": 10,
-          "title": "Zip Code"
-        },
-        "city": {
-          "type": "varchar",
-          "length": 255,
-          "title": "City"
-        },
-        "state": {
-          "type": "char",
-          "length": 2,
-          "title": "State / Province",
-          "special": "province"
-        },
-        "country": {
-          "type": "char",
-          "length": 2,
-          "title": "Country",
-          "special": "country"
-        },
-        "foreign_postcode": {
-          "type": "varchar",
-          "length": 32,
-          "title": "Foreign Postcode"
-        },
-        "address_3": {
-          "type": "text",
-          "title": "Address 3"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived",
-          "client_editable": false
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date",
-          "client_editable": false
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date",
-          "client_editable": false
-        }
-      }
-    },
-    "contact": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary",
-          "client_editable": false,
-          "client_visible": false
-        },
-        "contact_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "contact Version ID",
-          "key": "unique",
-          "client_editable": false,
-          "client_visible": false
-        },
-        "contact_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "contact ID",
-          "key": "column",
-          "client_editable": false,
-          "client_visible": false
-        },
-        "account_id": {
-          "type": "char",
-          "length": 8,
-          "client_editable": false,
-          "client_visible": false
-        },
-        "address_id": {
-          "type": "char",
-          "length": 36,
-          "client_editable": false,
-          "client_visible": false
-        },
-        "first_name": {
-          "type": "varchar",
-          "length": 32,
-          "title": "First Name",
-          "column_definition": {
-            "nowrap": true
-          }
-        },
-        "last_name": {
-          "type": "varchar",
-          "length": 32,
-          "title": "Last Name"
-        },
-        "title": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Title"
-        },
-        "email": {
-          "type": "varchar",
-          "length": 128,
-          "title": "Email",
-          "key": "column",
-          "conversion": [
-            "lowercase"
-          ]
-        },
-        "phone": {
-          "type": "varchar",
-          "length": 20,
-          "title": "Phone"
-        },
-        "phone_ext": {
-          "type": "varchar",
-          "length": 10,
-          "title": "Extension"
-        },
-        "notes": {
-          "type": "text",
-          "title": "Notes"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived",
-          "client_editable": false
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date",
-          "client_editable": false
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date",
-          "client_editable": false
-        }
-      }
-    },
-    "creative_instance": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "creative_instance_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Instance Version ID",
-          "key": "unique"
-        },
-        "creative_instance_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Group UUID",
-          "key": "column"
-        },
-        "creative_template": {
-          "type": "varchar",
-          "length": 16
-        },
-        "instance_type": {
-          "type": "tinyint",
-          "title": "Instance Type",
-          "options": [
-            "One-off",
-            "Global"
-          ]
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archive Date"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date"
-        },
-        "creative_instance_name": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Creative Instance Name"
-        },
-        "account_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Account ID"
-        }
-      },
-      "joins": [
-        {
-          "table": "creative_map",
-          "local_key": "creative_instance_version_id",
-          "foreign_key": "creative_instance_version_id"
-        }
-      ]
-    },
-    "creative": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "creative_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Version ID",
-          "key": "column"
-        },
-        "creative_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative ID",
-          "key": "column"
-        },
-        "account_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Account ID"
-        },
-        "type": {
-          "type": "varchar",
-          "length": 36,
-          "title": "Type"
-        },
-        "sort_order": {
-          "type": "tinyint",
-          "title": "Sort Order"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archive Date"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date"
-        },
-        "value": {
-          "type": "text",
-          "title": "Value"
-        },
-        "attributes": {
-          "type": "text",
-          "data_type": "json",
-          "title": "Extra Data"
-        }
-      }
-    },
-    "creative_map": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "creative_instance_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Group Version ID",
-          "key": {
-            "table": "creative_instance",
-            "fields": [
-              "creative_instance_version_id"
-            ]
-          }
-        },
-        "creative_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Creative Associate ID",
-          "key": {
-            "table": "creative",
-            "fields": [
-              "creative_id"
-            ]
-          }
-        }
-      },
-      "joins": [
-        {
-          "table": "creative",
-          "local_key": "creative_id",
-          "foreign_key": "creative_id"
-        }
-      ]
-    },
-    "hive": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "hive_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Hive Version ID",
-          "key": "unique"
-        },
-        "hive_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid"
-        },
-        "gateway_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Gateway ID",
-          "key": "column"
-        },
-        "legacy_setting_id": {
-          "type": "int"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived"
-        },
-        "script_type": {
-          "type": "varchar",
-          "length": 32
-        },
-        "script_version": {
-          "type": "varchar",
-          "length": 32
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date"
-        }
-      },
-      "joins": [
-        {
-          "table": "hive_product",
-          "local_key": "hive_version_id",
-          "foreign_key": "hive_version_id"
-        },
-        {
-          "table": "hive_setting",
-          "local_key": "hive_version_id",
-          "foreign_key": "hive_type_id"
-        }
-      ]
-    },
-    "hive_product": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "hive_product_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Hive Version ID",
-          "key": "unique"
-        },
-        "hive_version_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Hive Version ID",
-          "key": "column"
-        },
-        "swarm_id": {
-          "type": "char",
-          "length": 8,
-          "title": "Swarm ID"
-        },
-        "product": {
-          "type": "varchar",
-          "length": 32
-        }
-      },
-      "joins": [
-        {
-          "table": "swarm",
-          "local_key": "swarm_id",
-          "foreign_key": "swarm_id",
-          "module_parent": "swarm",
-          "class": "Swarm"
-        },
-        {
-          "table": "hive_setting",
-          "local_key": "hive_product_id",
-          "foreign_key": "hive_type_id"
-        }
-      ]
-    },
-    "hive_setting": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Hive Setting ID",
-          "key": "primary"
-        },
-        "hive_type_id": {
-          "type": "char",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Hive Version ID",
-          "key": "column"
-        },
-        "type": {
-          "type": "varchar",
-          "length": 40,
-          "title": "Setting Type"
-        },
-        "handle": {
-          "type": "varchar",
-          "length": 40,
-          "title": "Setting Handle"
-        },
-        "value": {
-          "type": "text",
-          "title": "Setting Value"
-        }
-      }
-    },
-    "tag": {
-      "fields": {
-        "tag_id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "category": {
-          "type": "varchar",
-          "length": 32,
-          "title": "Category"
-        },
-        "name": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Tag Name"
-        }
-      }
-    },
-    "tag_map": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "tag_id": {
-          "type": "int",
-          "title": "Tag ID",
-          "key": "column"
-        },
-        "item_id": {
-          "type": "varchar",
-          "length": 128,
-          "key": "column"
-        },
-        "type": {
-          "type": "varchar",
-          "length": 36
-        }
-      },
-      "joins": [
-        {
-          "table": "tag",
-          "local_key": "tag_id",
-          "foreign_key": "tag_id"
-        }
-      ]
-    },
-    "gateway": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "gateway_id": {
-          "type": "varchar",
-          "length": 8,
-          "key": "unique"
-        },
-        "account_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Account ID",
-          "key": "column"
-        },
-        "swarm_id": {
-          "type": "varchar",
-          "length": 8,
-          "title": "Swarm ID"
-        },
-        "gateway_name": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Gateway Name"
-        },
-        "gateway_type": {
-          "type": "varchar",
-          "length": 6,
-          "title": "Gateway Type",
-          "options": {
-            "path": "Path",
-            "script": "Script"
-          }
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date"
-        }
-      },
-      "joins": [
-        {
-          "module_parent": "swarm",
-          "class": "Swarm",
-          "table": "swarm",
-          "local_key": "swarm_id",
-          "foreign_key": "swarm_id"
-        }
-      ]
     },
     "pipeline": {
       "fields": {
@@ -3622,6 +2543,1181 @@
         }
       }
     },
+    "ad": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "readonly": true,
+          "client_visible": false,
+          "key": "primary"
+        },
+        "ad_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad Version ID",
+          "readonly": true,
+          "client_visible": false,
+          "key": "unique"
+        },
+        "ad_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Ad ID",
+          "data_type": "minid",
+          "readonly": true,
+          "minid_precursor": "A",
+          "key": "column"
+        },
+        "account_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Advertiser Account ID"
+        },
+        "active": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Active"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "readonly": true,
+          "client_visible": false,
+          "title": "Archived"
+        },
+        "cpc": {
+          "type": "float",
+          "length": "(5,2)",
+          "title": "CPC"
+        },
+        "cpi": {
+          "type": "float",
+          "length": "(5,4)",
+          "title": "CPI"
+        },
+        "weight": {
+          "type": "smallint",
+          "title": "Weight"
+        },
+        "start_time": {
+          "type": "datetime",
+          "title": "Start Date/Time",
+          "input": {
+            "type": "date",
+            "attributes": {
+              "minYear": 2012,
+              "maxYear": 2014
+            }
+          }
+        },
+        "end_time": {
+          "type": "datetime",
+          "title": "End Date/Time",
+          "input": {
+            "type": "date",
+            "attributes": {
+              "minYear": 2012,
+              "maxYear": 2014
+            }
+          }
+        },
+        "daily_start_time": {
+          "type": "time",
+          "title": "Daily Start Time"
+        },
+        "daily_end_time": {
+          "type": "time",
+          "title": "Daily End Time"
+        },
+        "max_imp_count": {
+          "type": "int",
+          "title": "Max Imp Count"
+        },
+        "max_click_count": {
+          "type": "mediumint",
+          "title": "Max Click Count"
+        },
+        "locked_to_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Locked To ID"
+        },
+        "allow_sunday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Sunday"
+        },
+        "allow_monday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Monday"
+        },
+        "allow_tuesday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Tuesday"
+        },
+        "allow_wednesday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Wednesday"
+        },
+        "allow_thursday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Thursday"
+        },
+        "allow_friday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Friday"
+        },
+        "allow_saturday": {
+          "type": "boolean",
+          "default": 1,
+          "title": "Saturday"
+        },
+        "ad_name": {
+          "type": "varchar",
+          "length": 128,
+          "title": "Ad Name"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "readonly": true,
+          "title": "Last Modified"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date",
+          "readonly": true
+        },
+        "access_date": {
+          "type": "timestamp",
+          "title": "Access Date",
+          "readonly": true
+        },
+        "tracker_url": {
+          "type": "text",
+          "title": "Tracker URL"
+        }
+      },
+      "joins": [
+        {
+          "table": "ad_creative",
+          "local_key": "ad_version_id",
+          "foreign_key": "ad_version_id"
+        }
+      ]
+    },
+    "ad_creative": {
+      "fields": {
+        "ad_creative_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "readonly": true,
+          "key": "primary"
+        },
+        "ad_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad Version ID",
+          "readonly": true,
+          "key": {
+            "table": "ad"
+          }
+        },
+        "ad_template": {
+          "type": "int",
+          "title": "Tag ID"
+        },
+        "content": {
+          "type": "text",
+          "data_type": "json",
+          "title": "Content",
+          "conversion": [
+            "json",
+            "base64"
+          ]
+        },
+        "content_merged": {
+          "type": "text",
+          "data_type": "json",
+          "title": "Merged Content",
+          "conversion": [
+            "json",
+            "base64"
+          ]
+        }
+      }
+    },
+    "ad_caps": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "readonly": true,
+          "key": "primary"
+        },
+        "ad_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "readonly": true,
+          "key": "column"
+        },
+        "date": {
+          "type": "date",
+          "title": "Date",
+          "key": "column"
+        },
+        "type": {
+          "type": "char",
+          "length": 3,
+          "title": "Type",
+          "options": {
+            "imp": "Impression",
+            "clk": "Click"
+          }
+        },
+        "count": {
+          "type": "smallint",
+          "title": "Count"
+        }
+      }
+    },
+    "ad_tag": {
+      "fields": {
+        "ad_tag_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "readonly": true,
+          "key": "primary"
+        },
+        "ad_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad Version ID",
+          "key": {
+            "table": "ad"
+          }
+        },
+        "tag_id": {
+          "type": "int",
+          "title": "Tag ID",
+          "key": {
+            "table": "tag"
+          }
+        }
+      },
+      "joins": [
+        {
+          "table": "tag",
+          "local_key": "tag_id",
+          "foreign_key": "tag_id",
+          "module_parent": "tag",
+          "class": "Tag"
+        }
+      ]
+    },
+    "ad_feed": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "readonly": true,
+          "key": "primary"
+        },
+        "ad_feed_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad Feed Version ID",
+          "readonly": true,
+          "key": "unique"
+        },
+        "ad_feed_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "readonly": true,
+          "key": "column"
+        },
+        "feed_title": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Title"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archive"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archive Date"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "readonly": true,
+          "title": "Created Date"
+        },
+        "ad_template": {
+          "type": "int",
+          "title": "Ad Template ID"
+        }
+      },
+      "joins": [
+        {
+          "table": "ad_feed_map",
+          "local_key": "ad_feed_version_id",
+          "foreign_key": "ad_feed_version_id"
+        }
+      ]
+    },
+    "ad_feed_map": {
+      "fields": {
+        "ad_feed_map_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "key": "primary"
+        },
+        "ad_feed_version_id": {
+          "type": "char",
+          "length": 36,
+          "key": {
+            "table": "ad_feed"
+          }
+        },
+        "ad_id": {
+          "type": "char",
+          "length": 36,
+          "title": "Ad ID",
+          "key": {
+            "table": "ad"
+          }
+        },
+        "position": {
+          "type": "tinyint",
+          "title": "Position"
+        }
+      },
+      "joins": [
+        {
+          "table": "ad",
+          "local_key": "ad_id",
+          "foreign_key": "ad_id"
+        }
+      ]
+    },
+    "ad_feed_tag": {
+      "fields": {
+        "ad_feed_tag_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "readonly": true,
+          "key": "primary"
+        },
+        "ad_feed_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Ad Feed Version ID",
+          "key": {
+            "table": "ad_feed"
+          }
+        },
+        "tag_id": {
+          "type": "int",
+          "title": "Tag ID"
+        }
+      }
+    },
+    "tag": {
+      "fields": {
+        "tag_id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "category": {
+          "type": "varchar",
+          "length": 32,
+          "title": "Category"
+        },
+        "name": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Tag Name"
+        }
+      }
+    },
+    "tag_map": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "tag_id": {
+          "type": "int",
+          "title": "Tag ID",
+          "key": "column"
+        },
+        "item_id": {
+          "type": "varchar",
+          "length": 128,
+          "key": "column"
+        },
+        "type": {
+          "type": "varchar",
+          "length": 36
+        }
+      },
+      "joins": [
+        {
+          "table": "tag",
+          "local_key": "tag_id",
+          "foreign_key": "tag_id"
+        }
+      ]
+    },
+    "hive": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "hive_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Hive Version ID",
+          "key": "unique"
+        },
+        "hive_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid"
+        },
+        "gateway_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Gateway ID",
+          "key": "column"
+        },
+        "legacy_setting_id": {
+          "type": "int"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived"
+        },
+        "script_type": {
+          "type": "varchar",
+          "length": 32
+        },
+        "script_version": {
+          "type": "varchar",
+          "length": 32
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date"
+        }
+      },
+      "joins": [
+        {
+          "table": "hive_product",
+          "local_key": "hive_version_id",
+          "foreign_key": "hive_version_id"
+        },
+        {
+          "table": "hive_setting",
+          "local_key": "hive_version_id",
+          "foreign_key": "hive_type_id"
+        }
+      ]
+    },
+    "hive_product": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "hive_product_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Hive Version ID",
+          "key": "unique"
+        },
+        "hive_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Hive Version ID",
+          "key": "column"
+        },
+        "swarm_id": {
+          "type": "char",
+          "length": 8,
+          "title": "Swarm ID"
+        },
+        "product": {
+          "type": "varchar",
+          "length": 32
+        }
+      },
+      "joins": [
+        {
+          "table": "swarm",
+          "local_key": "swarm_id",
+          "foreign_key": "swarm_id",
+          "module_parent": "swarm",
+          "class": "Swarm"
+        },
+        {
+          "table": "hive_setting",
+          "local_key": "hive_product_id",
+          "foreign_key": "hive_type_id"
+        }
+      ]
+    },
+    "hive_setting": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Hive Setting ID",
+          "key": "primary"
+        },
+        "hive_type_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Hive Version ID",
+          "key": "column"
+        },
+        "type": {
+          "type": "varchar",
+          "length": 40,
+          "title": "Setting Type"
+        },
+        "handle": {
+          "type": "varchar",
+          "length": 40,
+          "title": "Setting Handle"
+        },
+        "value": {
+          "type": "text",
+          "title": "Setting Value"
+        }
+      }
+    },
+    "account": {
+      "identity_key": "account_id",
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary",
+          "client_editable": false
+        },
+        "account_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Account Version ID",
+          "key": "unique",
+          "client_editable": false
+        },
+        "account_id": {
+          "type": "int",
+          "title": "Account ID",
+          "key": "column",
+          "data_type": "minid",
+          "minid_precursor": "C",
+          "client_editable": false
+        },
+        "account_parent_id": {
+          "type": "int",
+          "title": "Account Parent ID",
+          "key": "column",
+          "data_type": "minid",
+          "minid_precursor": "C",
+          "client_editable": false
+        },
+        "permissions_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Permissions ID",
+          "client_editable": false
+        },
+        "internal_account": {
+          "type": "boolean",
+          "title": "Internal Account",
+          "default": 0
+        },
+        "legacy_long_id": {
+          "type": "varchar",
+          "length": 43,
+          "title": "Legacy Long ID",
+          "client_editable": false
+        },
+        "company_name": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Company Name"
+        },
+        "company_alias1": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Company Alias 1"
+        },
+        "company_alias2": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Company Alias 2"
+        },
+        "company_name_accounting": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Quickbooks Company Name"
+        },
+        "admin_email": {
+          "type": "varchar",
+          "length": 128,
+          "title": "Account Admin Email",
+          "conversion": [
+            "lowercase"
+          ]
+        },
+        "payment_frequency_pending": {
+          "type": "varchar",
+          "title": "Payment Frequency Pending",
+          "length": 24,
+          "default": "",
+          "options": {
+            "": "None",
+            "Monthly": "Monthly",
+            "BiWeekly": "BiWeekly",
+            "Weekly": "Weekly",
+            "Threshold": "External Threshold"
+          }
+        },
+        "payment_frequency": {
+          "type": "varchar",
+          "length": 24,
+          "title": "Payment Frequency",
+          "default": "Monthly",
+          "options": {
+            "": "None",
+            "Monthly": "Monthly",
+            "BiWeekly": "BiWeekly",
+            "Weekly": "Weekly",
+            "Threshold": "External Threshold"
+          }
+        },
+        "net_terms_pending": {
+          "type": "char",
+          "title": "Net Terms Pending",
+          "length": 2,
+          "default": 30,
+          "options": {
+            "0": "None",
+            "7": "Net 7",
+            "15": "Net 15",
+            "30": "Net 30",
+            "45": "Net 45"
+          }
+        },
+        "net_terms": {
+          "type": "char",
+          "length": 2,
+          "title": "Net Terms",
+          "default": 30,
+          "options": {
+            "0": "None",
+            "7": "Net 7",
+            "15": "Net 15",
+            "30": "Net 30",
+            "45": "Net 45"
+          }
+        },
+        "payment_threshold_pending": {
+          "type": "double",
+          "title": "Payment Threshold Pending",
+          "conditional_defaults": {
+            "Check": 50,
+            "Wire": 100,
+            "ACH": 10
+          }
+        },
+        "payment_threshold": {
+          "type": "double",
+          "title": "Payment Threshold",
+          "tooltip": "A Payment Threshold value of 0 instead uses a default based on the value selected for Payment Method",
+          "conditional_defaults": {
+            "Check": 50,
+            "Wire": 100,
+            "ACH": 10
+          }
+        },
+        "payment_method_pending": {
+          "type": "varchar",
+          "title": "Payment Method Pending",
+          "length": 5,
+          "default": "",
+          "options": {
+            "Check": "Check",
+            "Wire": "Wire",
+            "ACH": "ACH",
+            "": "None"
+          }
+        },
+        "payment_method": {
+          "type": "varchar",
+          "length": 5,
+          "title": "Payment Method",
+          "default": "",
+          "options": {
+            "Check": "Check",
+            "Wire": "Wire",
+            "ACH": "ACH",
+            "": "None"
+          }
+        },
+        "payment_currency": {
+          "type": "varchar",
+          "length": 3,
+          "title": "Payment Currency",
+          "default": "USD"
+        },
+        "payment_currency_pending": {
+          "type": "varchar",
+          "title": "Payment Currency Pending",
+          "length": 3,
+          "default": "USD"
+        },
+        "external_revenue_pending": {
+          "type": "boolean",
+          "title": "External Revenue Pending",
+          "length": 1,
+          "default": 0
+        },
+        "external_revenue": {
+          "type": "boolean",
+          "length": 1,
+          "title": "External Revenue",
+          "default": 0
+        },
+        "no_pay_pending": {
+          "type": "boolean",
+          "title": "No Pay Pending",
+          "length": 1,
+          "default": 0
+        },
+        "no_pay": {
+          "type": "boolean",
+          "length": 1,
+          "title": "No Pay",
+          "default": 0
+        },
+        "phone": {
+          "type": "varchar",
+          "length": 20,
+          "title": "Phone"
+        },
+        "default_revenue_cut": {
+          "type": "double",
+          "title": "Default Revenue Share"
+        },
+        "tax_id": {
+          "type": "varchar",
+          "length": 12,
+          "title": "Tax ID"
+        },
+        "ssn": {
+          "type": "char",
+          "length": 11,
+          "title": "SSN"
+        },
+        "bank_id_pending": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Routing # Pending"
+        },
+        "bank_id": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Routing #"
+        },
+        "bank_account_id_pending": {
+          "type": "varchar",
+          "title": "Bank Account # Pending",
+          "length": 36
+        },
+        "bank_account_id": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Bank Account #"
+        },
+        "bank_account_type_pending": {
+          "type": "varchar",
+          "length": 16,
+          "default": "checking",
+          "title": "Bank Account Type Pending",
+          "options": {
+            "checking": "Checking",
+            "saving": "Saving"
+          }
+        },
+        "bank_account_type": {
+          "type": "varchar",
+          "length": 16,
+          "title": "Bank Account Type",
+          "default": "checking",
+          "options": {
+            "checking": "Checking",
+            "saving": "Saving"
+          }
+        },
+        "swift_code_pending": {
+          "type": "varchar",
+          "title": "Swift Code Pending",
+          "length": 36
+        },
+        "swift_code": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Swift Code"
+        },
+        "iban_pending": {
+          "type": "varchar",
+          "title": "IBAN Pending",
+          "length": 36
+        },
+        "iban": {
+          "type": "varchar",
+          "length": 36,
+          "title": "IBAN"
+        },
+        "bank_name_pending": {
+          "type": "varchar",
+          "title": "Bank Name Pending",
+          "length": 64
+        },
+        "bank_name": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Bank Name (Only for wires)"
+        },
+        "manager": {
+          "type": "varchar",
+          "length": 32,
+          "title": "Account Manager"
+        },
+        "company_name_at_bank_pending": {
+          "type": "varchar",
+          "title": "Company Name At Bank Pending",
+          "length": 64
+        },
+        "company_name_at_bank": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Company Name At Bank (Vendor Name for CSV)"
+        },
+        "active": {
+          "type": "tinyint",
+          "default": 1,
+          "title": "Active"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived",
+          "client_editable": false
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date",
+          "client_editable": false
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date",
+          "client_editable": false
+        },
+        "bank_address_pending": {
+          "type": "text",
+          "title": "Bank Address Pending"
+        },
+        "bank_address": {
+          "type": "text",
+          "title": "Bank Address"
+        },
+        "payment_notes_pending": {
+          "type": "text",
+          "title": "Payment Notes Pending"
+        },
+        "payment_notes": {
+          "type": "text",
+          "title": "Payment Notes"
+        },
+        "notes": {
+          "type": "text",
+          "title": "Notes"
+        }
+      },
+      "joins": [
+        {
+          "table": "address",
+          "local_key": "account_id",
+          "foreign_key": "account_id",
+          "relationship": "one_to_many"
+        },
+        {
+          "table": "contact",
+          "local_key": "account_id",
+          "foreign_key": "account_id",
+          "relationship": "one_to_many"
+        }
+      ]
+    },
+    "address": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "address_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Address Version ID",
+          "key": "unique",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "address_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Address ID",
+          "key": "column",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "account_id": {
+          "type": "char",
+          "length": 8,
+          "client_editable": false,
+          "client_visible": false
+        },
+        "label": {
+          "type": "varchar",
+          "length": 255,
+          "title": "Label"
+        },
+        "type": {
+          "type": "varchar",
+          "length": 16,
+          "title": "Type",
+          "default": "primary",
+          "options": {
+            "mailing": "Mailing Address",
+            "billing": "Billing Address",
+            "secondary": "Other Address"
+          }
+        },
+        "address_1": {
+          "type": "varchar",
+          "length": 255,
+          "title": "Address 1"
+        },
+        "address_2": {
+          "type": "varchar",
+          "length": 255,
+          "title": "Address 2"
+        },
+        "zip_code": {
+          "type": "varchar",
+          "length": 10,
+          "title": "Zip Code"
+        },
+        "city": {
+          "type": "varchar",
+          "length": 255,
+          "title": "City"
+        },
+        "state": {
+          "type": "char",
+          "length": 2,
+          "title": "State / Province",
+          "special": "province"
+        },
+        "country": {
+          "type": "char",
+          "length": 2,
+          "title": "Country",
+          "special": "country"
+        },
+        "foreign_postcode": {
+          "type": "varchar",
+          "length": 32,
+          "title": "Foreign Postcode"
+        },
+        "address_3": {
+          "type": "text",
+          "title": "Address 3"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived",
+          "client_editable": false
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date",
+          "client_editable": false
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date",
+          "client_editable": false
+        }
+      }
+    },
+    "contact": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "contact_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "contact Version ID",
+          "key": "unique",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "contact_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "contact ID",
+          "key": "column",
+          "client_editable": false,
+          "client_visible": false
+        },
+        "account_id": {
+          "type": "char",
+          "length": 8,
+          "client_editable": false,
+          "client_visible": false
+        },
+        "address_id": {
+          "type": "char",
+          "length": 36,
+          "client_editable": false,
+          "client_visible": false
+        },
+        "first_name": {
+          "type": "varchar",
+          "length": 32,
+          "title": "First Name",
+          "column_definition": {
+            "nowrap": true
+          }
+        },
+        "last_name": {
+          "type": "varchar",
+          "length": 32,
+          "title": "Last Name"
+        },
+        "title": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Title"
+        },
+        "email": {
+          "type": "varchar",
+          "length": 128,
+          "title": "Email",
+          "key": "column",
+          "conversion": [
+            "lowercase"
+          ]
+        },
+        "phone": {
+          "type": "varchar",
+          "length": 20,
+          "title": "Phone"
+        },
+        "phone_ext": {
+          "type": "varchar",
+          "length": 10,
+          "title": "Extension"
+        },
+        "notes": {
+          "type": "text",
+          "title": "Notes"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived",
+          "client_editable": false
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date",
+          "client_editable": false
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date",
+          "client_editable": false
+        }
+      }
+    },
     "user": {
       "identity_key": "user_id",
       "fields": {
@@ -3799,129 +3895,6 @@
           "foreign_key": "group_id"
         }
       ]
-    },
-    "decision_tree": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "decision_tree_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Decision Tree Version ID",
-          "key": "unique"
-        },
-        "archive": {
-          "type": "tinyint",
-          "default": 0,
-          "title": "Archived"
-        },
-        "decision_tree_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Decision Tree ID",
-          "key": "column"
-        },
-        "create_date": {
-          "type": "datetime",
-          "default": "_NOW_",
-          "title": "Created Date"
-        },
-        "archive_date": {
-          "type": "datetime",
-          "title": "Archived Date"
-        },
-        "decision_tree_name": {
-          "type": "varchar",
-          "length": 64,
-          "title": "Decision Tree Name"
-        }
-      },
-      "joins": [
-        {
-          "table": "decision_path",
-          "local_key": "decision_tree_version_id",
-          "foreign_key": "decision_tree_version_id"
-        }
-      ]
-    },
-    "decision_path": {
-      "fields": {
-        "id": {
-          "type": "int",
-          "default": "auto_increment",
-          "title": "Table ID",
-          "key": "primary"
-        },
-        "decision_tree_version_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Decision Tree Version ID",
-          "key": {
-            "table": "decision_tree"
-          }
-        },
-        "decision_option_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid"
-        },
-        "option_connect_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid"
-        },
-        "decision_path_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid"
-        },
-        "decision_node_id": {
-          "type": "varchar",
-          "length": 36,
-          "data_type": "uuid",
-          "title": "Decision Node ID"
-        },
-        "category": {
-          "type": "varchar",
-          "length": 36,
-          "title": "Decision Category"
-        },
-        "handle": {
-          "type": "varchar",
-          "length": 36,
-          "title": "Decision Handle"
-        },
-        "type": {
-          "type": "varchar",
-          "length": 36,
-          "title": "Decision Type"
-        },
-        "value": {
-          "type": "varchar",
-          "length": 255,
-          "title": "Value"
-        },
-        "tier": {
-          "type": "tinyint",
-          "title": "Tier"
-        },
-        "sort_order": {
-          "type": "tinyint",
-          "title": "Order"
-        },
-        "create_date": {
-          "type": "datetime",
-          "title": "Create Date",
-          "default": "_NOW_"
-        }
-      }
     },
     "bill": {
       "identity_key": "bill_id",
@@ -4116,6 +4089,17 @@
           "type": "datetime",
           "title": "Last Updated"
         },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived",
+          "client_editable": false
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date",
+          "client_editable": false
+        },
         "notes": {
           "type": "text",
           "title": "Notes"
@@ -4247,6 +4231,298 @@
           "relationship": "one_to_many"
         }
       ]
+    },
+    "decision_tree": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "decision_tree_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Decision Tree Version ID",
+          "key": "unique"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived"
+        },
+        "decision_tree_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Decision Tree ID",
+          "key": "column"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archived Date"
+        },
+        "decision_tree_name": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Decision Tree Name"
+        }
+      },
+      "joins": [
+        {
+          "table": "decision_path",
+          "local_key": "decision_tree_version_id",
+          "foreign_key": "decision_tree_version_id"
+        }
+      ]
+    },
+    "decision_path": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "decision_tree_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Decision Tree Version ID",
+          "key": {
+            "table": "decision_tree"
+          }
+        },
+        "decision_option_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid"
+        },
+        "option_connect_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid"
+        },
+        "decision_path_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid"
+        },
+        "decision_node_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Decision Node ID"
+        },
+        "category": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Decision Category"
+        },
+        "handle": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Decision Handle"
+        },
+        "type": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Decision Type"
+        },
+        "value": {
+          "type": "varchar",
+          "length": 255,
+          "title": "Value"
+        },
+        "tier": {
+          "type": "tinyint",
+          "title": "Tier"
+        },
+        "sort_order": {
+          "type": "tinyint",
+          "title": "Order"
+        },
+        "create_date": {
+          "type": "datetime",
+          "title": "Create Date",
+          "default": "_NOW_"
+        }
+      }
+    },
+    "creative_instance": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "creative_instance_version_id": {
+          "type": "varchar",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Instance Version ID",
+          "key": "unique"
+        },
+        "creative_instance_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Group UUID",
+          "key": "column"
+        },
+        "creative_template": {
+          "type": "varchar",
+          "length": 16
+        },
+        "instance_type": {
+          "type": "tinyint",
+          "title": "Instance Type",
+          "options": [
+            "One-off",
+            "Global"
+          ]
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archive Date"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date"
+        },
+        "creative_instance_name": {
+          "type": "varchar",
+          "length": 64,
+          "title": "Creative Instance Name"
+        },
+        "account_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Account ID"
+        }
+      },
+      "joins": [
+        {
+          "table": "creative_map",
+          "local_key": "creative_instance_version_id",
+          "foreign_key": "creative_instance_version_id"
+        }
+      ]
+    },
+    "creative": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "creative_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Version ID",
+          "key": "column"
+        },
+        "creative_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative ID",
+          "key": "column"
+        },
+        "account_id": {
+          "type": "varchar",
+          "length": 8,
+          "title": "Account ID"
+        },
+        "type": {
+          "type": "varchar",
+          "length": 36,
+          "title": "Type"
+        },
+        "sort_order": {
+          "type": "tinyint",
+          "title": "Sort Order"
+        },
+        "archive": {
+          "type": "tinyint",
+          "default": 0,
+          "title": "Archived"
+        },
+        "archive_date": {
+          "type": "datetime",
+          "title": "Archive Date"
+        },
+        "create_date": {
+          "type": "datetime",
+          "default": "_NOW_",
+          "title": "Created Date"
+        },
+        "value": {
+          "type": "text",
+          "title": "Value"
+        },
+        "attributes": {
+          "type": "text",
+          "data_type": "json",
+          "title": "Extra Data"
+        }
+      }
+    },
+    "creative_map": {
+      "fields": {
+        "id": {
+          "type": "int",
+          "default": "auto_increment",
+          "title": "Table ID",
+          "key": "primary"
+        },
+        "creative_instance_version_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Group Version ID",
+          "key": {
+            "table": "creative_instance",
+            "fields": [
+              "creative_instance_version_id"
+            ]
+          }
+        },
+        "creative_id": {
+          "type": "char",
+          "length": 36,
+          "data_type": "uuid",
+          "title": "Creative Associate ID",
+          "key": {
+            "table": "creative",
+            "fields": [
+              "creative_id"
+            ]
+          }
+        }
+      },
+      "joins": [
+        {
+          "table": "creative",
+          "local_key": "creative_id",
+          "foreign_key": "creative_id"
+        }
+      ]
     }
   },
   "path_options": {
@@ -4313,144 +4589,192 @@
       }
     },
     "decision": {
-      "persistent_percentage": {
-        "title": "Persistent Percentage",
-        "handle": "persistent_percentage",
+      "visits": {
+        "title": "Visits",
+        "handle": "visits",
         "options": {
-          "percentage": {
-            "allow_quantity": 1,
+          "visits": {
             "type": "int",
-            "value": 0,
-            "allow_range": {
-              "min": 1,
-              "max": 100
-            },
             "input": {
+              "title": "Visits",
               "type": "text",
-              "title": "P%",
               "attributes": {
                 "size": 1
               }
             }
-          }
-        }
-      },
-      "ad_bucket": {
-        "title": "Ad Bucket",
-        "handle": "ad_bucket",
-        "options": {
-          "tags": {
-            "type": "csv",
-            "input": {
-              "title": "Tags",
-              "type": "select",
-              "options": {
-                "1": "payday loan",
-                "2": "cash advance",
-                "3": "credit card",
-                "4": "reject",
-                "5": "premium",
-                "6": "return user",
-                "9": "test",
-                "10": "",
-                "11": "",
-                "12": "",
-                "13": "",
-                "14": "",
-                "15": ""
-              }
-            }
           },
-          "type": {
+          "visit_type": {
             "type": "alnum",
             "input": {
               "title": "",
               "type": "select",
               "options": {
-                "imp": "Imp",
-                "clk": "Clk"
+                "page": "Page",
+                "node": "Node",
+                "global": "Global"
               }
             }
           }
         }
       },
-      "us_states": {
-        "title": "US States",
-        "handle": "us_states",
+      "mobile": {
+        "title": "Mobile",
+        "handle": "mobile",
         "options": {
-          "us_states": {
+          "mobile_on": {
+            "type": "int",
+            "input": {
+              "type": "select",
+              "title": "Mobile",
+              "options": {
+                "0": "No",
+                "1": "Yes"
+              }
+            }
+          }
+        }
+      },
+      "uk_provinces_nuts": {
+        "title": "UK Greater Regions",
+        "handle": "uk_provinces_nuts",
+        "options": {
+          "uk_nuts": {
             "type": "csv",
             "input": {
-              "title": "US States",
+              "title": "UK Greater Regions",
               "type": "select",
               "attributes": {
                 "multiple": true,
                 "size": 10
               },
               "options": {
-                "": "None Selected",
-                "ZZ": "Not Applicable",
-                "AL": "Alabama",
-                "AK": "Alaska",
-                "AZ": "Arizona",
-                "AR": "Arkansas",
-                "CA": "California",
-                "CO": "Colorado",
-                "CT": "Connecticut",
-                "DE": "Delaware",
-                "FL": "Florida",
-                "GA": "Georgia",
-                "HI": "Hawaii",
-                "ID": "Idaho",
-                "IL": "Illinois",
-                "IN": "Indiana",
-                "IA": "Iowa",
-                "KS": "Kansas",
-                "KY": "Kentucky",
-                "LA": "Louisiana",
-                "ME": "Maine",
-                "MD": "Maryland",
-                "MA": "Massachusetts",
-                "MI": "Michigan",
-                "MN": "Minnesota",
-                "MS": "Mississippi",
-                "MO": "Missouri",
-                "MT": "Montana",
-                "NE": "Nebraska",
-                "NV": "Nevada",
-                "NH": "New Hampshire",
-                "NJ": "New Jersey",
-                "NM": "New Mexico",
-                "NY": "New York",
-                "NC": "North Carolina",
-                "ND": "North Dakota",
-                "OH": "Ohio",
-                "OK": "Oklahoma",
-                "OR": "Oregon",
-                "PA": "Pennsylvania",
-                "RI": "Rhode Island",
-                "SC": "South Carolina",
-                "SD": "South Dakota",
-                "TN": "Tennessee",
-                "TX": "Texas",
-                "UT": "Utah",
-                "VT": "Vermont",
-                "VA": "Virginia",
-                "WA": "Washington",
-                "DC": "Washington, DC",
-                "WV": "West Virginia",
-                "WI": "Wisconsin",
-                "WY": "Wyoming",
-                "PR": "Puerto Rico",
-                "BC": "British Columbia",
-                "NF": "Newfoundland",
-                "NS": "Nova Scotia",
-                "ON": "Ontario",
-                "PE": "Prince Edward",
-                "PQ": "Quebec",
-                "SK": "Saskatchewan",
-                "NT": "Northwest Territories",
-                "YT": "Yukon Terrirory"
+                "UKC": "North East, England",
+                "UKC1": " - Tees Valley and Durham",
+                "UKC2": " - Northumberland and Tyne and Wear",
+                "UKD": "North West, England",
+                "UKD1": " - Cumbria",
+                "UKD6": " - Cheshire",
+                "UKD3": " - Greater Manchester",
+                "UKD4": " - Lancashire",
+                "UKD7": " - Merseyside",
+                "UKE": "Yorkshire and the Humber, England",
+                "UKE1": " - East Riding and North Lincolnshire",
+                "UKE2": " - North Yorkshire",
+                "UKE3": " - South Yorkshire",
+                "UKE4": " - West Yorkshire",
+                "UKF": "East Midlands, England",
+                "UKF1": " - Derbyshire and Nottinghamshire",
+                "UKF2": " - Leicestershire, Rutland and Northamptonshire",
+                "UKF3": " - Lincolnshire",
+                "UKG": "West Midlands, England",
+                "UKG1": " - Herefordshire, Worcestershire and Warwickshire",
+                "UKG2": " - Shropshire and Staffordshire",
+                "UKG3": " - West Midlands",
+                "UKH": "East of England",
+                "UKH1": " - East Anglia",
+                "UKH2": " - Bedfordshire and Hertfordshire",
+                "UKH3": " - Essex",
+                "UKI": "London, England",
+                "UKI1": " - Inner London",
+                "UKI2": " - Outer London",
+                "UKJ": "South East, England",
+                "UKJ1": " - Berkshire, Buckinghamshire, and Oxfordshire",
+                "UKJ2": " - Surrey, East and West Sussex",
+                "UKJ3": " - Hampshire and Isle of Wight",
+                "UKJ4": " - Kent",
+                "UKK": "South West, England",
+                "UKK1": " - Gloucestershire, Wiltshire and Bristol/Bath area",
+                "UKK2": " - Dorset and Somerset",
+                "UKK3": " - Cornwall and Isles of Scilly",
+                "UKK4": " - Devon",
+                "UKL": "Wales",
+                "UKL1": " - West Wales and The Valleys",
+                "UKL2": " - East Wales",
+                "UKM": "Scotland",
+                "UKM2": " - Eastern Scotland",
+                "UKM3": " - South Western Scotland",
+                "UKM5": " - North Eastern Scotland",
+                "UKM6": " - Highlands and Islands",
+                "UKN": "Northern Ireland",
+                "UKN0": " - Northern Ireland"
+              }
+            }
+          }
+        }
+      },
+      "daytime": {
+        "title": "Day+Time",
+        "handle": "daytime",
+        "options": {
+          "start_day": {
+            "type": "int",
+            "input": {
+              "title": "Start",
+              "type": "select",
+              "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "start_time_hour": {
+            "type": "int",
+            "input": {
+              "title": "",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "start_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_day": {
+            "type": "int",
+            "input": {
+              "title": "<br/>End",
+              "type": "select",
+              "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "end_time_hour": {
+            "type": "int",
+            "input": {
+              "title": "",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
               }
             }
           }
@@ -4494,100 +4818,23 @@
           }
         }
       },
-      "dailytime": {
-        "title": "Daily Time",
-        "handle": "dailytime",
+      "random_percentage": {
+        "title": "Random Percentage",
+        "handle": "random_percentage",
         "options": {
-          "days": {
-            "type": "csv",
-            "input": {
-              "title": "Days",
-              "type": "select",
-              "attributes": {
-                "multiple": true,
-                "size": 7
-              },
-              "options": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-              ]
-            }
-          },
-          "start_time_hour": {
+          "percentage": {
+            "allow_quantity": "many",
             "type": "int",
-            "input": {
-              "title": "<br/>Start",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "start_time_min": {
-            "type": "int",
-            "input": {
-              "title": "&nbsp;:",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "end_time_hour": {
-            "type": "int",
-            "input": {
-              "title": "<br/>End",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "end_time_min": {
-            "type": "int",
-            "input": {
-              "title": "&nbsp;:",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          }
-        }
-      },
-      "imp_cap": {
-        "title": "Imp Cap",
-        "handle": "imp_cap",
-        "options": {
-          "imps": {
-            "type": "int",
+            "value": 0,
+            "allow_range": {
+              "min": 1,
+              "max": 100
+            },
             "input": {
               "type": "text",
-              "title": "Imp Cap",
+              "title": "%",
               "attributes": {
                 "size": 1
-              }
-            }
-          }
-        }
-      },
-      "mobile": {
-        "title": "Mobile",
-        "handle": "mobile",
-        "options": {
-          "mobile_on": {
-            "type": "int",
-            "input": {
-              "type": "select",
-              "title": "Mobile",
-              "options": {
-                "0": "No",
-                "1": "Yes"
               }
             }
           }
@@ -4783,152 +5030,6 @@
                 "si": "Slovenia",
                 "zm": "Zambia",
                 "zw": "Zimbabwe"
-              }
-            }
-          }
-        }
-      },
-      "uk_provinces_nuts": {
-        "title": "UK Greater Regions",
-        "handle": "uk_provinces_nuts",
-        "options": {
-          "uk_nuts": {
-            "type": "csv",
-            "input": {
-              "title": "UK Greater Regions",
-              "type": "select",
-              "attributes": {
-                "multiple": true,
-                "size": 10
-              },
-              "options": {
-                "UKC": "North East, England",
-                "UKC1": " - Tees Valley and Durham",
-                "UKC2": " - Northumberland and Tyne and Wear",
-                "UKD": "North West, England",
-                "UKD1": " - Cumbria",
-                "UKD6": " - Cheshire",
-                "UKD3": " - Greater Manchester",
-                "UKD4": " - Lancashire",
-                "UKD7": " - Merseyside",
-                "UKE": "Yorkshire and the Humber, England",
-                "UKE1": " - East Riding and North Lincolnshire",
-                "UKE2": " - North Yorkshire",
-                "UKE3": " - South Yorkshire",
-                "UKE4": " - West Yorkshire",
-                "UKF": "East Midlands, England",
-                "UKF1": " - Derbyshire and Nottinghamshire",
-                "UKF2": " - Leicestershire, Rutland and Northamptonshire",
-                "UKF3": " - Lincolnshire",
-                "UKG": "West Midlands, England",
-                "UKG1": " - Herefordshire, Worcestershire and Warwickshire",
-                "UKG2": " - Shropshire and Staffordshire",
-                "UKG3": " - West Midlands",
-                "UKH": "East of England",
-                "UKH1": " - East Anglia",
-                "UKH2": " - Bedfordshire and Hertfordshire",
-                "UKH3": " - Essex",
-                "UKI": "London, England",
-                "UKI1": " - Inner London",
-                "UKI2": " - Outer London",
-                "UKJ": "South East, England",
-                "UKJ1": " - Berkshire, Buckinghamshire, and Oxfordshire",
-                "UKJ2": " - Surrey, East and West Sussex",
-                "UKJ3": " - Hampshire and Isle of Wight",
-                "UKJ4": " - Kent",
-                "UKK": "South West, England",
-                "UKK1": " - Gloucestershire, Wiltshire and Bristol/Bath area",
-                "UKK2": " - Dorset and Somerset",
-                "UKK3": " - Cornwall and Isles of Scilly",
-                "UKK4": " - Devon",
-                "UKL": "Wales",
-                "UKL1": " - West Wales and The Valleys",
-                "UKL2": " - East Wales",
-                "UKM": "Scotland",
-                "UKM2": " - Eastern Scotland",
-                "UKM3": " - South Western Scotland",
-                "UKM5": " - North Eastern Scotland",
-                "UKM6": " - Highlands and Islands",
-                "UKN": "Northern Ireland",
-                "UKN0": " - Northern Ireland"
-              }
-            }
-          }
-        }
-      },
-      "daytime": {
-        "title": "Day+Time",
-        "handle": "daytime",
-        "options": {
-          "start_day": {
-            "type": "int",
-            "input": {
-              "title": "Start",
-              "type": "select",
-              "options": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-              ]
-            }
-          },
-          "start_time_hour": {
-            "type": "int",
-            "input": {
-              "title": "",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "start_time_min": {
-            "type": "int",
-            "input": {
-              "title": "&nbsp;:",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "end_day": {
-            "type": "int",
-            "input": {
-              "title": "<br/>End",
-              "type": "select",
-              "options": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-              ]
-            }
-          },
-          "end_time_hour": {
-            "type": "int",
-            "input": {
-              "title": "",
-              "type": "text",
-              "attributes": {
-                "size": 1
-              }
-            }
-          },
-          "end_time_min": {
-            "type": "int",
-            "input": {
-              "title": "&nbsp;:",
-              "type": "text",
-              "attributes": {
-                "size": 1
               }
             }
           }
@@ -5235,6 +5336,22 @@
           }
         }
       },
+      "imp_cap": {
+        "title": "Imp Cap",
+        "handle": "imp_cap",
+        "options": {
+          "imps": {
+            "type": "int",
+            "input": {
+              "type": "text",
+              "title": "Imp Cap",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
       "click_cap": {
         "title": "Click Cap",
         "handle": "click_cap",
@@ -5251,12 +5368,12 @@
           }
         }
       },
-      "random_percentage": {
-        "title": "Random Percentage",
-        "handle": "random_percentage",
+      "persistent_percentage": {
+        "title": "Persistent Percentage",
+        "handle": "persistent_percentage",
         "options": {
           "percentage": {
-            "allow_quantity": "many",
+            "allow_quantity": 1,
             "type": "int",
             "value": 0,
             "allow_range": {
@@ -5265,7 +5382,7 @@
             },
             "input": {
               "type": "text",
-              "title": "%",
+              "title": "P%",
               "attributes": {
                 "size": 1
               }
@@ -5273,29 +5390,241 @@
           }
         }
       },
-      "visits": {
-        "title": "Visits",
-        "handle": "visits",
+      "dailytime": {
+        "title": "Daily Time",
+        "handle": "dailytime",
         "options": {
-          "visits": {
+          "days": {
+            "type": "csv",
+            "input": {
+              "title": "Days",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 7
+              },
+              "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "start_time_hour": {
             "type": "int",
             "input": {
-              "title": "Visits",
+              "title": "<br/>Start",
               "type": "text",
               "attributes": {
                 "size": 1
               }
             }
           },
-          "visit_type": {
+          "start_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_time_hour": {
+            "type": "int",
+            "input": {
+              "title": "<br/>End",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          },
+          "end_time_min": {
+            "type": "int",
+            "input": {
+              "title": "&nbsp;:",
+              "type": "text",
+              "attributes": {
+                "size": 1
+              }
+            }
+          }
+        }
+      },
+      "ad_bucket": {
+        "title": "Ad Bucket",
+        "handle": "ad_bucket",
+        "options": {
+          "tags": {
+            "type": "csv",
+            "input": {
+              "title": "Tags",
+              "type": "select",
+              "options": {
+                "1": "payday loan",
+                "2": "cash advance",
+                "3": "credit card",
+                "4": "reject",
+                "5": "premium",
+                "6": "return user",
+                "9": "test",
+                "10": "",
+                "11": "",
+                "12": "",
+                "13": "",
+                "14": "",
+                "15": "",
+                "16": "",
+                "17": "",
+                "18": "",
+                "19": "",
+                "20": "",
+                "21": "",
+                "22": "",
+                "23": "",
+                "24": "",
+                "25": "",
+                "26": "",
+                "27": "",
+                "28": "",
+                "29": "",
+                "30": "",
+                "31": "",
+                "32": "",
+                "33": "",
+                "34": "",
+                "35": "",
+                "36": "",
+                "37": "",
+                "38": "",
+                "39": "",
+                "40": "",
+                "41": "",
+                "42": "",
+                "43": "",
+                "44": "",
+                "45": "",
+                "46": "",
+                "47": "",
+                "48": "",
+                "49": "",
+                "50": "",
+                "51": "",
+                "52": "",
+                "53": "",
+                "54": "",
+                "55": "",
+                "56": "",
+                "57": "",
+                "58": "",
+                "59": "",
+                "60": "",
+                "61": "",
+                "62": "",
+                "63": "",
+                "64": "",
+                "65": "",
+                "66": "",
+                "67": "",
+                "68": ""
+              }
+            }
+          },
+          "type": {
             "type": "alnum",
             "input": {
               "title": "",
               "type": "select",
               "options": {
-                "page": "Page",
-                "node": "Node",
-                "global": "Global"
+                "imp": "Imp",
+                "clk": "Clk"
+              }
+            }
+          }
+        }
+      },
+      "us_states": {
+        "title": "US States",
+        "handle": "us_states",
+        "options": {
+          "us_states": {
+            "type": "csv",
+            "input": {
+              "title": "US States",
+              "type": "select",
+              "attributes": {
+                "multiple": true,
+                "size": 10
+              },
+              "options": {
+                "": "None Selected",
+                "ZZ": "Not Applicable",
+                "AL": "Alabama",
+                "AK": "Alaska",
+                "AZ": "Arizona",
+                "AR": "Arkansas",
+                "CA": "California",
+                "CO": "Colorado",
+                "CT": "Connecticut",
+                "DE": "Delaware",
+                "FL": "Florida",
+                "GA": "Georgia",
+                "HI": "Hawaii",
+                "ID": "Idaho",
+                "IL": "Illinois",
+                "IN": "Indiana",
+                "IA": "Iowa",
+                "KS": "Kansas",
+                "KY": "Kentucky",
+                "LA": "Louisiana",
+                "ME": "Maine",
+                "MD": "Maryland",
+                "MA": "Massachusetts",
+                "MI": "Michigan",
+                "MN": "Minnesota",
+                "MS": "Mississippi",
+                "MO": "Missouri",
+                "MT": "Montana",
+                "NE": "Nebraska",
+                "NV": "Nevada",
+                "NH": "New Hampshire",
+                "NJ": "New Jersey",
+                "NM": "New Mexico",
+                "NY": "New York",
+                "NC": "North Carolina",
+                "ND": "North Dakota",
+                "OH": "Ohio",
+                "OK": "Oklahoma",
+                "OR": "Oregon",
+                "PA": "Pennsylvania",
+                "RI": "Rhode Island",
+                "SC": "South Carolina",
+                "SD": "South Dakota",
+                "TN": "Tennessee",
+                "TX": "Texas",
+                "UT": "Utah",
+                "VT": "Vermont",
+                "VA": "Virginia",
+                "WA": "Washington",
+                "DC": "Washington, DC",
+                "WV": "West Virginia",
+                "WI": "Wisconsin",
+                "WY": "Wyoming",
+                "PR": "Puerto Rico",
+                "BC": "British Columbia",
+                "NF": "Newfoundland",
+                "NS": "Nova Scotia",
+                "ON": "Ontario",
+                "PE": "Prince Edward",
+                "PQ": "Quebec",
+                "SK": "Saskatchewan",
+                "NT": "Northwest Territories",
+                "YT": "Yukon Terrirory"
               }
             }
           }

@@ -77,6 +77,7 @@ PapiClient::getField = (table, field) ->
 
 
 PapiClient::checkForError = (err, result, cb) ->
+  console.log("RES", result)
   body = result.body
   if err?
     console.log "Error"
