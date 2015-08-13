@@ -20,7 +20,7 @@ module.exports = (target_url, data, cb) ->
     cur.protocol = window.location.protocol
     target_url = url.format(cur)
 
-  console.log "URL", target_url
+  # console.log "URL", target_url
   ws = hq.get(target_url, opts)
   buffer = ""
   ws.on "data", (chunk) ->
