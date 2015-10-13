@@ -53,6 +53,10 @@
         "type": "bill",
         "get": "get_bill_period"
     },
+    "current_bills": {
+        "type": "bill",
+        "get": "get_current_bills"
+    },
     "bill_list": {
         "type": "bill",
         "get": "get_bill_list"
