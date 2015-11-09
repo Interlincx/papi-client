@@ -6,7 +6,7 @@ endpoints = require './endpoints.json'
 
 module.exports = PapiClient = (opts={}) ->
 
-  @baseUrl = opts.baseUrl or 'http://development.papi.lincx.co/'
+  @baseUrl = opts.baseUrl or 'http://production.papi.lincx.co/'
   @schemas = schemas
   @endpoints = endpoints
   return this
