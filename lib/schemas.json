@@ -404,6 +404,71 @@
       "tag_id": 83,
       "category": null,
       "name": ""
+    },
+    {
+      "tag_id": 84,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 85,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 86,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 87,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 88,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 89,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 90,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 91,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 92,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 93,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 94,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 95,
+      "category": null,
+      "name": ""
+    },
+    {
+      "tag_id": 96,
+      "category": null,
+      "name": ""
     }
   ],
   "creative_sub_templates": {
@@ -5046,7 +5111,20 @@
                 "80": "",
                 "81": "",
                 "82": "",
-                "83": ""
+                "83": "",
+                "84": "",
+                "85": "",
+                "86": "",
+                "87": "",
+                "88": "",
+                "89": "",
+                "90": "",
+                "91": "",
+                "92": "",
+                "93": "",
+                "94": "",
+                "95": "",
+                "96": ""
               }
             }
           },
