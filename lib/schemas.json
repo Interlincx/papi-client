@@ -469,6 +469,11 @@
       "tag_id": 96,
       "category": null,
       "name": ""
+    },
+    {
+      "tag_id": 97,
+      "category": null,
+      "name": ""
     }
   ],
   "creative_sub_templates": {
@@ -2416,6 +2421,10 @@
         "tracker_url": {
           "type": "text",
           "title": "Tracker URL"
+        },
+        "script": {
+          "type": "text",
+          "title": "Script"
         }
       },
       "joins": [
@@ -5124,7 +5133,8 @@
                 "93": "",
                 "94": "",
                 "95": "",
-                "96": ""
+                "96": "",
+                "97": ""
               }
             }
           },
