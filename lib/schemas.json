@@ -2424,6 +2424,7 @@
         },
         "script": {
           "type": "text",
+          "client_visible": false,
           "title": "Script"
         }
       },
