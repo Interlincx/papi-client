@@ -43,21 +43,21 @@ module.exports =
       if title != '' and title != null
         @c_items[title] = row
         @c_titles.push(title)
-    console.log @c_titles
-    console.log @c_items
+    # console.log @c_titles
+    # console.log @c_items
   
     _this = @
     t_options =
       source: @c_titles
       updater: (item) ->
-        console.log _this.c_items[item]
+        # console.log _this.c_items[item]
       highlighter: (item) ->
         itemid = '.'+_this.c_items[item][item_id_handle]
         $('.dropdown-menu').hide()
         $(itemid).show()
         return false
   
-    console.log t_options
+    # console.log t_options
     $('.modal_typeahead').typeahead(t_options).keyup ->
       $('.dropdown-menu').hide()
   
